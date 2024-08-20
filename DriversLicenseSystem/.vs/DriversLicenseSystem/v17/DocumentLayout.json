@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverslicensesystem\\driverslicensesystem\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\driverslicensesystem\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Site.Master.cs",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master.cs",
+              "RelativeDocumentMoniker": "DriversLicenseSystem\\Site.Master.cs",
+              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master.cs",
+              "RelativeToolTip": "DriversLicenseSystem\\Site.Master.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T08:19:02.64Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
