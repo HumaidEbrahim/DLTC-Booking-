@@ -1,8 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DriversLicenseSystem.SiteMaster" %>
 
 <!DOCTYPE html>
-<html lang="en">
-<head runat="server">
+<html lang="en"><head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %></title>
@@ -14,11 +13,15 @@
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         
         <!-- Header Section -->
-        <header class="bg-success text-white py-3">
-            <image src = "logo.jpg"
+        <header class="bg-success text-white py-6">
             <div class="container d-flex justify-content-between align-items-center">
                 
-                <h2>Drivers License Testing Centre</h2>
+                <h2 style="display:inline-block;">
+                    <image src ="logo1.png" height = "100px"/image>
+                    Drivers License Testing Centre
+                </h2>
+                
+                    
             </div>
         </header>
         
@@ -30,28 +33,47 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
+
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/">Home</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/AdminPortal.aspx">Admin Portal</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/ClientPortal.aspx">Client Portal</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/AboutUs.aspx">About</a>
+                        </li>
+
                     </ul>
+                    <div class="d-flex">
+                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control me-2" placeholder="Search" aria-label="Search"></asp:TextBox>
+                        <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="btn btn-outline-light" OnClick="SearchButton_Click" />
+                    </div>
                 </div>
             </div>
         </nav>
-        
+
         <!-- Main Content -->
         <main class="container mt-4">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                
         </main>
         
         <!-- Footer -->
         <footer class="footer bg-light mt-auto py-3 border-top">
             <div class="container text-center">
+                <br />
+                <br /> 
+                <br /> 
+                <br />
+                <br />
+                <br /> 
                 <p>&copy; <%: DateTime.Now.Year %> Drivers License Testing Centre. All rights reserved.</p>
             </div>
         </footer>
