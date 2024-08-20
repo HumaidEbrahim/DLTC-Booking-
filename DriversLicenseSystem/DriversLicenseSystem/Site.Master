@@ -1,8 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
 
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head runat="server">
+=======
+<html lang="en"><head runat="server">
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %></title>
@@ -14,10 +18,22 @@
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         
         <!-- Header Section -->
+<<<<<<< HEAD
         <header class="bg-success text-white py-3">
             <div class="container d-flex justify-content-between align-items-center">
                 <img src="~/Content/logo.jpg" alt="Logo" /><!-- style="height: 50px;"--> 
                 <h2>Drivers License Testing Centre</h2>
+=======
+        <header class="bg-success text-white py-6">
+            <div class="container d-flex justify-content-between align-items-center">
+                
+                <h2 style="display:inline-block;">
+                    <image src ="logo1.png" height = "100px"/image>
+                    Drivers License Testing Centre
+                </h2>
+                
+                    
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
             </div>
         </header>
         
@@ -29,6 +45,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/">Home</a>
                         </li>
@@ -38,19 +55,59 @@
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/ClientPortal.aspx">Client Portal</a>
                         </li>
+=======
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/AdminPortal.aspx">Admin Portal</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/ClientPortal.aspx">Client Portal</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/AboutUs.aspx">About</a>
+                        </li>
+
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
                     </ul>
+                    <div class="d-flex">
+                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control me-2" placeholder="Search" aria-label="Search"></asp:TextBox>
+                        <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="btn btn-outline-light" OnClick="SearchButton_Click" />
+                    </div>
                 </div>
             </div>
         </nav>
+<<<<<<< HEAD
         
         <!-- Main Content -->
         <main class="container mt-4">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+=======
+
+        <!-- Main Content -->
+        <main class="container mt-4">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
         </main>
         
         <!-- Footer -->
         <footer class="footer bg-light mt-auto py-3 border-top">
             <div class="container text-center">
+<<<<<<< HEAD
+=======
+                <br />
+                <br /> 
+                <br /> 
+                <br />
+                <br />
+                <br /> 
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
                 <p>&copy; <%: DateTime.Now.Year %> Drivers License Testing Centre. All rights reserved.</p>
             </div>
         </footer>

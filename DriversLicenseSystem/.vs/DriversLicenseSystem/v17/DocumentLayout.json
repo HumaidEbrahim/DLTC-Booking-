@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\",
   "Documents": [
     {
@@ -17,6 +18,13 @@
     {
       "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\driverslicensesystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverslicensesystem\\driverslicensesystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
     }
   ],
   "DocumentGroupContainers": [
@@ -31,6 +39,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Site.Master",
               "DocumentMoniker": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master",
               "RelativeDocumentMoniker": "DriversLicenseSystem\\Site.Master",
@@ -78,6 +87,16 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-08-01T10:54:03.33Z",
+=======
+              "Title": "ClientPortal.aspx",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\ClientPortal.aspx",
+              "RelativeDocumentMoniker": "DriversLicenseSystem\\ClientPortal.aspx",
+              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\ClientPortal.aspx",
+              "RelativeToolTip": "DriversLicenseSystem\\ClientPortal.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-20T15:48:58.921Z",
+>>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
               "EditorCaption": ""
             }
           ]
