@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverslicensesystem\\driverslicensesystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\driverslicensesystem\\adminportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{64A65163-DB30-4A5E-B3EE-71BE5D9B9A2D}|DriversLicenseSystem\\DriversLicenseSystem.csproj|solutionrelative:driverslicensesystem\\adminportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +26,7 @@
               "RelativeToolTip": "DriversLicenseSystem\\ClientPortal.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T11:31:07.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminPortal.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\AdminPortal.aspx",
-              "RelativeDocumentMoniker": "DriversLicenseSystem\\AdminPortal.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\AdminPortal.aspx",
-              "RelativeToolTip": "DriversLicenseSystem\\AdminPortal.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T11:29:32.545Z",
+              "WhenOpened": "2024-08-20T15:48:58.921Z",
               "EditorCaption": ""
             }
           ]
