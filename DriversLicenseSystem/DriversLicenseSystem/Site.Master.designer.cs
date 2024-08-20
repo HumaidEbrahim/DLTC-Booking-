@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace DriversLicenseSystem
 {
 
 
@@ -15,8 +15,6 @@ namespace WebApplication1
     {
 
         /// <summary>
-<<<<<<< HEAD
-=======
         /// SearchBox control.
         /// </summary>
         /// <remarks>
@@ -35,7 +33,6 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button SearchButton;
 
         /// <summary>
->>>>>>> f352db840d8c7808f53eda7651b4e7dd7920c5c5
         /// MainContent control.
         /// </summary>
         /// <remarks>
