@@ -73,7 +73,7 @@
         
         <div class="form-group">
             <label for="Name" class="form-label">Name</label>
-            <asp:TextBox ID="Name" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="Name" runat="server" class="form-control is-valid"></asp:TextBox>
         </div>
         
         <div class="form-group">
@@ -98,7 +98,7 @@
        
         <div class="form-group">
             <label  for="City" class="form-label">City</label>
-            <asp:DropDownList ID="City" runat="server" CssClass="dropdown"></asp:DropDownList>
+            <asp:DropDownList ID="City" runat="server" class="btn btn-secondary dropdown-toggle"></asp:DropDownList>
         </div>
         
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
