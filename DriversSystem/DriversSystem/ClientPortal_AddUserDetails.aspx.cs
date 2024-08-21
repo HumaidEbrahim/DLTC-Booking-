@@ -23,7 +23,7 @@ namespace DriversSystem
             }
 
             // Populate city drop down
-            String query = "SELECT Name FROM City";
+            String query = "SELECT Name FROM City ORDER BY Name ASC";
 
             using (SqlDataReader reader = dbHelper.ExecuteReader(query))
             {

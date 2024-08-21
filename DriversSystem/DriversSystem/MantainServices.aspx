@@ -52,18 +52,86 @@
         .btn-add {
             background-color: #28a745;
         }
-        .btn-csv {
-            background-color: #007bff;
+        .form-group {
+            margin-bottom: 15px;
         }
-    </style>
 
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+       
+        
+    </style>
+      
+    
     <div class="table-container">
         <h2>Maintain Services</h2>
+         <div>
+
+<!-- Modal: add -->
+     <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="btn-add" 
+         OnClientClick="$('#myModal').modal('show'); return false;"/>
+</div>
+
+  <!-- The Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+                
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+
+                <div class="form-container">
+                    <p>Enter service details below:</p>
+                    
+
+                                    <div class="form-group">
+                    <label for="Surname" class="form-label">Surname</label>
+                    <asp:TextBox ID="Surname" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneNumber" class="form-label">Phone Number</label>
+                    <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <label for="AddressNumber" class="form-label">Address Number</label>
+                    <asp:TextBox ID="AddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="btn-add"/>
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="btn btn-light"  OnClientClick="$('#myModal').modal('hide'); return false;"/>
+               
+                 
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Gridview -->
 
         <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
             <Columns>
-                <asp:BoundField DataField="ServiceID" HeaderText="Service ID" />
-                <asp:BoundField DataField="ServiceDescription" HeaderText="Service Description" />
+                <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
+                <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
                 <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
 
                 <asp:TemplateField HeaderText="Actions">
@@ -75,9 +143,7 @@
             </Columns>
         </asp:GridView>
 
-        <div>
-            <asp:Button ID="DownloadCsvButton" runat="server" Text="Download CSV" CssClass="btn-csv" />
-            <asp:Button ID="AddServiceButton" runat="server" Text="Add Service" CssClass="btn-add" />
-        </div>
+       
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
