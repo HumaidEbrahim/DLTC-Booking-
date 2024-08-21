@@ -64,11 +64,11 @@
     </style>
 
     <div class="form-container">
-        <h2 class="form-heading">Client Details</h2>
+        <h2 class="form-heading">Add Client Details</h2>
         
         <div class="form-group">
             <label for="IDNumber" class="form-label">ID Number</label>
-            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
         </div>
         
         <div class="form-group">
@@ -95,10 +95,10 @@
             <label for="AddressStreet" class="form-label">Address Street</label>
             <asp:TextBox ID="AddressStreet" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
-        
+       
         <div class="form-group">
-            <label for="City" class="form-label">City</label>
-            <asp:TextBox ID="City" runat="server" CssClass="form-control"></asp:TextBox>
+            <label  for="City" class="form-label">City</label>
+            <asp:DropDownList ID="City" runat="server" CssClass="dropdown"></asp:DropDownList>
         </div>
         
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />

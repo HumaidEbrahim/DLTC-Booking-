@@ -27,6 +27,10 @@ namespace DriversSystem
             // Check if the ID is valid
             if (validateID(id))
             {
+                // Store ID in Session
+
+                Session["IDNumber"] = id;
+
                 // Check if user exists in database
                 if (existsID(id))
                 {
