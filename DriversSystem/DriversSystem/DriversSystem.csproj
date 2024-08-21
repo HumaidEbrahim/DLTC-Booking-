@@ -233,6 +233,7 @@
     <Compile Include="ClientPortal_Menu.aspx.designer.cs">
       <DependentUpon>ClientPortal_Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
