@@ -14,9 +14,11 @@ namespace DriversSystem
 
          static DatabaseHelper()
         {
-            connString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            // gets conn string from web.config
+            connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
 
+        // Execute Query: sql select
         public DataTable ExecuteQuery(string query, SqlParameter[] param = null)
         {
             using (SqlConnection conn = new SqlConnection(connString))
@@ -39,6 +41,41 @@ namespace DriversSystem
                 }
             }
         }
+
+        // Exectute non query: insert, update, delete
+        public int ExecuteNonQuery(string query, SqlParameter[] param = null)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    if (param != null)
+                    {
+                        cmd.Parameters.AddRange(param);
+                    }
+
+                    conn.Open();
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //Execute reader
+        public SqlDataReader ExecuteReader(string query, SqlParameter[] param = null)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                if (param != null)
+                {
+                    cmd.Parameters.AddRange(param);
+                }
+
+                conn.Open();
+                return cmd.ExecuteReader(); 
+            }
+        }
+
 
     }
 }

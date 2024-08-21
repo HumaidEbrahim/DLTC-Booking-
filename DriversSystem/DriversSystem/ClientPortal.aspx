@@ -62,15 +62,19 @@
 
     <div class="custom-panel">
         <h2 class="panel-heading">Welcome Client</h2>
+       <asp:Panel ID="idAlert" CssClass="alert alert-danger" runat="server" Visible="false">
+            Invalid ID number. Please try again.
+        </asp:Panel>
+
         <div class="panel-body">
-            <p>Please enter your ID Number below to search for your details.</p>
+            <p>Please enter your South African ID Number</p>
         </div>
         <div class="form-group">
-            <label for="clientId">ID Number</label>
-            <input type="text" id="clientId" class="form-control" placeholder="Enter Your ID Number">
-        </div>
-        <div class="text-center">
-            <button type="button" class="search-btn">Search</button>
-        </div>
+        <asp:TextBox ID="clientId" runat="server" CssClass="form-control" Placeholder="Enter Your ID Number"></asp:TextBox>
+    </div>
+
+    <div class="text-center">
+     <asp:Button ID="bttnEnterID" runat="server" Text="Search" OnClick="bttnIDEnter_Click" CssClass="search-btn" />
+</div>
     </div>
 </asp:Content>
