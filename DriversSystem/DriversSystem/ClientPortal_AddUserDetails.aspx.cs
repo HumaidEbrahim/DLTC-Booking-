@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -31,11 +32,21 @@ namespace DriversSystem
                     String cityName = reader["Name"].ToString();  
                     City.Items.Add(cityName);
                 }
-            }
-
-           
-
-
+            }           
+                if (IsPostBack)
+                {
+                    Validate();
+                    if (IsValid)
+                    {
+                    
+                        Name.CssClass = "form-control is-valid";
+                    }
+                    else
+                    {
+                        Name.CssClass = "form-control is-invalid";
+                    }
+                }
+            
         }
 
         protected void ContinueButton_Click(object sender, EventArgs e)

@@ -11,7 +11,12 @@ namespace DriversSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Get clients ID from session
+            if (Session["IDNumber"] != null)
+            {
+                String id = Session["IDNumber"].ToString();
+                IDNumber.Text = id;
+            }
         }
     }
 }

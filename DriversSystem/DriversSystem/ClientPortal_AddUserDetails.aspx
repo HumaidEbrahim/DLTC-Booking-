@@ -72,8 +72,26 @@
         </div>
         
         <div class="form-group">
-            <label for="Name" class="form-label">Name</label>
-            <asp:TextBox ID="Name" runat="server" class="form-control is-valid"></asp:TextBox>
+             <label for="Name" class="form-label">First name</label>
+    <asp:TextBox ID="Name" runat="server" CssClass="form-control" />
+    <asp:RequiredFieldValidator 
+        ID="NameRequired" 
+        runat="server" 
+        ControlToValidate="Name" 
+        ErrorMessage="Name is required" 
+        CssClass="invalid-feedback" 
+        Display="Dynamic" />
+    <asp:RegularExpressionValidator 
+        ID="NameRegex" 
+        runat="server" 
+        ControlToValidate="Name" 
+        ErrorMessage="Only letters are allowed" 
+        CssClass="invalid-feedback" 
+        Display="Dynamic" 
+        ValidationExpression="^[a-zA-Z\s]+$" />
+    <div class="valid-feedback">
+        Looks good!
+    </div>
         </div>
         
         <div class="form-group">

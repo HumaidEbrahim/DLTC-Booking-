@@ -33,6 +33,24 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox Name;
 
         /// <summary>
+        /// NameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NameRequired;
+
+        /// <summary>
+        /// NameRegex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator NameRegex;
+
+        /// <summary>
         /// Surname control.
         /// </summary>
         /// <remarks>

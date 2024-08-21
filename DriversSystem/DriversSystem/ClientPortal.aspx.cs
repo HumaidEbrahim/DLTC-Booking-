@@ -23,6 +23,7 @@ namespace DriversSystem
         {
             
             string id = clientId.Text;
+            id = id.Trim();
 
             // Check if the ID is valid
             if (validateID(id))

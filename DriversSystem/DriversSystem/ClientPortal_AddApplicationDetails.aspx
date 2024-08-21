@@ -74,6 +74,15 @@
         .timeslot-group {
             margin-bottom: 15px;
         }
+
+         .calendar a {
+            text-decoration: none;
+            color: inherit; /* Keep default color */
+        }
+
+        .calendar a:hover {
+            color: #28a745; /* Change color on hover if desired */
+        }
     </style>
 
     <div class="form-container">
@@ -81,36 +90,26 @@
         
         <div class="form-group">
             <label for="IDNumber" class="form-label">ID Number</label>
-            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="Service" class="form-label">Select Service</label>
             <asp:DropDownList ID="ServiceDropdown" runat="server" CssClass="form-control">
-                <asp:ListItem Text="Learner's Appointment" Value="LearnerAppointment"></asp:ListItem>
-                <asp:ListItem Text="License Appointment" Value="LicenseAppointment"></asp:ListItem>
-                <asp:ListItem Text="Learner Issue" Value="LearnerIssue"></asp:ListItem>
-                <asp:ListItem Text="License Issue" Value="LicenseIssue"></asp:ListItem>
+               
             </asp:DropDownList>
         </div>
 
         <div class="form-group calendar-container">
             <label for="SelectDate" class="form-label">Select Date</label>
+
             <asp:Calendar ID="SelectDateCalendar" runat="server" CssClass="form-control"></asp:Calendar>
         </div>
 
         <div class="form-group timeslot-group">
             <label for="SelectTimeslot" class="form-label">Select Timeslot</label>
             <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control">
-                <asp:ListItem Text="8:00 AM - 9:00 AM" Value="8AM"></asp:ListItem>
-                <asp:ListItem Text="9:00 AM - 10:00 AM" Value="9AM"></asp:ListItem>
-                <asp:ListItem Text="10:00 AM - 11:00 AM" Value="10AM"></asp:ListItem>
-                <asp:ListItem Text="11:00 AM - 12:00 PM" Value="11AM"></asp:ListItem>
-                <asp:ListItem Text="12:00 PM - 1:00 PM" Value="12PM"></asp:ListItem>
-                <asp:ListItem Text="1:00 PM - 2:00 PM" Value="1PM"></asp:ListItem>
-                <asp:ListItem Text="2:00 PM - 3:00 PM" Value="2PM"></asp:ListItem>
-                <asp:ListItem Text="3:00 PM - 4:00 PM" Value="3PM"></asp:ListItem>
-                <asp:ListItem Text="4:00 PM - 5:00 PM" Value="4PM"></asp:ListItem>
+               
             </asp:RadioButtonList>
         </div>
 
