@@ -1,16 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\",
+  "WorkspaceRootPath": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DriversLicenseSystem\\Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DriversLicenseSystem\\Site.Master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,33 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WebForm1.aspx.cs",
-              "DocumentMoniker": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx.cs",
-              "ToolTip": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T16:48:03.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WebForm1.aspx",
-              "DocumentMoniker": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx",
-              "ToolTip": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\WebForm1.aspx",
+              "Title": "Site.Master",
+              "DocumentMoniker": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master",
+              "RelativeDocumentMoniker": "DriversLicenseSystem\\Site.Master",
+              "ToolTip": "D:\\University\\IT\\Year 2\\Semester 2\\CMPG223\\Project\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Site.Master",
+              "RelativeToolTip": "DriversLicenseSystem\\Site.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T16:48:03.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Default.aspx",
-              "RelativeDocumentMoniker": "DriversLicenseSystem\\Default.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversLicenseSystem\\DriversLicenseSystem\\Default.aspx",
-              "RelativeToolTip": "DriversLicenseSystem\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T16:48:03.641Z"
+              "WhenOpened": "2024-08-20T16:59:56.639Z",
+              "EditorCaption": ""
             }
           ]
         }
