@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Admin Portal - Mantain Services" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantainServices.aspx.cs" Inherits="DriversSystem.MantainServices" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         .table-container {
@@ -25,37 +24,9 @@
         .crud-table td {
             background-color: #fff;
         }
-        .btn {
-            padding: 6px 12px;
-            font-size: 14px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-edit {
-            background-color: #ffc107;
-            color: white;
-        }
-        .btn-delete {
-            background-color: #dc3545;
-            color: white;
-        }
-        .btn-add, .btn-csv {
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-right: 10px;
-            cursor: pointer;
-            border: none;
-            color: white;
-        }
-        .btn-add {
-            background-color: #28a745;
-        }
         .form-group {
             margin-bottom: 15px;
         }
-
         .form-control {
             width: 100%;
             padding: 10px;
@@ -64,86 +35,151 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
-       
-        
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #28a745;
+            border-radius: 5px 0 0 5px;
+            box-sizing: border-box;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+        }
+        .custom-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+        .custom-btn:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-edit {
+            background-color: #ffc107;
+            color: white;
+            padding: 6px 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+            padding: 6px 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
-      
-    
+
     <div class="table-container">
         <h2>Maintain Services</h2>
-         <div>
+        <br />
 
-<!-- Modal: add -->
-     <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="btn-add" 
-         OnClientClick="$('#myModal').modal('show'); return false;"/>
-</div>
-
-  <!-- The Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-           
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
-                
+        <div class="action-bar">
+            <!-- Search Bar on the Left -->
+            <div class="search-container">
+                <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search records..."></asp:TextBox>
+                <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
             </div>
 
-            <!-- Modal Body -->
-            <div class="modal-body">
-                
+            <!-- Add Button on the Right -->
+            <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
+                OnClientClick="$('#myModal').modal('show'); return false;" />
+        </div>
 
-                <div class="form-container">
-                    <p>Enter service details below:</p>
-                    
+        <br />
 
-                                    <div class="form-group">
-                    <label for="Surname" class="form-label">Surname</label>
-                    <asp:TextBox ID="Surname" runat="server" CssClass="form-control"></asp:TextBox>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <div class="form-container">
+                            <p>Enter service details below:</p>
+                            <!-- Service Form Fields -->
+                            <div class="form-group">
+                                <label for="Surname" class="form-label">Surname</label>
+                                <asp:TextBox ID="Surname" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="PhoneNumber" class="form-label">Phone Number</label>
+                                <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="AddressNumber" class="form-label">Address Number</label>
+                                <asp:TextBox ID="AddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" />
+                        <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#myModal').modal('hide'); return false;" />
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="PhoneNumber" class="form-label">Phone Number</label>
-                    <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-
-                <div class="form-group">
-                    <label for="AddressNumber" class="form-label">Address Number</label>
-                    <asp:TextBox ID="AddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                </div>
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="btn-add"/>
-                <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="btn btn-light"  OnClientClick="$('#myModal').modal('hide'); return false;"/>
-               
-                 
-                </button>
             </div>
         </div>
-    </div>
-</div>
-        <!-- Gridview -->
 
+        <!-- GridView -->
         <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
             <Columns>
                 <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
                 <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
                 <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
-
                 <asp:TemplateField HeaderText="Actions">
                     <ItemTemplate>
-                        <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                        <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" />
+                        <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn-edit" CommandName="Edit" />
+                        <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn-delete" CommandName="Delete" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
-       
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
+

@@ -52,10 +52,7 @@
                         </li>
 
                     </ul>
-                    <div class="d-flex">
-                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control me-2" placeholder="Search" aria-label="Search"></asp:TextBox>
-                        <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="btn btn-outline-light" OnClick="SearchButton_Click" />
-                    </div>
+                    
                 </div>
             </div>
         </nav>

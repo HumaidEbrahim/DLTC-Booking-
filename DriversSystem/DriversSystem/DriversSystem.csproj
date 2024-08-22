@@ -126,6 +126,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="logo1.png" />
+    <Content Include="MantainClients.aspx" />
     <Content Include="MantainServices.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -243,6 +244,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MantainClients.aspx.cs">
+      <DependentUpon>MantainClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantainClients.aspx.designer.cs">
+      <DependentUpon>MantainClients.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantainServices.aspx.cs">
       <DependentUpon>MantainServices.aspx</DependentUpon>

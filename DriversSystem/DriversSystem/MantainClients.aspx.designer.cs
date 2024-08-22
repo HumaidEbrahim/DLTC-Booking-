@@ -11,35 +11,35 @@ namespace DriversSystem
 {
 
 
-    public partial class MantainServices
+    public partial class MantainClients
     {
 
         /// <summary>
-        /// SearchTextBox control.
+        /// AddClientButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchTextBox;
+        protected global::System.Web.UI.WebControls.Button AddClientButton;
 
         /// <summary>
-        /// SearchButton control.
+        /// IDNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchButton;
+        protected global::System.Web.UI.WebControls.TextBox IDNumber;
 
         /// <summary>
-        /// AddServiceButton control.
+        /// Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddServiceButton;
+        protected global::System.Web.UI.WebControls.TextBox Name;
 
         /// <summary>
         /// Surname control.
@@ -69,13 +69,31 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox AddressNumber;
 
         /// <summary>
-        /// SaveServiceButton control.
+        /// AddressStreet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveServiceButton;
+        protected global::System.Web.UI.WebControls.TextBox AddressStreet;
+
+        /// <summary>
+        /// CityID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CityID;
+
+        /// <summary>
+        /// SaveClientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveClientButton;
 
         /// <summary>
         /// Cancel control.
@@ -87,12 +105,12 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button Cancel;
 
         /// <summary>
-        /// ServicesGridView control.
+        /// ClientsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ServicesGridView;
+        protected global::System.Web.UI.WebControls.GridView ClientsGridView;
     }
 }
