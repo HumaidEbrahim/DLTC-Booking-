@@ -42,31 +42,22 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button AddServiceButton;
 
         /// <summary>
-        /// Surname control.
+        /// serviceDesr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Surname;
+        protected global::System.Web.UI.WebControls.TextBox serviceDesr;
 
         /// <summary>
-        /// PhoneNumber control.
+        /// price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
-
-        /// <summary>
-        /// AddressNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddressNumber;
+        protected global::System.Web.UI.WebControls.TextBox price;
 
         /// <summary>
         /// SaveServiceButton control.

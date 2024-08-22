@@ -108,78 +108,78 @@
         }
     </style>
 
+   
     <div class="table-container">
         <h2>Maintain Services</h2>
-        <br />
+    </div>
+    
+    <br />
 
-        <div class="action-bar">
-            <!-- Search Bar on the Left -->
-            <div class="search-container">
-                <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search records..."></asp:TextBox>
-                <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
-            </div>
-
-            <!-- Add Button on the Right -->
-            <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
-                OnClientClick="$('#myModal').modal('show'); return false;" />
+    <div class="action-bar">
+        <!-- Search Bar on the Left -->
+        <div class="search-container">
+            <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Description..." OnTextChanged="SearchTextBox_TextChanged"></asp:TextBox>
+            <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
         </div>
 
-        <br />
+        <!-- Add Button on the Right -->
+        <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
+            OnClientClick="$('#myModal').modal('show'); return false;" />   
+    </div>
 
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
-                    </div>
+    <br />
 
-                    <!-- Modal Body -->
-                    <div class="modal-body">
-                        <div class="form-container">
-                            <p>Enter service details below:</p>
-                            <!-- Service Form Fields -->
-                            <div class="form-group">
-                                <label for="Surname" class="form-label">Surname</label>
-                                <asp:TextBox ID="Surname" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="PhoneNumber" class="form-label">Phone Number</label>
-                                <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="AddressNumber" class="form-label">Address Number</label>
-                                <asp:TextBox ID="AddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
+       <!-- The Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="form-container">
+                        <p>Enter service details below:</p>
+                        <!-- Service Form Fields -->
+                        <div class="form-group">
+                            <label for="serviceDescr" class="form-label">Service Description</label>
+                            <asp:TextBox ID="serviceDesr" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="form-label">Service Price</label>
+                            <asp:TextBox ID="price" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Modal Footer -->
-                    <div class="modal-footer">
-                        <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" />
-                        <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#myModal').modal('hide'); return false;" />
-                    </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" />
+                    <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#myModal').modal('hide'); return false;" />
                 </div>
             </div>
         </div>
-
-        <!-- GridView -->
-        <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
-            <Columns>
-                <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
-                <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
-                <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
-                <asp:TemplateField HeaderText="Actions">
-                    <ItemTemplate>
-                        <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn-edit" CommandName="Edit" />
-                        <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn-delete" CommandName="Delete" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
     </div>
 
+    <!-- GridView -->
+    <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
+        <Columns>
+            <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
+            <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
+            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
+            <asp:TemplateField HeaderText="Actions">
+                <ItemTemplate>
+                    <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
+                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
 
