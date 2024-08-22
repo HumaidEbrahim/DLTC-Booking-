@@ -83,6 +83,84 @@
         .calendar a:hover {
             color: #28a745; /* Change color on hover if desired */
         }
+
+        td.no_underline a
+         {
+             text-decoration:none;
+         }
+         td.no_underline a:active
+         {
+            text-decoration: none;
+         }
+
+         .calendar-container {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    width: fit-content;
+    margin: 0 auto;
+   
+    background-color: #198754; /* Light background for a modern look */
+    text-decoration: none;
+}
+
+/* Remove underline from days */
+.calendar-container td, .calendar-container th {
+    text-align: center;
+    padding: 10px;
+    border: 0.5px solid #ddd; /* Light border between cells */
+    text-decoration: none;
+     background-color: #198754;
+}
+
+/* Style for the header (Month and Year) */
+.calendar-container .calendar-header {
+    background-color: #198754;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0px 0px 0 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Style for the weekday names (Sun, Mon, etc.) */
+.calendar-container .calendar-day-header {
+    background-color: #e9ecef; /* Light gray background */
+    color: #495057; /* Bootstrap secondary text color */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Style for the days */
+.calendar-container .calendar-day, .calendar-container .calendar-weekend-day {
+    background-color: white;
+    color: #333;
+    text-decoration:none;
+}
+
+/* Style for today's date */
+.calendar-container .calendar-today {
+    background-color: #28a745; /* Green background */
+    color: white;
+    font-weight: bold;
+    
+    text-decoration: none;
+}
+
+/* Style for selected date */
+.calendar-container .calendar-selected {
+    background-color: #17a2b8; /* Bootstrap info color */
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for weekends */
+.calendar-container .calendar-weekend-day {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #dc3545; /* Bootstrap danger color */
+    text-decoration: none;
+}
     </style>
 
     <div class="form-container">
@@ -100,11 +178,19 @@
             </asp:DropDownList>
         </div>
 
-        <div class="form-group calendar-container">
-            <label for="SelectDate" class="form-label">Select Date</label>
-
-            <asp:Calendar ID="SelectDateCalendar" runat="server" CssClass="form-control"></asp:Calendar>
-        </div>
+         <div class="calendar-container">
+        <asp:Calendar ID="SelectDateCalendar" runat="server" 
+            DayStyle-Font-Underline="false"
+            DayStyle-Font-Overline="false"
+            TodayDayStyle-Font-Underline="false"
+            DayStyle-CssClass="calendar-day"
+            TodayDayStyle-CssClass="calendar-today"
+            SelectedDayStyle-CssClass="calendar-selected"
+            WeekendDayStyle-CssClass="calendar-weekend-day"
+            TitleStyle-CssClass="calendar-header"
+            DayHeaderStyle-CssClass="calendar-day-header">
+        </asp:Calendar>
+    </div>
 
         <div class="form-group timeslot-group">
             <label for="SelectTimeslot" class="form-label">Select Timeslot</label>
