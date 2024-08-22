@@ -100,7 +100,7 @@
                 <div class="custom-panel equal-height">
                     <h2 class="panel-heading">Application</h2>
                     <div class="button-container">
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Create a New Application" />
+                        <asp:Button runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Application" />
                         <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Application" />
                         <asp:Button runat="server" CssClass="custom-btn" Text="View Application" />
