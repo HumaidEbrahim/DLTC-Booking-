@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace DriversSystem
 {
-    public partial class SiteMaster : MasterPage
+    public partial class MantainClients : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void SearchButton_Click(object sender, EventArgs e)
-        {
-            
-        
         }
     }
 }

@@ -77,7 +77,7 @@
 
          .calendar a {
             text-decoration: none;
-            color: inherit; /* Keep default color */
+            color: black; /* Keep default color */
         }
 
         .calendar a:hover {
