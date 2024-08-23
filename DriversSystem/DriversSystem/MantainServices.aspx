@@ -115,6 +115,8 @@
     
     <br />
 
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+    <ContentTemplate>
     <div class="action-bar">
         <!-- Search Bar on the Left -->
         <div class="search-container">
@@ -129,7 +131,28 @@
 
     <br />
 
-       <!-- Add Modal -->
+    
+
+    <!-- GridView -->
+    
+    <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
+        <Columns>
+            <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
+            <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
+            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
+            <asp:TemplateField HeaderText="Actions">
+                <ItemTemplate>
+                    <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
+                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" OnClick="DeleteButton_Click"  
+                        OnClientClick="$('#DeleteModal').modal('show'); return false;" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+            </ContentTemplate>
+    </asp:UpdatePanel>
+
+           <!-- Add Modal -->
     <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -194,21 +217,6 @@
     </div>
 </div>
 
-    <!-- GridView -->
-    <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
-        <Columns>
-            <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
-            <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
-            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
-            <asp:TemplateField HeaderText="Actions">
-                <ItemTemplate>
-                    <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" OnClick="DeleteButton_Click"  
-                        OnClientClick="$('#DeleteModal').modal('show'); return false;" />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
 

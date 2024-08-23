@@ -24,8 +24,6 @@ namespace DriversSystem
         {
             string userSearch = SearchTextBox.Text.Trim();
             
-            AddServiceButton.Text = userSearch;
-
             string query = "SELECT * FROM SERVICE WHERE Service_Descr LIKE '%' + @userSearch + '%'";
             SqlParameter[] param =
             {
@@ -86,7 +84,10 @@ namespace DriversSystem
 
         protected void DeleteButton_Click(Object sender, EventArgs e)
         { 
-        
+            //Delete by ID
+            // Somehow get id from gridview
+            // also put gridview stuff in modal how?
+
         }
 
         protected void populateGridView(String query = "SELECT * FROM Service")
