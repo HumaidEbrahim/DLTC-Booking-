@@ -39,12 +39,12 @@ namespace DriversSystem
         protected void SaveServiceButton_Click(object sender, EventArgs e)
         {
             // add to database
-            String inputDescr = serviceDesr.Text;
+            String inputDescr = AddServiceDescr.Text;
             double inputPrice;
 
             try
             {
-                inputPrice = double.Parse(price.Text); // Corrected parsing
+                inputPrice = double.Parse(AddPrice.Text); // Corrected parsing
                 String query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
                 SqlParameter[] param =
                 {
@@ -61,8 +61,8 @@ namespace DriversSystem
                     populateGridView();
 
                     // clear inputs
-                    serviceDesr.Text = "";
-                    price.Text = "";
+                    AddServiceDescr.Text = "";
+                    AddPrice.Text = "";
                 }
                 else
                 {
@@ -82,13 +82,7 @@ namespace DriversSystem
             }
         }
 
-        protected void DeleteButton_Click(Object sender, EventArgs e)
-        { 
-            //Delete by ID
-            // Somehow get id from gridview
-            // also put gridview stuff in modal how?
-
-        }
+        
 
         protected void populateGridView(String query = "SELECT * FROM Service")
         {

@@ -131,26 +131,74 @@
 
     <br />
 
-    
+    <!-- Get details from from for delete -->
+      <script type="text/javascript">
+          function showDeleteModal(serviceID, serviceDescr, price) {
+              document.getElementById('<%= DelServiceID.ClientID %>').value.d = serviceID;
+        document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
+        document.getElementById('<%= DelPrice.ClientID %>').value = price;
 
-    <!-- GridView -->
-    
-    <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
-        <Columns>
-            <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
-            <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
-            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
-            <asp:TemplateField HeaderText="Actions">
-                <ItemTemplate>
-                    <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" OnClick="DeleteButton_Click"  
-                        OnClientClick="$('#DeleteModal').modal('show'); return false;" />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
-            </ContentTemplate>
-    </asp:UpdatePanel>
+              $('#DeleteModal').modal('show');
+          }
+      </script>
+
+<!-- GridView -->
+<asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
+    <Columns>
+        <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
+        <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
+        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
+        <asp:TemplateField HeaderText="Actions">
+            <ItemTemplate>
+                <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
+                <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" 
+     OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
+
+
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+ </ContentTemplate>
+</asp:UpdatePanel>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteLabel">Delete Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="DelServiceID" class="form-label">Service ID</label>
+                        <asp:TextBox ID="DelServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelServiceDescr" class="form-label">Service Description</label>
+                        <asp:TextBox ID="DelServiceDescr" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelPrice" class="form-label">Price</label>
+                        <asp:TextBox ID="DelPrice" runat="server" CssClass="form-control" Enabled="false" ></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <asp:Button ID="Button1" runat="server" Text="Delete" CssClass="custom-btn" />
+                <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
+            </div>
+        </div>
+    </div>
+</div>
+
 
            <!-- Add Modal -->
     <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -168,12 +216,12 @@
                     <div class="form-container">
                         <p>Enter service details below:</p>
                         <div class="form-group">
-                            <label for="serviceDescr" class="form-label">Service Description</label>
-                            <asp:TextBox ID="serviceDesr" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label for="AddServiceDescr" class="form-label">Service Description</label>
+                            <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="price" class="form-label">Service Price</label>
-                            <asp:TextBox ID="price" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label for="AddPrice" class="form-label">Service Price</label>
+                            <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -186,36 +234,9 @@
         </div>
     </div>
 
-       <!-- Delete Modal -->
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
 
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteLabel">Delete Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
 
-            <div class="modal-body">
-                <div class="form-container">
-                    <p>Enter service details below:</p>
-                    <div class="form-group">
-                        <label for="Service_ID" class="form-label">Service ID</label>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="modal-footer">
-                <asp:Button ID="Button1" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" />
-                <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
-            </div>
-
-        </div>
-    </div>
-</div>
+   
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
