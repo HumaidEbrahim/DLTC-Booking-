@@ -62,7 +62,7 @@
 
     <div class="custom-panel">
         <h2 class="panel-heading">Welcome Client</h2>
-       <asp:Panel ID="idAlert" CssClass="alert alert-danger" runat="server" Visible="true">
+       <asp:Panel ID="idAlert" CssClass="alert alert-danger" runat="server" Visible="false">
             Invalid ID number. Please try again.
         </asp:Panel>
 

@@ -118,22 +118,22 @@
     <div class="action-bar">
         <!-- Search Bar on the Left -->
         <div class="search-container">
-            <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Description..." OnTextChanged="SearchTextBox_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Description..." OnTextChanged="SearchTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
             <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
         </div>
 
         <!-- Add Button on the Right -->
         <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
-            OnClientClick="$('#myModal').modal('show'); return false;" />   
+            OnClientClick="$('#AddModal').modal('show'); return false;" />   
     </div>
 
     <br />
 
-       <!-- The Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <!-- Add Modal -->
+    <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <!-- Modal Header -->
+
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -141,11 +141,9 @@
                     </button>
                 </div>
 
-                <!-- Modal Body -->
                 <div class="modal-body">
                     <div class="form-container">
                         <p>Enter service details below:</p>
-                        <!-- Service Form Fields -->
                         <div class="form-group">
                             <label for="serviceDescr" class="form-label">Service Description</label>
                             <asp:TextBox ID="serviceDesr" runat="server" CssClass="form-control"></asp:TextBox>
@@ -156,15 +154,45 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Modal Footer -->
                 <div class="modal-footer">
                     <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" />
-                    <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#myModal').modal('hide'); return false;" />
+                    <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" />
                 </div>
+
             </div>
         </div>
     </div>
+
+       <!-- Delete Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteLabel">Delete Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-container">
+                    <p>Enter service details below:</p>
+                    <div class="form-group">
+                        <label for="Service_ID" class="form-label">Service ID</label>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <asp:Button ID="Button1" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" />
+                <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
+            </div>
+
+        </div>
+    </div>
+</div>
 
     <!-- GridView -->
     <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
@@ -175,7 +203,8 @@
             <asp:TemplateField HeaderText="Actions">
                 <ItemTemplate>
                     <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" />
+                    <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" OnClick="DeleteButton_Click"  
+                        OnClientClick="$('#DeleteModal').modal('show'); return false;" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

@@ -15,17 +15,28 @@ namespace DriversSystem
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            populateGridView();
+            if (!IsPostBack)
+                populateGridView();
 
         }
 
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            // As user types repopulate gridview
-           // String userSearch = SearchTextBox.Text;
-           // String query = "SELECT * FROM SERVICE WHERE Service_Descr LIKE '%' + @userSearch + '%' ";
+            string userSearch = SearchTextBox.Text.Trim();
+            
+            AddServiceButton.Text = userSearch;
 
+            string query = "SELECT * FROM SERVICE WHERE Service_Descr LIKE '%' + @userSearch + '%'";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
+            };
+
+            
+            ServicesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
+            ServicesGridView.DataBind();
         }
+
 
         protected void SaveServiceButton_Click(object sender, EventArgs e)
         {
@@ -50,7 +61,10 @@ namespace DriversSystem
                     // display Success Message
                     // display gridview with updated results
                     populateGridView();
-                    // Optionally clear input fields or show success message
+
+                    // clear inputs
+                    serviceDesr.Text = "";
+                    price.Text = "";
                 }
                 else
                 {
@@ -70,10 +84,14 @@ namespace DriversSystem
             }
         }
 
+        protected void DeleteButton_Click(Object sender, EventArgs e)
+        { 
+        
+        }
 
-        protected void populateGridView()
+        protected void populateGridView(String query = "SELECT * FROM Service")
         {
-            String query = "SELECT * FROM Service";
+            
             try
             {
                 ServicesGridView.DataSource = dbHelper.ExecuteQuery(query);
