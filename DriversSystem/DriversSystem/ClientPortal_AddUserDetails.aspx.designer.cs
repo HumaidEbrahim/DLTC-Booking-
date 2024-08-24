@@ -15,6 +15,15 @@ namespace DriversSystem
     {
 
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+
+        /// <summary>
         /// IDNumber control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,24 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox Surname;
 
         /// <summary>
+        /// SurnameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator SurnameRequired;
+
+        /// <summary>
+        /// SurnameRegex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator SurnameRegex;
+
+        /// <summary>
         /// PhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,24 @@ namespace DriversSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
+
+        /// <summary>
+        /// NumberRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NumberRequired;
+
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// AddressNumber control.
@@ -78,6 +123,15 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox AddressNumber;
 
         /// <summary>
+        /// AddressNumRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressNumRequired;
+
+        /// <summary>
         /// AddressStreet control.
         /// </summary>
         /// <remarks>
@@ -85,6 +139,15 @@ namespace DriversSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AddressStreet;
+
+        /// <summary>
+        /// AddressStreetRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressStreetRequired;
 
         /// <summary>
         /// City control.

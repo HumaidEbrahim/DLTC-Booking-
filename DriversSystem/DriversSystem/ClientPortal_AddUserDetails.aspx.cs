@@ -32,27 +32,25 @@ namespace DriversSystem
                     String cityName = reader["Name"].ToString();  
                     City.Items.Add(cityName);
                 }
-            }           
-                if (IsPostBack)
-                {
-                    Validate();
-                    if (IsValid)
-                    {
-                    
-                        Name.CssClass = "form-control is-valid";
-                    }
-                    else
-                    {
-                        Name.CssClass = "form-control is-invalid";
-                    }
-                }
-            
+            }
+            if (!IsPostBack)
+            {
+                // Enable client-side validation
+                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
+            }
+
         }
 
         protected void ContinueButton_Click(object sender, EventArgs e)
         {
 
-            // validate everything
+            // Check if valid
+            if(Page.IsValid)
+            {
+                Response.Redirect("ClientPortal_Menu.aspx");
+            }
+             
+            
 
             // add new client to database
 
