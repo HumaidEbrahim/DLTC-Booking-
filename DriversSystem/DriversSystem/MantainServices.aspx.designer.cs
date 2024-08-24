@@ -15,6 +15,24 @@ namespace DriversSystem
     {
 
         /// <summary>
+        /// successAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel successAlert;
+
+        /// <summary>
+        /// errorAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel errorAlert;
+
+        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -69,6 +87,15 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox DelServiceID;
 
         /// <summary>
+        /// HiddenDelServiceID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenDelServiceID;
+
+        /// <summary>
         /// DelServiceDescr control.
         /// </summary>
         /// <remarks>
@@ -87,13 +114,13 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.TextBox DelPrice;
 
         /// <summary>
-        /// Button1 control.
+        /// DeleteServiceButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button DeleteServiceButton;
 
         /// <summary>
         /// Button2 control.

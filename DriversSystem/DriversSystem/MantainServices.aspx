@@ -112,8 +112,20 @@
     <div class="table-container">
         <h2>Maintain Services</h2>
     </div>
-    
-    <br />
+ 
+    <!-- Success Alert -->
+    <asp:Panel ID="successAlert" CssClass="alert alert-success" runat="server" Visible="false">
+    </asp:Panel>
+
+
+    <!-- Error Alert -->
+    <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</asp:Panel>
+
+
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
     <ContentTemplate>
@@ -129,12 +141,12 @@
             OnClientClick="$('#AddModal').modal('show'); return false;" />   
     </div>
 
-    <br />
 
     <!-- Get details from from for delete -->
       <script type="text/javascript">
           function showDeleteModal(serviceID, serviceDescr, price) {
-              document.getElementById('<%= DelServiceID.ClientID %>').value.d = serviceID;
+              document.getElementById('<%= DelServiceID.ClientID %>').value = serviceID;
+              document.getElementById('<%= HiddenDelServiceID.ClientID %>').value = serviceID;
         document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
         document.getElementById('<%= DelPrice.ClientID %>').value = price;
 
@@ -179,6 +191,7 @@
                     <div class="form-group">
                         <label for="DelServiceID" class="form-label">Service ID</label>
                         <asp:TextBox ID="DelServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:HiddenField ID="HiddenDelServiceID" runat="server" />
                     </div>
                     <div class="form-group">
                         <label for="DelServiceDescr" class="form-label">Service Description</label>
@@ -192,15 +205,14 @@
             </div>
 
             <div class="modal-footer">
-                <asp:Button ID="Button1" runat="server" Text="Delete" CssClass="custom-btn" />
+                 <asp:Button ID="DeleteServiceButton" runat="server" Text="Delete" CssClass="custom-btn" OnClick="DeleteServiceButton_Click" />
                 <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
             </div>
         </div>
     </div>
 </div>
 
-
-           <!-- Add Modal -->
+       <!-- Add Modal -->
     <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
