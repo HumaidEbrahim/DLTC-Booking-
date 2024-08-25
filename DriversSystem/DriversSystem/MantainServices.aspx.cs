@@ -20,6 +20,7 @@ namespace DriversSystem
 
         }
 
+        // Search
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string userSearch = SearchTextBox.Text.Trim();
@@ -30,48 +31,100 @@ namespace DriversSystem
                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
             };
 
-            
             ServicesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
             ServicesGridView.DataBind();
         }
 
+        // Add
         protected void SaveServiceButton_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
-            {
-                string serviceDescr = AddServiceDescr.Text;
-                decimal price;
+            {   
+                // add to database
+                string inputDescr = AddServiceDescr.Text;
+                double inputPrice;
 
-                if (decimal.TryParse(AddPrice.Text, out price) &&
-                    serviceDescr.Length > 0 && serviceDescr.Length <= 50 &&
-                    price >= 10 && price <= 1000)
+                try
                 {
-                    // CODE TO SAVE SERVICE
-                    
-                    //LoadServices(); // Refresh the GridView
-                    successAlert.Visible = true;
-                    successMessage.Text = "Service added successfully.";
+                    inputPrice = double.Parse(AddPrice.Text);
+                    string query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
+                    SqlParameter[] param =
+                    {
+                        new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
+                        new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice }
+                    };
+
+                    int result = dbHelper.ExecuteNonQuery(query, param);
+
+                    if (result > 0)
+                    {
+                        // repopulate gridview and success message
+                        populateGridView();
+                        errorAlert.Visible = false;
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "Service added successfully!" });
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    // Handle validation error
+                    successAlert.Visible = false;
                     errorAlert.Visible = true;
-                    errorMessage.Text = "Invalid input. Please check your entries.";
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to add service" });
                 }
             }
         }
 
+        //Update 
+        protected void UpdateServiceButton_Click(object sender, EventArgs e)
+        {
+            string inputDescr = UpdateServiceDescr.Text;
+            double inputPrice;
+            
+            try
+            {
+                int id = int.Parse(HiddenUpdateServiceID.Value);
+                inputPrice = double.Parse(UpdatePrice.Text);
+                
+                string query = "UPDATE Service SET Service_Descr = @Descr, Price = @Price WHERE Service_ID = @ID";
 
+                SqlParameter[] param =
+                {
+                    new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
+                    new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice },
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id}
+                 };
+
+                int result = dbHelper.ExecuteNonQuery(query, param);
+
+                if(result > 0)
+                {
+                    // repopulate gridview and success message
+                    populateGridView();
+                    errorAlert.Visible = false;
+                    successAlert.Visible = true;
+                    successAlert.Controls.Add(new Literal { Text = "Service updated successfully!" });
+                }
+            }
+            catch(Exception) 
+            {
+                successAlert.Visible = false;
+                errorAlert.Visible = true;
+                errorAlert.Controls.Add(new Literal { Text = "Failed to update service" });
+            }
+        }
+
+
+         //Delete
         protected void DeleteServiceButton_Click(object sender, EventArgs e)
         {
             try 
             {
                 int id = int.Parse(HiddenDelServiceID.Value);
 
-                String query = "DELETE FROM Service WHERE Service_ID = @ID";
+                string query = "DELETE FROM Service WHERE Service_ID = @ID";
                 SqlParameter[] param =
                 {
-                new SqlParameter("@ID", SqlDbType.Int) { Value = id}
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id}
                 };
 
                 int result = dbHelper.ExecuteNonQuery(query, param);
@@ -86,15 +139,16 @@ namespace DriversSystem
             }
             catch(Exception)
             {
+                successAlert.Visible = false;
                 errorAlert.Visible = true;
                 errorAlert.Controls.Add(new Literal { Text = "Failed to delete service" });
             }
            
         }
 
-        protected void populateGridView(String query = "SELECT * FROM Service")
+        protected void populateGridView()
         {
-
+            string query = "SELECT * FROM Service";
             try
             {
                 ServicesGridView.DataSource = dbHelper.ExecuteQuery(query);

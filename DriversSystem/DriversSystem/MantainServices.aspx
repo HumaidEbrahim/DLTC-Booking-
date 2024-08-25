@@ -114,19 +114,16 @@
     </div>
  
     <!-- Success Alert -->
-    <asp:Panel ID="successAlert" CssClass="alert alert-success" runat="server" Visible="false">
+    <asp:Panel ID="successAlert" CssClass="alert alert-success alert-dismissible fade show" runat="server" Visible="false">
         <asp:Label ID="successMessage" runat="server"></asp:Label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </asp:Panel>
 
     <!-- Error Alert -->
     <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
-        <asp:Label ID="errorMessage" runat="server"></asp:Label>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </asp:Panel>
-
-
+    <asp:Label ID="errorMessage" runat="server"></asp:Label>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</asp:Panel>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
     <ContentTemplate>
@@ -143,36 +140,45 @@
     </div>
 
 
-    <!-- Get details from from for delete -->
-      <script type="text/javascript">
+    <!-- Get details from form for delete -->
+      <script>
           function showDeleteModal(serviceID, serviceDescr, price) {
               document.getElementById('<%= DelServiceID.ClientID %>').value = serviceID;
               document.getElementById('<%= HiddenDelServiceID.ClientID %>').value = serviceID;
-        document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
-        document.getElementById('<%= DelPrice.ClientID %>').value = price;
-
+              document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
+              document.getElementById('<%= DelPrice.ClientID %>').value = price;
               $('#DeleteModal').modal('show');
+    
           }
       </script>
+
+          <!-- Get details from form for update -->
+    <script>
+        function showUpdateModal(serviceID, serviceDescr, price) {
+            document.getElementById('<%= UpdateServiceID.ClientID %>').value = serviceID;
+            document.getElementById('<%= HiddenUpdateServiceID.ClientID %>').value = serviceID;
+            document.getElementById('<%= UpdateServiceDescr.ClientID %>').value = serviceDescr;
+            document.getElementById('<%= UpdatePrice.ClientID %>').value = price;
+            $('#UpdateModal').modal('show');
+        }
+    </script>
 
 <!-- GridView -->
 <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
     <Columns>
         <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
         <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
-        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
+        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="R{0:F0}" />
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
-                <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" 
-                            OnClientClick='<%# "showEditModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
-                <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete"
-                            OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
-            </ItemTemplate>
+                <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
+                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F0}", Eval("Price")) + "\"); return false;" %>' />
+                <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
+                 OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("R{0:F0}", Eval("Price")) + "\"); return false;" %>' />
+        </ItemTemplate>
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
-
-
  </ContentTemplate>
 </asp:UpdatePanel>
 
@@ -180,14 +186,9 @@
 <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteLabel">Delete Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
-
             <div class="modal-body">
                 <div class="form-container">
                     <div class="form-group">
@@ -214,15 +215,48 @@
     </div>
 </div>
 
+    <!-- Update Modal -->
+<div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Update Service</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="UpdateServiceID" class="form-label">Service ID</label>
+                        <asp:TextBox ID="UpdateServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:HiddenField ID="HiddenUpdateServiceID" runat="server" />
+                    </div>
+                    <div class="form-group">
+                        <label for="UpdateServiceDescr" class="form-label">Service Description</label>
+                        <asp:TextBox ID="UpdateServiceDescr" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                        <span id="UpdateDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="UpdatePrice" class="form-label">Price</label>
+                        <asp:TextBox ID="UpdatePrice" runat="server" CssClass="form-control" Enabled="true" ></asp:TextBox>
+                        <span id="UpdatePriceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click" OnClientClick="return validateForm('update','UpdateDescrWarning','UpdatePriceWarning') && true;"/>
+                <asp:Button ID="Button3" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#UpdateModal').modal('hide'); return false;" />
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Add Modal -->
 <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <div class="form-container">
@@ -230,113 +264,62 @@
                     <div class="form-group">
                         <label for="AddServiceDescr" class="form-label">Service Description</label>
                         <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
-                        <span id="serviceDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
+                        <span id="AddDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
                     </div>
                     <div class="form-group">
                         <label for="AddPrice" class="form-label">Service Price</label>
                         <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
-                        <span id="priceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
+                        <span id="AddPriceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
                     </div>                    
                 </div>
             </div>
             <div class="modal-footer">
-                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" UseSubmitBehavior="false" OnClientClick="return validateForm();" />
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn"  OnClientClick="return validateForm('add','AddDescrWarning','AddPriceWarning') && true;"  OnClick="SaveServiceButton_Click"/>
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" CausesValidation="false" />
             </div>
         </div>
     </div>
 </div>
 
-<!-- Edit Modal -->
-<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="form-container">
-                    <div class="form-group">
-                        <label for="EditServiceID" class="form-label">Service ID</label>
-                        <asp:TextBox ID="EditServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
-                        <asp:HiddenField ID="HiddenEditServiceID" runat="server" />
-                    </div>
-                    <div class="form-group">
-                        <label for="EditServiceDescr" class="form-label">Service Description</label>
-                        <asp:TextBox ID="EditServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="EditPrice" class="form-label">Price</label>
-                        <asp:TextBox ID="EditPrice" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <!-- FIX THIS
-                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click" />
-                -->
-                <asp:Button ID="CancelEditButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#EditModal').modal('hide'); return false;" />
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 <script type="text/javascript">
-    function showEditModal(serviceID, serviceDescr, price) {
-        document.getElementById('<%= EditServiceID.ClientID %>').value = serviceID;
-        document.getElementById('<%= HiddenEditServiceID.ClientID %>').value = serviceID;
-        document.getElementById('<%= EditServiceDescr.ClientID %>').value = serviceDescr;
-        document.getElementById('<%= EditPrice.ClientID %>').value = price;
-
-        $('#EditModal').modal('show');
-    }
-
-    function validateEditForm() {
+    function validateForm(modalType, descrWarningId, priceWarningId) {
         var isValid = true;
-        var serviceDescr = document.getElementById('<%= EditServiceDescr.ClientID %>').value;
-        var price = document.getElementById('<%= EditPrice.ClientID %>').value;
+        var serviceDescr, price;
+
+        if (modalType === 'update') {
+            serviceDescr = document.getElementById('<%= UpdateServiceDescr.ClientID %>').value;
+            price = document.getElementById('<%= UpdatePrice.ClientID %>').value;
+        } else if (modalType === 'add') {
+            serviceDescr = document.getElementById('<%= AddServiceDescr.ClientID %>').value;
+            price = document.getElementById('<%= AddPrice.ClientID %>').value; splay = 'none';
+        }
 
         // Validate Service Description
         if (serviceDescr.length < 1 || serviceDescr.length > 50) {
-            document.getElementById('editServiceDescrWarning').style.display = 'block';
+            document.getElementById(descrWarningId).style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('editServiceDescrWarning').style.display = 'none';
+            document.getElementById(descrWarningId).style.display = 'none';
         }
 
         // Validate Price
-        var priceValue = parseFloat(price);
-        if (isNaN(priceValue) || priceValue < 10.00 || priceValue > 1000.00) {
-            document.getElementById('editPriceWarning').style.display = 'block';
+        var priceValue = Number(price);
+        if (!Number.isInteger(priceValue) || priceValue < 10 || priceValue > 1000) {
+            document.getElementById(priceWarningId).style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('editPriceWarning').style.display = 'none';
+            document.getElementById(priceWarningId).style.display = 'none';
         }
 
         return isValid;
+       
     }
-
-    // Add event listeners to clear warnings when user starts typing
-    document.getElementById('<%= EditServiceDescr.ClientID %>').addEventListener('input', function () {
-        document.getElementById('editServiceDescrWarning').style.display = 'none';
-    });
-
-    document.getElementById('<%= EditPrice.ClientID %>').addEventListener('input', function () {
-        document.getElementById('editPriceWarning').style.display = 'none';
-    });
 </script>
+
 
 
 
    
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
