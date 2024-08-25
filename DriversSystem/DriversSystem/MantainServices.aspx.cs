@@ -38,39 +38,42 @@ namespace DriversSystem
 
         protected void SaveServiceButton_Click(object sender, EventArgs e)
         {
-            // add to database
-            String inputDescr = AddServiceDescr.Text;
-            double inputPrice;
-
-            try
+            if(Page.IsValid)
             {
-                inputPrice = double.Parse(AddPrice.Text); 
-                String query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
-                SqlParameter[] param =
+                // add to database
+                String inputDescr = AddServiceDescr.Text;
+                double inputPrice;
+
+                try
                 {
-                new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
-                new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice }
-                };
+                    inputPrice = double.Parse(AddPrice.Text); 
+                    String query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
+                    SqlParameter[] param =
+                    {
+                    new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
+                    new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice }
+                    };
 
-                int result = dbHelper.ExecuteNonQuery(query, param);
+                    int result = dbHelper.ExecuteNonQuery(query, param);
 
-                if (result > 0)
+                    if (result > 0)
+                    {
+                        // repopulate gridview and success message
+                        populateGridView();
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "Service added successfully!" });
+
+                        // clear inputs
+                        AddServiceDescr.Text = "";
+                        AddPrice.Text = "";
+                    }  
+                }
+                catch (Exception)
                 {
-                    // repopulate gridview and success message
-                    populateGridView();
-                    successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "Service added successfully!" });
-
-                    // clear inputs
-                    AddServiceDescr.Text = "";
-                    AddPrice.Text = "";
-                }  
+                    errorAlert.Visible = true;
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to add service" });
+                }
             }
-            catch (Exception)
-            {
-                errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to add service" });
-            }  
         }
 
         protected void DeleteServiceButton_Click(object sender, EventArgs e)

@@ -212,40 +212,61 @@
     </div>
 </div>
 
-       <!-- Add Modal -->
-    <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="form-container">
-                        <p>Enter service details below:</p>
-                        <div class="form-group">
-                            <label for="AddServiceDescr" class="form-label">Service Description</label>
-                            <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddPrice" class="form-label">Service Price</label>
-                            <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
+         <!-- Add Modal -->
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
+                <div class="form-container">
+                    <p>Enter service details below:</p>
+                    <div class="form-group">
+                        <label for="AddServiceDescr" class="form-label">Service Description</label>
+                        <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                            ControlToValidate="AddServiceDescr" 
+                            ErrorMessage="Service Description is required." 
+                            Display="None">
+                        </asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="AddServiceDescr" 
+                            ErrorMessage="Service Description must be between 3 and 100 characters." 
+                            ValidationExpression="^.{3,100}$" 
+                            Display="None">
+                        </asp:RegularExpressionValidator>
+                    </div>
+                    <div class="form-group">
+                        <label for="AddPrice" class="form-label">Service Price</label>
+                        <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                            ControlToValidate="AddPrice" 
+                            ErrorMessage="Service Price is required." 
+                            Display="None">
+                        </asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                            ControlToValidate="AddPrice" 
+                            ErrorMessage="Price must be between 10 and 500." 
+                            MinimumValue="10" 
+                            MaximumValue="500" 
+                            Type="Double" 
+                            Display="None">
+                        </asp:RangeValidator>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" />
-                    <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" />
-                </div>
-
+            </div>
+            <div class="modal-footer">
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" UseSubmitBehavior="false" />
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" CausesValidation="false" />
             </div>
         </div>
     </div>
-
+</div>
 
 
    
