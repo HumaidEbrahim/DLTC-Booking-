@@ -163,15 +163,16 @@
         <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
-                <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" 
-     OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
-
-
+                <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" 
+                            OnClientClick='<%# "showEditModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
+                <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete"
+                            OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
             </ItemTemplate>
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
+
+
  </ContentTemplate>
 </asp:UpdatePanel>
 
@@ -246,41 +247,93 @@
     </div>
 </div>
 
+<!-- Edit Modal -->
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="EditServiceID" class="form-label">Service ID</label>
+                        <asp:TextBox ID="EditServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:HiddenField ID="HiddenEditServiceID" runat="server" />
+                    </div>
+                    <div class="form-group">
+                        <label for="EditServiceDescr" class="form-label">Service Description</label>
+                        <asp:TextBox ID="EditServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="EditPrice" class="form-label">Price</label>
+                        <asp:TextBox ID="EditPrice" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <!-- FIX THIS
+                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click" />
+                -->
+                <asp:Button ID="CancelEditButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#EditModal').modal('hide'); return false;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <script type="text/javascript">
-    function validateForm() {
+    function showEditModal(serviceID, serviceDescr, price) {
+        document.getElementById('<%= EditServiceID.ClientID %>').value = serviceID;
+        document.getElementById('<%= HiddenEditServiceID.ClientID %>').value = serviceID;
+        document.getElementById('<%= EditServiceDescr.ClientID %>').value = serviceDescr;
+        document.getElementById('<%= EditPrice.ClientID %>').value = price;
+
+        $('#EditModal').modal('show');
+    }
+
+    function validateEditForm() {
         var isValid = true;
-        var serviceDescr = document.getElementById('<%= AddServiceDescr.ClientID %>').value;
-        var price = document.getElementById('<%= AddPrice.ClientID %>').value;
+        var serviceDescr = document.getElementById('<%= EditServiceDescr.ClientID %>').value;
+        var price = document.getElementById('<%= EditPrice.ClientID %>').value;
 
         // Validate Service Description
         if (serviceDescr.length < 1 || serviceDescr.length > 50) {
-            document.getElementById('serviceDescrWarning').style.display = 'block';
+            document.getElementById('editServiceDescrWarning').style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('serviceDescrWarning').style.display = 'none';
+            document.getElementById('editServiceDescrWarning').style.display = 'none';
         }
 
         // Validate Price
         var priceValue = parseFloat(price);
         if (isNaN(priceValue) || priceValue < 10.00 || priceValue > 1000.00) {
-            document.getElementById('priceWarning').style.display = 'block';
+            document.getElementById('editPriceWarning').style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('priceWarning').style.display = 'none';
+            document.getElementById('editPriceWarning').style.display = 'none';
         }
 
         return isValid;
     }
 
     // Add event listeners to clear warnings when user starts typing
-    document.getElementById('<%= AddServiceDescr.ClientID %>').addEventListener('input', function() {
-        document.getElementById('serviceDescrWarning').style.display = 'none';
+    document.getElementById('<%= EditServiceDescr.ClientID %>').addEventListener('input', function () {
+        document.getElementById('editServiceDescrWarning').style.display = 'none';
     });
 
-    document.getElementById('<%= AddPrice.ClientID %>').addEventListener('input', function () {
-        document.getElementById('priceWarning').style.display = 'none';
+    document.getElementById('<%= EditPrice.ClientID %>').addEventListener('input', function () {
+        document.getElementById('editPriceWarning').style.display = 'none';
     });
 </script>
+
 
 
    
