@@ -79,39 +79,37 @@
 <div class="form-group">
     <label for="Name" class="form-label">First name</label>
     <asp:TextBox ID="Name" runat="server" CssClass="form-control" />
-    <asp:RequiredFieldValidator ID="NameRequired" runat="server" ControlToValidate="Name" ErrorMessage="Name is required!" CssClass="invalid-feedback" Display="Dynamic" />
+    <asp:RequiredFieldValidator ID="NameRequired" runat="server" ControlToValidate="Name" ErrorMessage="Name is required!" Display="None"  />
     <asp:RegularExpressionValidator ID="NameRegex" runat="server" 
-        ControlToValidate="Name" ErrorMessage="Name can only contain letters!" CssClass="invalid-feedback" Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
+        ControlToValidate="Name" ErrorMessage="Name can only contain letters!"  Display="None" ValidationExpression="^[a-zA-Z\s]+$" />
 </div>
 
 <!-- Surname -->
 <div class="form-group">
     <label for="Surname" class="form-label">Surname</label>
     <asp:TextBox ID="Surname" runat="server" CssClass="form-control" />
-    <asp:RequiredFieldValidator ID="SurnameRequired" runat="server" ControlToValidate="Surname" ErrorMessage="Surname is required!" CssClass="invalid-feedback" Display="Dynamic" />
-    <asp:RegularExpressionValidator ID="SurnameRegex" runat="server" ControlToValidate="Surname" ErrorMessage="Surname can only contain letters!"
-      CssClass="invalid-feedback" Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
+    <asp:RequiredFieldValidator ID="SurnameRequired" runat="server" ControlToValidate="Surname" ErrorMessage="Surname is required!"  Display="None" />
+    <asp:RegularExpressionValidator ID="SurnameRegex" runat="server" ControlToValidate="Surname" ErrorMessage="Surname can only contain letters!" Display="None" ValidationExpression="^[a-zA-Z\s]+$" />
 </div>
 
         <div class="form-group">
             <label for="PhoneNumber" class="form-label">Phone Number</label>
             <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-             <asp:RequiredFieldValidator ID="NumberRequired" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Phone number is required!" CssClass="invalid-feedback" Display="Dynamic" />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Please enter a valid phone number"
-            CssClass="invalid-feedback" Display="Dynamic" ValidationExpression="^0\d{9}\s*$" />
+             <asp:RequiredFieldValidator ID="NumberRequired" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Phone number is required!" Display="None" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Please enter a valid phone number" Display="None" ValidationExpression="^0\d{9}\s*$" />
         </div>
         
         <!-- Address -->
         <div class="form-group">
             <label for="AddressNumber" class="form-label">Address Number</label>
             <asp:TextBox ID="AddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="AddressNumRequired" runat="server" ControlToValidate="AddressNumber" ErrorMessage="Address number is required!" CssClass="invalid-feedback" Display="Dynamic" />
+            <asp:RequiredFieldValidator ID="AddressNumRequired" runat="server" ControlToValidate="AddressNumber" ErrorMessage="Address number is required!"  Display="None" />
         </div>
         
         <div class="form-group">
             <label for="AddressStreet" class="form-label">Address Street</label>
             <asp:TextBox ID="AddressStreet" runat="server" CssClass="form-control"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="AddressStreetRequired" runat="server" ControlToValidate="AddressStreet" ErrorMessage="Street Address is required!" CssClass="invalid-feedback" Display="Dynamic" />
+            <asp:RequiredFieldValidator ID="AddressStreetRequired" runat="server" ControlToValidate="AddressStreet" ErrorMessage="Street Address is required!"  Display="None" />
         </div>
        
         <!-- city dropdown -->
@@ -123,20 +121,4 @@
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" OnClick ="ContinueButton_Click" />
     </div>
 
-    <script> 
-        $(document).ready(function () {
-            $('form').on('submit', function () {
-                if ($(this).valid()) {
-                    $('.form-control').addClass('is-valid');
-                } else {
-                    $('.form-control:invalid').addClass('is-invalid');
-                }
-            });
-
-            $('.form-control').on('keyup', function () {
-                $(this).removeClass('is-invalid is-valid');
-            });
-        });
-
-    </script>
 </asp:Content>
