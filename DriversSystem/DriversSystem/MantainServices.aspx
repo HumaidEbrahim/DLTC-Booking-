@@ -114,19 +114,16 @@
     </div>
  
     <!-- Success Alert -->
-    <asp:Panel ID="successAlert" CssClass="alert alert-success" runat="server" Visible="false">
+    <asp:Panel ID="successAlert" CssClass="alert alert-success alert-dismissible fade show" runat="server" Visible="false">
         <asp:Label ID="successMessage" runat="server"></asp:Label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </asp:Panel>
 
     <!-- Error Alert -->
     <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
-        <asp:Label ID="errorMessage" runat="server"></asp:Label>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </asp:Panel>
-
-
+    <asp:Label ID="errorMessage" runat="server"></asp:Label>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</asp:Panel>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
     <ContentTemplate>
@@ -163,8 +160,6 @@
             document.getElementById('<%= UpdateServiceDescr.ClientID %>').value = serviceDescr;
             document.getElementById('<%= UpdatePrice.ClientID %>').value = price;
             $('#UpdateModal').modal('show');
-
-
         }
     </script>
 
@@ -177,12 +172,10 @@
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
                 <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
-                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
+                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
                 <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
                  OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
-
-
-            </ItemTemplate>
+        </ItemTemplate>
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
@@ -193,14 +186,9 @@
 <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteLabel">Delete Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
-
             <div class="modal-body">
                 <div class="form-container">
                     <div class="form-group">
@@ -234,11 +222,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title" id="updateLabel">Update Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
-
             <div class="modal-body">
                 <div class="form-container">
                     <div class="form-group">
@@ -258,7 +242,7 @@
             </div>
 
             <div class="modal-footer">
-                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="DeleteServiceButton_Click"/>
+                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click"/>
                 <asp:Button ID="Button3" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#UpdateModal').modal('hide'); return false;" />
             </div>
         </div>
@@ -271,9 +255,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <div class="form-container">
@@ -291,7 +272,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" UseSubmitBehavior="false" OnClientClick="return validateForm();" />
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn"  OnClientClick="return validateForm() && true;"  OnClick="SaveServiceButton_Click"/>
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" CausesValidation="false" />
             </div>
         </div>
