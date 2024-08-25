@@ -115,15 +115,16 @@
  
     <!-- Success Alert -->
     <asp:Panel ID="successAlert" CssClass="alert alert-success" runat="server" Visible="false">
+        <asp:Label ID="successMessage" runat="server"></asp:Label>
     </asp:Panel>
-
 
     <!-- Error Alert -->
     <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</asp:Panel>
+        <asp:Label ID="errorMessage" runat="server"></asp:Label>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </asp:Panel>
 
 
 
@@ -212,7 +213,7 @@
     </div>
 </div>
 
-         <!-- Add Modal -->
+<!-- Add Modal -->
 <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -223,54 +224,66 @@
                 </button>
             </div>
             <div class="modal-body">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
                 <div class="form-container">
                     <p>Enter service details below:</p>
                     <div class="form-group">
                         <label for="AddServiceDescr" class="form-label">Service Description</label>
                         <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                            ControlToValidate="AddServiceDescr" 
-                            ErrorMessage="Service Description is required." 
-                            Display="None">
-                        </asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                            ControlToValidate="AddServiceDescr" 
-                            ErrorMessage="Service Description must be between 3 and 100 characters." 
-                            ValidationExpression="^.{3,100}$" 
-                            Display="None">
-                        </asp:RegularExpressionValidator>
+                        <span id="serviceDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
                     </div>
                     <div class="form-group">
                         <label for="AddPrice" class="form-label">Service Price</label>
                         <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                            ControlToValidate="AddPrice" 
-                            ErrorMessage="Service Price is required." 
-                            Display="None">
-                        </asp:RequiredFieldValidator>
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                            ControlToValidate="AddPrice" 
-                            ErrorMessage="Price must be between 10 and 500." 
-                            MinimumValue="10" 
-                            MaximumValue="500" 
-                            Type="Double" 
-                            Display="None">
-                        </asp:RangeValidator>
-                    </div>
+                        <span id="priceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
+                    </div>                    
                 </div>
             </div>
             <div class="modal-footer">
-                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" UseSubmitBehavior="false" />
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveServiceButton_Click" UseSubmitBehavior="false" OnClientClick="return validateForm();" />
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" CausesValidation="false" />
             </div>
         </div>
     </div>
 </div>
 
+<script type="text/javascript">
+    function validateForm() {
+        var isValid = true;
+        var serviceDescr = document.getElementById('<%= AddServiceDescr.ClientID %>').value;
+        var price = document.getElementById('<%= AddPrice.ClientID %>').value;
+
+        // Validate Service Description
+        if (serviceDescr.length < 1 || serviceDescr.length > 50) {
+            document.getElementById('serviceDescrWarning').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('serviceDescrWarning').style.display = 'none';
+        }
+
+        // Validate Price
+        var priceValue = parseFloat(price);
+        if (isNaN(priceValue) || priceValue < 10.00 || priceValue > 1000.00) {
+            document.getElementById('priceWarning').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('priceWarning').style.display = 'none';
+        }
+
+        return isValid;
+    }
+
+    // Add event listeners to clear warnings when user starts typing
+    document.getElementById('<%= AddServiceDescr.ClientID %>').addEventListener('input', function() {
+        document.getElementById('serviceDescrWarning').style.display = 'none';
+    });
+
+    document.getElementById('<%= AddPrice.ClientID %>').addEventListener('input', function () {
+        document.getElementById('priceWarning').style.display = 'none';
+    });
+</script>
+
 
    
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
-
