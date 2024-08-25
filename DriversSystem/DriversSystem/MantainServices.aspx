@@ -168,13 +168,13 @@
     <Columns>
         <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
         <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />
-        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
+        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="R{0:F0}" />
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
                 <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
-                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F2}", Eval("Price")) + "\"); return false;" %>' />
+                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:F0}", Eval("Price")) + "\"); return false;" %>' />
                 <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
-                 OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
+                 OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("R{0:F0}", Eval("Price")) + "\"); return false;" %>' />
         </ItemTemplate>
         </asp:TemplateField>
     </Columns>
@@ -233,16 +233,18 @@
                     <div class="form-group">
                         <label for="UpdateServiceDescr" class="form-label">Service Description</label>
                         <asp:TextBox ID="UpdateServiceDescr" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                        <span id="UpdateDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
                     </div>
                     <div class="form-group">
                         <label for="UpdatePrice" class="form-label">Price</label>
                         <asp:TextBox ID="UpdatePrice" runat="server" CssClass="form-control" Enabled="true" ></asp:TextBox>
+                        <span id="UpdatePriceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
                     </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click"/>
+                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateServiceButton_Click" OnClientClick="return validateForm('update','UpdateDescrWarning','UpdatePriceWarning') && true;"/>
                 <asp:Button ID="Button3" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#UpdateModal').modal('hide'); return false;" />
             </div>
         </div>
@@ -262,17 +264,17 @@
                     <div class="form-group">
                         <label for="AddServiceDescr" class="form-label">Service Description</label>
                         <asp:TextBox ID="AddServiceDescr" runat="server" CssClass="form-control"></asp:TextBox>
-                        <span id="serviceDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
+                        <span id="AddDescrWarning" class="text-danger" style="display: none;">Service Description must be between 1 and 50 characters.</span>
                     </div>
                     <div class="form-group">
                         <label for="AddPrice" class="form-label">Service Price</label>
                         <asp:TextBox ID="AddPrice" runat="server" CssClass="form-control"></asp:TextBox>
-                        <span id="priceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
+                        <span id="AddPriceWarning" class="text-danger" style="display: none;">Price must be a valid number between 10 and 1000.</span>
                     </div>                    
                 </div>
             </div>
             <div class="modal-footer">
-                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn"  OnClientClick="return validateForm() && true;"  OnClick="SaveServiceButton_Click"/>
+                <asp:Button ID="SaveServiceButton" runat="server" Text="Save" CssClass="custom-btn"  OnClientClick="return validateForm('add','AddDescrWarning','AddPriceWarning') && true;"  OnClick="SaveServiceButton_Click"/>
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" CausesValidation="false" />
             </div>
         </div>
@@ -280,43 +282,44 @@
 </div>
 
 <script type="text/javascript">
-    function validateForm() {
+    function validateForm(modalType, descrWarningId, priceWarningId) {
         var isValid = true;
-        var serviceDescr = document.getElementById('<%= AddServiceDescr.ClientID %>').value;
-        var price = document.getElementById('<%= AddPrice.ClientID %>').value;
+        var serviceDescr, price;
+
+        if (modalType === 'update') {
+            serviceDescr = document.getElementById('<%= UpdateServiceDescr.ClientID %>').value;
+            price = document.getElementById('<%= UpdatePrice.ClientID %>').value;
+        } else if (modalType === 'add') {
+            serviceDescr = document.getElementById('<%= AddServiceDescr.ClientID %>').value;
+            price = document.getElementById('<%= AddPrice.ClientID %>').value; splay = 'none';
+        }
 
         // Validate Service Description
         if (serviceDescr.length < 1 || serviceDescr.length > 50) {
-            document.getElementById('serviceDescrWarning').style.display = 'block';
+            document.getElementById(descrWarningId).style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('serviceDescrWarning').style.display = 'none';
+            document.getElementById(descrWarningId).style.display = 'none';
         }
 
         // Validate Price
-        var priceValue = parseFloat(price);
-        if (isNaN(priceValue) || priceValue < 10.00 || priceValue > 1000.00) {
-            document.getElementById('priceWarning').style.display = 'block';
+        var priceValue = Number(price);
+        if (!Number.isInteger(priceValue) || priceValue < 10 || priceValue > 1000) {
+            document.getElementById(priceWarningId).style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('priceWarning').style.display = 'none';
+            document.getElementById(priceWarningId).style.display = 'none';
         }
 
         return isValid;
+       
     }
-
-    // Add event listeners to clear warnings when user starts typing
-    document.getElementById('<%= AddServiceDescr.ClientID %>').addEventListener('input', function() {
-        document.getElementById('serviceDescrWarning').style.display = 'none';
-    });
-
-    document.getElementById('<%= AddPrice.ClientID %>').addEventListener('input', function () {
-        document.getElementById('priceWarning').style.display = 'none';
-    });
 </script>
+
+
 
 
    
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </asp:Content>
