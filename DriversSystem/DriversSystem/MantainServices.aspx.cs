@@ -38,25 +38,34 @@ namespace DriversSystem
         protected void SaveServiceButton_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
-            {
-                string serviceDescr = AddServiceDescr.Text;
-                decimal price;
+            {// add to database
+                String inputDescr = AddServiceDescr.Text;
+                double inputPrice;
 
-                if (decimal.TryParse(AddPrice.Text, out price) &&
-                    serviceDescr.Length > 0 && serviceDescr.Length <= 50 &&
-                    price >= 10 && price <= 1000)
+                try
                 {
-                    // CODE TO SAVE SERVICE
-                    
-                    //LoadServices(); // Refresh the GridView
-                    successAlert.Visible = true;
-                    successMessage.Text = "Service added successfully.";
+                    inputPrice = double.Parse(AddPrice.Text);
+                    String query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
+                    SqlParameter[] param =
+                    {
+                        new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
+                        new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice }
+                    };
+
+                    int result = dbHelper.ExecuteNonQuery(query, param);
+
+                    if (result > 0)
+                    {
+                        // repopulate gridview and success message
+                        populateGridView();
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "Service added successfully!" });
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    // Handle validation error
                     errorAlert.Visible = true;
-                    errorMessage.Text = "Invalid input. Please check your entries.";
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to add service" });
                 }
             }
         }

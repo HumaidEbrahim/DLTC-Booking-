@@ -143,17 +143,30 @@
     </div>
 
 
-    <!-- Get details from from for delete -->
-      <script type="text/javascript">
+    <!-- Get details from form for delete -->
+      <script>
           function showDeleteModal(serviceID, serviceDescr, price) {
               document.getElementById('<%= DelServiceID.ClientID %>').value = serviceID;
               document.getElementById('<%= HiddenDelServiceID.ClientID %>').value = serviceID;
-        document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
-        document.getElementById('<%= DelPrice.ClientID %>').value = price;
-
+              document.getElementById('<%= DelServiceDescr.ClientID %>').value = serviceDescr;
+              document.getElementById('<%= DelPrice.ClientID %>').value = price;
               $('#DeleteModal').modal('show');
+    
           }
       </script>
+
+          <!-- Get details from form for update -->
+    <script>
+        function showUpdateModal(serviceID, serviceDescr, price) {
+            document.getElementById('<%= UpdateServiceID.ClientID %>').value = serviceID;
+            document.getElementById('<%= HiddenUpdateServiceID.ClientID %>').value = serviceID;
+            document.getElementById('<%= UpdateServiceDescr.ClientID %>').value = serviceDescr;
+            document.getElementById('<%= UpdatePrice.ClientID %>').value = price;
+            $('#UpdateModal').modal('show');
+
+
+        }
+    </script>
 
 <!-- GridView -->
 <asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
@@ -163,9 +176,10 @@
         <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
-                <asp:Button ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-edit" CommandName="Edit" />
-                <asp:Button ID="DeleteButton" runat="server" Text="Del" CssClass="btn btn-delete" CommandName="Delete" 
-     OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
+                <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
+                 OnClientClick='<%# "showUpdateModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
+                <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
+                 OnClientClick='<%# "showDeleteModal(\"" + Eval("Service_ID") + "\", \"" + Eval("Service_Descr") + "\", \"" + String.Format("{0:C}", Eval("Price")) + "\"); return false;" %>' />
 
 
             </ItemTemplate>
@@ -208,6 +222,44 @@
             <div class="modal-footer">
                  <asp:Button ID="DeleteServiceButton" runat="server" Text="Delete" CssClass="custom-btn" OnClick="DeleteServiceButton_Click" />
                 <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Update Modal -->
+<div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Update Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="UpdateServiceID" class="form-label">Service ID</label>
+                        <asp:TextBox ID="UpdateServiceID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:HiddenField ID="HiddenUpdateServiceID" runat="server" />
+                    </div>
+                    <div class="form-group">
+                        <label for="UpdateServiceDescr" class="form-label">Service Description</label>
+                        <asp:TextBox ID="UpdateServiceDescr" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="UpdatePrice" class="form-label">Price</label>
+                        <asp:TextBox ID="UpdatePrice" runat="server" CssClass="form-control" Enabled="true" ></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                 <asp:Button ID="UpdateServiceButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="DeleteServiceButton_Click"/>
+                <asp:Button ID="Button3" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#UpdateModal').modal('hide'); return false;" />
             </div>
         </div>
     </div>
