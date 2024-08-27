@@ -37,7 +37,7 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            min-height: 300px; 
+            min-height: 400px; 
         }
 
         .panel-heading {
@@ -48,16 +48,10 @@
 
         .row {
             display: flex;
-            justify-content: space-around; 
+            justify-content: center; 
             align-items: center; 
             gap: 20px; 
             flex-wrap: wrap;
-        }
-
-        .col-md-6 {
-            display: flex;
-            justify-content: center; 
-            flex: 1;
         }
 
         .equal-height {
@@ -90,17 +84,9 @@
         <div class="row mt-4">
             <div class="col-md-6">
                 <div class="custom-panel equal-height">
-                    <h2 class="panel-heading">User Details</h2>
+                    <h2 class="panel-heading">Manage Your Details and Applications</h2>
                     <div class="button-container">
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Details" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="custom-panel equal-height">
-                    <h2 class="panel-heading">Application</h2>
-                    <div class="button-container">
+                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete User Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Application" />
                         <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Application" />
@@ -111,4 +97,3 @@
         </div>
     </div>
 </asp:Content>
-

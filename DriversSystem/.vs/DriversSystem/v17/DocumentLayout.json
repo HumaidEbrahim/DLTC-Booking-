@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\mantainavailabletimes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainavailabletimes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\clientportal_menu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_menu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ayesha\\onedrive - mahala.ms\\documents\\github\\cmpg223\\driverssystem\\driverssystem\\clientportal_confirmadduserdeatils.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_confirmadduserdeatils.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\driverssystem\\clientportal_menu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_menu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,63 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\Site.Master",
-              "RelativeDocumentMoniker": "DriversSystem\\Site.Master",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\Site.Master",
-              "RelativeToolTip": "DriversSystem\\Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T20:25:42.703Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MantainServices.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\MantainServices.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\MantainServices.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\MantainServices.aspx",
-              "RelativeToolTip": "DriversSystem\\MantainServices.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T21:33:42.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MantainAvailableTimes.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\MantainAvailableTimes.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\MantainAvailableTimes.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\MantainAvailableTimes.aspx",
-              "RelativeToolTip": "DriversSystem\\MantainAvailableTimes.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T21:33:28.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\Default.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\Default.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\Default.aspx",
-              "RelativeToolTip": "DriversSystem\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T21:33:22.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ClientPortal_Menu.aspx",
               "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal_Menu.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_Menu.aspx",
@@ -107,7 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ClientPortal_MaintainClients.aspx",
               "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_MaintainClients.aspx",
@@ -116,19 +44,6 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-08-27T21:32:39.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClientPortal_ConfirmAddUserDeatils.aspx",
-              "DocumentMoniker": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal_ConfirmAddUserDeatils.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_ConfirmAddUserDeatils.aspx",
-              "ToolTip": "C:\\Users\\Ayesha\\OneDrive - Mahala.Ms\\Documents\\GitHub\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal_ConfirmAddUserDeatils.aspx",
-              "RelativeToolTip": "DriversSystem\\ClientPortal_ConfirmAddUserDeatils.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T21:32:12.925Z",
               "EditorCaption": ""
             }
           ]
