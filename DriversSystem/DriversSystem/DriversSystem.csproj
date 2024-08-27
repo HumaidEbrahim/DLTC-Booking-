@@ -128,6 +128,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="logo1.png" />
+    <Content Include="MaintainCities.aspx" />
     <Content Include="MantainAvailableTimes.aspx" />
     <Content Include="MantainServices.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainCities.aspx.cs">
+      <DependentUpon>MaintainCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintainCities.aspx.designer.cs">
+      <DependentUpon>MaintainCities.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantainAvailableTimes.aspx.cs">
       <DependentUpon>MantainAvailableTimes.aspx</DependentUpon>

@@ -11,7 +11,7 @@ namespace DriversSystem
 {
 
 
-    public partial class MantainServices
+    public partial class MaintainCities
     {
 
         /// <summary>
@@ -60,85 +60,58 @@ namespace DriversSystem
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// SearchTextBox control.
+        /// AddCityButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchTextBox;
+        protected global::System.Web.UI.WebControls.Button AddCityButton;
 
         /// <summary>
-        /// SearchButton control.
+        /// CitiesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchButton;
+        protected global::System.Web.UI.WebControls.GridView CitiesGridView;
 
         /// <summary>
-        /// AddServiceButton control.
+        /// DelCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddServiceButton;
+        protected global::System.Web.UI.WebControls.TextBox DelCityID;
 
         /// <summary>
-        /// ServicesGridView control.
+        /// HiddenDelCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ServicesGridView;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenDelCityID;
 
         /// <summary>
-        /// DelServiceID control.
+        /// DelCityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelServiceID;
+        protected global::System.Web.UI.WebControls.TextBox DelCityName;
 
         /// <summary>
-        /// HiddenDelServiceID control.
+        /// DeleteCityButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenDelServiceID;
-
-        /// <summary>
-        /// DelServiceDescr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelServiceDescr;
-
-        /// <summary>
-        /// DelPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelPrice;
-
-        /// <summary>
-        /// DeleteServiceButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteServiceButton;
+        protected global::System.Web.UI.WebControls.Button DeleteCityButton;
 
         /// <summary>
         /// Button2 control.
@@ -150,49 +123,40 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// UpdateServiceID control.
+        /// UpdateCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdateServiceID;
+        protected global::System.Web.UI.WebControls.TextBox UpdateCityID;
 
         /// <summary>
-        /// HiddenUpdateServiceID control.
+        /// HiddenUpdateCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenUpdateServiceID;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenUpdateCityID;
 
         /// <summary>
-        /// UpdateServiceDescr control.
+        /// UpdateCityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdateServiceDescr;
+        protected global::System.Web.UI.WebControls.TextBox UpdateCityName;
 
         /// <summary>
-        /// UpdatePrice control.
+        /// UpdateCityButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdatePrice;
-
-        /// <summary>
-        /// UpdateServiceButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateServiceButton;
+        protected global::System.Web.UI.WebControls.Button UpdateCityButton;
 
         /// <summary>
         /// Button3 control.
@@ -204,39 +168,30 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// AddServiceDescr control.
+        /// AddCityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddServiceDescr;
+        protected global::System.Web.UI.WebControls.TextBox AddCityName;
 
         /// <summary>
-        /// AddPrice control.
+        /// SaveCityButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddPrice;
+        protected global::System.Web.UI.WebControls.Button SaveCityButton;
 
         /// <summary>
-        /// SaveServiceButton control.
+        /// Button4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveServiceButton;
-
-        /// <summary>
-        /// Cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancel;
+        protected global::System.Web.UI.WebControls.Button Button4;
     }
 }
