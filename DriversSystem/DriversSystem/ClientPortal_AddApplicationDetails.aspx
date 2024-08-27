@@ -46,7 +46,7 @@
         }
 
         .calendar-container {
-            text-align: center; /* Center the calendar */
+            text-align: center; 
             margin-bottom: 15px;
         }
 
@@ -77,11 +77,11 @@
 
          .calendar a {
             text-decoration: none;
-            color: black; /* Keep default color */
+            color: black; 
         }
 
         .calendar a:hover {
-            color: #28a745; /* Change color on hover if desired */
+            color: #28a745;
         }
 
         td.no_underline a
@@ -100,15 +100,14 @@
     width: fit-content;
     margin: 0 auto;
    
-    background-color: #198754; /* Light background for a modern look */
+    background-color: #198754; 
     text-decoration: none;
 }
 
-/* Remove underline from days */
 .calendar-container td, .calendar-container th {
     text-align: center;
     padding: 10px;
-    border: 0.5px solid #ddd; /* Light border between cells */
+    border: 0.5px solid #ddd; 
     text-decoration: none;
      background-color: #198754;
 }
@@ -124,41 +123,37 @@
     text-decoration: none;
 }
 
-/* Style for the weekday names (Sun, Mon, etc.) */
+
 .calendar-container .calendar-day-header {
-    background-color: #e9ecef; /* Light gray background */
-    color: #495057; /* Bootstrap secondary text color */
+    background-color: #e9ecef; 
+    color: #495057; 
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Style for the days */
 .calendar-container .calendar-day, .calendar-container .calendar-weekend-day {
     background-color: white;
     color: #333;
     text-decoration:none;
 }
 
-/* Style for today's date */
 .calendar-container .calendar-today {
-    background-color: #28a745; /* Green background */
+    background-color: #28a745;
     color: white;
     font-weight: bold;
     
     text-decoration: none;
 }
 
-/* Style for selected date */
 .calendar-container .calendar-selected {
-    background-color: #17a2b8; /* Bootstrap info color */
+    background-color: #17a2b8; 
     color: white;
     text-decoration: none;
 }
 
-/* Style for weekends */
 .calendar-container .calendar-weekend-day {
-    background-color: #f8f9fa; /* Light gray background */
-    color: #dc3545; /* Bootstrap danger color */
+    background-color: #f8f9fa;
+    color: #dc3545;
     text-decoration: none;
 }
     </style>

@@ -15,9 +15,9 @@
             text-decoration: none;
             margin: 10px;
             border-radius: 5px;
-            white-space: normal; /* Allow text to wrap */
-            word-wrap: break-word; /* Ensure long words break to the next line */
-            width: 100%; /* Full width for buttons */
+            white-space: normal; 
+            word-wrap: break-word; 
+            width: 100%; 
         }
 
         .custom-btn:hover {
@@ -32,12 +32,12 @@
             padding: 30px;
             margin-top: 20px;
             width: 100%;
-            max-width: 500px; /* Limit max width */
+            max-width: 500px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            min-height: 300px; /* Ensure equal height */
+            min-height: 300px; 
         }
 
         .panel-heading {
@@ -48,22 +48,22 @@
 
         .row {
             display: flex;
-            justify-content: space-around; /* Center the panels and add space around them */
-            align-items: center; /* Vertically align the panels */
-            gap: 20px; /* Add some space between the columns */
+            justify-content: space-around; 
+            align-items: center; 
+            gap: 20px; 
             flex-wrap: wrap;
         }
 
         .col-md-6 {
             display: flex;
-            justify-content: center; /* Center content horizontally */
+            justify-content: center; 
             flex: 1;
         }
 
         .equal-height {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center buttons vertically */
+            justify-content: center; 
             height: 100%;
         }
 

@@ -15,8 +15,8 @@
             text-decoration: none;
             margin: 10px;
             border-radius: 5px;
-            white-space: normal; /* Allow text to wrap */
-            word-wrap: break-word; /* Ensure long words break to the next line */
+            white-space: normal; 
+            word-wrap: break-word; 
         }
 
         .custom-btn:hover {
@@ -41,7 +41,7 @@
         .row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center the columns */
+            justify-content: center; 
         }
 
         .col-md-6 {

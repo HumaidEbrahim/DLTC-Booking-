@@ -9,7 +9,7 @@
             border-radius: 10px;
             padding: 30px;
             max-width: 600px;
-            margin: 0 auto; /* Center the form */
+            margin: 0 auto; 
             margin-top: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -50,7 +50,7 @@
             transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
-            margin: 20px auto 0; /* Center the button */
+            margin: 20px auto 0; 
             border-radius: 5px;
             width: 100%;
             display: block;
@@ -84,7 +84,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            display: none; /* Hidden by default */
+            display: none; 
         }
 
         .confirm-label {

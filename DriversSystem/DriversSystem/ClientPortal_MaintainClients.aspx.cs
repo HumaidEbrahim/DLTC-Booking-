@@ -24,7 +24,7 @@ namespace DriversSystem
                     ClientID = Convert.ToInt32(Session["Client_ID"]);
                     populateDropdown();
                     populateForm();
-                    TextBox1.Text = ClientID.ToString();
+                    //TextBox1.Text = ClientID.ToString();
                 }
                 // Enable client-side validation
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
