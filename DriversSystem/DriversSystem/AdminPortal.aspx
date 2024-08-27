@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPortal.aspx.cs" Inherits="DriversSystem.Contact" %>
+﻿<%@ Page Title="Admin Portal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPortal.aspx.cs" Inherits="DriversSystem.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
@@ -64,11 +64,11 @@
             <div class="col-md-6">
                 <h2 class="panel-heading">Maintain</h2>
                 <div class="custom-panel">
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Services" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Available Times" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Applications" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Cities" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Service Times" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Services" PostBackUrl="~/MantainServices.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Available Times" PostBackUrl="~/MantainAvailableTimes.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Applications" PostBackUrl="~/MantainApplications.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Cities" PostBackUrl="~/MantainCities.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Service Times" PostBackUrl="~/MantainServiceTimes.aspx" />
                 </div>
             </div>
             <div class="col-md-6">
