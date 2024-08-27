@@ -9,7 +9,7 @@
             border-radius: 10px;
             padding: 30px;
             max-width: 600px;
-            margin: 0 auto; /* Center the form */
+            margin: 0 auto;
             margin-top: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
@@ -52,7 +52,7 @@
             display: block;
             text-align: center;
             text-decoration: none;
-            margin: 20px auto 0; /* Center the button */
+            margin: 20px auto 0; 
             border-radius: 5px;
             width: 100%;
         }
@@ -62,7 +62,6 @@
             color: #28a745;
         }
 
-        /* Styling the dropdown */
         .dropdown-control {
             width: 100%;
             padding: 10px;
@@ -71,11 +70,7 @@
             border: 1px solid #ccc;
             background-color: white;
             color: #333;
-            appearance: none; /* Remove default dropdown arrow */
-            -webkit-appearance: none;
-            -moz-appearance: none;
             position: relative;
-            background-image: url('data:image/svg+xml;base64,...'); /* Add custom arrow icon if needed */
             background-repeat: no-repeat;
             background-position: right 10px center;
         }
