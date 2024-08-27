@@ -71,7 +71,7 @@ namespace DriversSystem
                     new SqlParameter("@name", SqlDbType.VarChar, 35) { Value = name },
                     new SqlParameter("@surname", SqlDbType.VarChar, 35) { Value = surname },
                     new SqlParameter("@phone", SqlDbType.Char, 10) { Value = phone },
-                    new SqlParameter("@addressnum", SqlDbType.Char, 10) { Value = addressnum },
+                    new SqlParameter("@addressnum", SqlDbType.VarChar, 10) { Value = addressnum },
                     new SqlParameter("@street", SqlDbType.VarChar, 50) { Value = street },
                     new SqlParameter("@cityId", SqlDbType.Int) { Value = cityId } // CityID as FK
                 };

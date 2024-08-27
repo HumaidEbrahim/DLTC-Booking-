@@ -92,7 +92,7 @@
                 <div class="custom-panel equal-height">
                     <h2 class="panel-heading">User Details</h2>
                     <div class="button-container">
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Details" />
+                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Details" />
                     </div>
                 </div>
