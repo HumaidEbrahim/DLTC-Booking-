@@ -11,7 +11,7 @@ namespace DriversSystem
 {
 
 
-    public partial class ClientPortal
+    public partial class ClientPortal_Menu
     {
     }
 }

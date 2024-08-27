@@ -12,17 +12,19 @@ namespace DriversSystem
     public partial class ClientPortal_MaintainClients : System.Web.UI.Page
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
+        int ClientID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {   
                 // Get clients ID from session
-                if (Session["IDNumber"] != null)
+                if (Session["Client_ID"] != null)
                 {
-                    String id = Session["IDNumber"].ToString();
-                    IDNumber.Text = id;
+                    ClientID = Convert.ToInt32(Session["Client_ID"]);
                     populateDropdown();
-                    populateForm(id);
+                    populateForm();
+                    TextBox1.Text = ClientID.ToString();
                 }
                 // Enable client-side validation
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
@@ -31,13 +33,6 @@ namespace DriversSystem
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-                string id = "";
-                // update client in database
-                if (Session["IDNumber"] != null)
-                {
-                    id = Session["IDNumber"].ToString();
-                }
-               
                 Name.Enabled = true;
                 Surname.Enabled = true;
                 PhoneNumber.Enabled = true;
@@ -47,14 +42,10 @@ namespace DriversSystem
                 DeleteButton.Visible = false;
                 UpdateButton.Visible = false;
                 SaveButton.Visible = true;
-
-
         }
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            {
-                string id = Session["IDNumber"].ToString();
+                ClientID = Convert.ToInt32(Session["Client_ID"]);
                 string name = Name.Text.Trim();
                 string surname = Surname.Text.Trim();
                 string phone = PhoneNumber.Text.Trim();
@@ -62,7 +53,7 @@ namespace DriversSystem
                 string street = AddressStreet.Text.Trim();
                 string cityID = City.SelectedValue;
 
-                string query = "UPDATE Client SET Name=@name, Surname=@surname, Phone_Number=@phone, Address_Num=@addressnum, Address_Street=@street, City_ID=@cityID WHERE IDNum=@id";
+                string query = "UPDATE Client SET Name=@name, Surname=@surname, Phone_Number=@phone, Address_Num=@addressnum, Address_Street=@street, City_ID =@cityID WHERE Client_ID=@ID";
 
                 SqlParameter[] param =
                 {
@@ -72,33 +63,48 @@ namespace DriversSystem
                     new SqlParameter("@addressnum", SqlDbType.Char, 10) { Value = addressnum },
                     new SqlParameter("@street", SqlDbType.VarChar, 50) { Value = street },
                     new SqlParameter("@cityID", SqlDbType.Int) { Value = cityID },
-                    new SqlParameter("@id", SqlDbType.Char, 13) { Value = id }
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = ClientID}
                 };
 
-                dbHelper.ExecuteNonQuery(query, param);
-
-                // Optionally, redirect or display a success message
-                Response.Redirect("ClientPortal_MaintainClients.aspx");
-            }
+                int result = dbHelper.ExecuteNonQuery(query, param);
+                
+                if(result > 0)
+                {
+                    populateForm();
+                    // Success message
+                }       
+            
         }
         protected void DeleteButton_Click(Object sender, EventArgs e)
         {
-            // Delete client
-
-        }
-
-        private void populateForm(String id)
-        {
-            string query = "SELECT * FROM Client WHERE IDNum = @ID";
+            ClientID = Convert.ToInt32(Session["Client_ID"]);
+            string query = "DELETE FROM Client WHERE Client_ID = @ID";
             SqlParameter[] param =
             {
-                new SqlParameter("@ID", SqlDbType.Char, 13) { Value = id }
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = ClientID}
+                };
+
+            int result = dbHelper.ExecuteNonQuery(query, param);
+
+            if(result > 0)
+            {
+                Response.Redirect("ClientPortal.aspx");
+            }
+        }
+
+        private void populateForm()
+        {
+            string query = "SELECT * FROM Client WHERE CLient_ID = @ID";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = ClientID}
             };
 
             using (SqlDataReader reader = dbHelper.ExecuteReader(query, param))
             {
                 if (reader.Read())
                 {
+                    IDNumber.Text = reader["IDNum"].ToString();
                     Name.Text = reader["Name"].ToString();
                     Surname.Text = reader["Surname"].ToString();
                     PhoneNumber.Text = reader["Phone_Number"].ToString();

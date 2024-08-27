@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Client Menu" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_Menu.aspx.cs" Inherits="DriversSystem.ClientPortal" %>
+﻿<%@ Page Title="Client Menu" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_Menu.aspx.cs" Inherits="DriversSystem.ClientPortal_Menu" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>

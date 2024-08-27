@@ -11,7 +11,7 @@ namespace DriversSystem
 {
 
 
-    public partial class ClientPortal1
+    public partial class ClientPortal
     {
 
         /// <summary>

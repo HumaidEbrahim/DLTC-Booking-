@@ -83,6 +83,8 @@
 
     <div class="form-container">
         <h2 class="form-heading">Add Client Details</h2>
+       <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Enabled="True"></asp:TextBox>
+
         <div class="form-group">
     <label for="IDNumber" class="form-label">ID Number</label>
     <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
