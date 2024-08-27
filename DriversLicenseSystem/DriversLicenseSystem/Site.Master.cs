@@ -13,5 +13,12 @@ namespace DriversLicenseSystem
         {
 
         }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            // Implement your search logic here
+            string searchQuery = SearchBox.Text;
+            // Process the search query
+        }
     }
 }

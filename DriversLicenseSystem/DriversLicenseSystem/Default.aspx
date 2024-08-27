@@ -1,44 +1,80 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DriversLicenseSystem._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DriversLicenseSystem.Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        .custom-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
 
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
+        .custom-btn:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+        }
 
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
+        .custom-panel {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel-heading {
+            font-size: 28px;
+            color: #28a745;
+            margin-bottom: 25px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #28a745;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #333333;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="text-center my-5">
+        <h1>Welcome to the Department of Licensing</h1>
+
+        <div class="custom-panel">
+            <p class="intro-text">
+                Welcome to the Licensing Department's official website! Our mission is to provide clear, efficient, and accessible licensing services to individuals and businesses alike. Whether you're applying for a new license or renewing an existing one, our website is your go-to resource. We are dedicated to ensuring that all licensing processes are straightforward, transparent, and tailored to meet your needs.
+            </p>
+
+            <h3 class="panel-heading">Please Select Your Desired Portal:</h3>
+
+            <div class="d-flex justify-content-center">
+                <a href="~/AdminPortal.aspx" runat="server" class="custom-btn">Admin Portal</a>
+                <a href="~/ClientPortal.aspx" runat="server" class="custom-btn">Client Portal</a>
+            </div>
         </div>
-    </main>
-
+    </div>
 </asp:Content>
