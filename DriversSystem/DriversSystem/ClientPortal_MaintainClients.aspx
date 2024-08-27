@@ -118,28 +118,29 @@
 
         <div class="form-group">
             <label for="IDNumber" class="form-label">ID Number</label>
-            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="IDNumber" runat="server" CssClass="form-control" Enabled="False" />
         </div>
         
+        <asp:Panel ID="FormState" runat="server"> 
         <div class="form-group">
             <label for="Name" class="form-label">First name</label>
             <asp:TextBox ID="Name" runat="server" CssClass="form-control" Enabled="False" />
             <asp:RequiredFieldValidator ID="NameRequired" runat="server" ControlToValidate="Name" ErrorMessage="Name is required!" Display="Dynamic"  />
-            <asp:RegularExpressionValidator ID="NameRegex" runat="server" ControlToValidate="Name" ErrorMessage="Name can only contain letters!"  Display="None" ValidationExpression="^[a-zA-Z\s]+$" />
+            <asp:RegularExpressionValidator ID="NameRegex" runat="server" ControlToValidate="Name" ErrorMessage="Name can only contain letters!"  Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
         </div>
 
         <div class="form-group">
             <label for="Surname" class="form-label">Surname</label>
             <asp:TextBox ID="Surname" runat="server" CssClass="form-control"  Enabled="False"/>
             <asp:RequiredFieldValidator ID="SurnameRequired" runat="server" ControlToValidate="Surname" ErrorMessage="Surname is required!"  Display="Dynamic" />
-            <asp:RegularExpressionValidator ID="SurnameRegex" runat="server" ControlToValidate="Surname" ErrorMessage="Surname can only contain letters!" Display="None" ValidationExpression="^[a-zA-Z\s]+$" />
+            <asp:RegularExpressionValidator ID="SurnameRegex" runat="server" ControlToValidate="Surname" ErrorMessage="Surname can only contain letters!" Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
         </div>
 
         <div class="form-group">
             <label for="PhoneNumber" class="form-label">Phone Number</label>
             <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"  Enabled="False"></asp:TextBox>
             <asp:RequiredFieldValidator ID="NumberRequired" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Phone number is required!" Display="Dynamic" />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Please enter a valid phone number" Display="None" ValidationExpression="^0\d{9}\s*$" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PhoneNumber" ErrorMessage="Please enter a valid phone number" Display="Dynamic" ValidationExpression="^0\d{9}\s*$" />
         </div>
         
         <div class="form-group">
@@ -158,6 +159,7 @@
             <label for="City" class="form-label">City</label>
             <asp:DropDownList ID="City" runat="server" CssClass="dropdown-control"  Enabled="False"></asp:DropDownList>
         </div>
+            </asp:Panel>
 
         <asp:Panel ID="ClientDetailsPanel" runat="server" CssClass="button-group">
             <asp:Button ID="UpdateButton" runat="server" Text="Edit" CssClass="btn btn-primary" OnClick="UpdateButton_Click" />

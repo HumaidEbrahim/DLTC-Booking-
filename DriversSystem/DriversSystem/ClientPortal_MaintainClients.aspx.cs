@@ -33,18 +33,16 @@ namespace DriversSystem
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-                Name.Enabled = true;
-                Surname.Enabled = true;
-                PhoneNumber.Enabled = true;
-                AddressNumber.Enabled = true;
-                AddressStreet.Enabled = true;
-                City.Enabled = true;
-                DeleteButton.Visible = false;
-                UpdateButton.Visible = false;
-                SaveButton.Visible = true;
+            FormState.Enabled = true;
+
+            DeleteButton.Visible = false;
+            UpdateButton.Visible = false;
+            SaveButton.Visible = true;
         }
         protected void SaveButton_Click(object sender, EventArgs e)
         {
+              if(Page.IsValid)
+                {
                 ClientID = Convert.ToInt32(Session["Client_ID"]);
                 string name = Name.Text.Trim();
                 string surname = Surname.Text.Trim();
@@ -67,12 +65,17 @@ namespace DriversSystem
                 };
 
                 int result = dbHelper.ExecuteNonQuery(query, param);
-                
-                if(result > 0)
+
+                if (result > 0)
                 {
                     populateForm();
-                    // Success message
-                }       
+                    SaveButton.Visible = false;
+                    UpdateButton.Visible = true;
+                    DeleteButton.Visible = true;
+                    FormState.Enabled = false;
+                }
+            }
+               
             
         }
         protected void DeleteButton_Click(Object sender, EventArgs e)
