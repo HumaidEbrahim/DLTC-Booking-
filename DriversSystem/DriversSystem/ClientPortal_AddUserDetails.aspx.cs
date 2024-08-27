@@ -45,14 +45,22 @@ namespace DriversSystem
         {
 
             // Check if valid
-            if(Page.IsValid)
-            {
-                Response.Redirect("ClientPortal_Menu.aspx");
-            }
-             
-            
+           // if(Page.IsValid)
+           // {
+           //     Response.Redirect("ClientPortal_Menu.aspx");
+            //}
 
-            // add new client to database
+                // Store the form data in Session variables
+                Session["Name"] = Name.Text;
+                Session["Surname"] = Surname.Text;
+                Session["PhoneNumber"] = PhoneNumber.Text;
+                Session["AddressNumber"] = AddressNumber.Text;
+                Session["AddressStreet"] = AddressStreet.Text;
+                Session["City"] = City.SelectedItem.Text;
+
+                // Redirect to the confirmation page
+                Response.Redirect("ClientPortal_ConfirmUserDetails.aspx");
+            
 
             // redirect to client main menu
 

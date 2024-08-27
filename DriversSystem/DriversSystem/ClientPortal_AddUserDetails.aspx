@@ -12,7 +12,7 @@
             margin: 0 auto; /* Center the form */
             margin-top: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+            }
 
         .form-heading {
             font-size: 28px;
@@ -61,6 +61,30 @@
             background-color: white;
             color: #28a745;
         }
+
+        /* Styling the dropdown */
+        .dropdown-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: #333;
+            appearance: none; /* Remove default dropdown arrow */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            position: relative;
+            background-image: url('data:image/svg+xml;base64,...'); /* Add custom arrow icon if needed */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .dropdown-control:focus {
+            outline: none;
+            border-color: #28a745;
+        }
+
     </style>
 
     <div class="form-container">
@@ -115,7 +139,7 @@
         <!-- city dropdown -->
         <div class="form-group">
             <label  for="City" class="form-label">City</label>
-            <asp:DropDownList ID="City" runat="server" class="btn btn-secondary dropdown-toggle"></asp:DropDownList>
+            <asp:DropDownList ID="City" runat="server" CssClass="dropdown-control"></asp:DropDownList>
         </div>
         
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" OnClick ="ContinueButton_Click" />
