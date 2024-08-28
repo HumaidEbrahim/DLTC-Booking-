@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="Client Portal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientPortal.aspx.cs" Inherits="DriversSystem.ClientPortal" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <style>
-        .custom-panel {
+
+        .custom-panel 
+        {
             background-color: white;
             border: 2px solid black;
             border-radius: 10px;
@@ -13,25 +16,29 @@
             margin-right: auto;
         }
 
-        .panel-heading {
+        .panel-heading 
+        {
             font-size: 26px;
             color: #28a745;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .panel-body {
+        .panel-body 
+        {
             font-size: 18px;
             margin-bottom: 30px;
             text-align: center;
         }
 
-        .form-group {
+        .form-group 
+        {
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .form-control {
+        .form-control 
+        {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -40,7 +47,8 @@
             box-sizing: border-box;
         }
 
-        .search-btn {
+        .search-btn 
+        {
             padding: 10px 20px;
             font-size: 18px;
             font-weight: bold;
@@ -54,14 +62,17 @@
             margin-top: 10px;
         }
 
-        .search-btn:hover {
+        .search-btn:hover 
+        {
             background-color: white;
             color: #28a745;
         }
+
     </style>
 
     <div class="custom-panel">
         <h2 class="panel-heading">Welcome Client</h2>
+
        <asp:Panel ID="idAlert" CssClass="alert alert-danger" runat="server" Visible="false">
             Invalid ID number. Please try again.
         </asp:Panel>
@@ -69,12 +80,15 @@
         <div class="panel-body">
             <p>Please enter your South African ID Number</p>
         </div>
+
         <div class="form-group">
+
         <asp:TextBox ID="clientId" runat="server" CssClass="form-control" Placeholder="Enter Your ID Number"></asp:TextBox>
     </div>
 
     <div class="text-center">
      <asp:Button ID="bttnEnterID" runat="server" Text="Search" OnClick="bttnIDEnter_Click" CssClass="search-btn" />
-</div>
+    </div>
+
     </div>
 </asp:Content>

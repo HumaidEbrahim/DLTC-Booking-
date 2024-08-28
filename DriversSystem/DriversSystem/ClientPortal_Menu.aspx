@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Client Menu" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_Menu.aspx.cs" Inherits="DriversSystem.ClientPortal_Menu" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
+<style>
         .custom-btn {
             padding: 15px 30px;
             font-size: 18px;
@@ -10,14 +10,14 @@
             color: white;
             border: 2px solid #28a745;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: block; 
             text-align: center;
             text-decoration: none;
-            margin: 10px;
+            margin: 10px 0; 
             border-radius: 5px;
-            white-space: normal; 
-            word-wrap: break-word; 
-            width: 100%; 
+            white-space: normal;
+            word-wrap: break-word;
+            width: 100%;
         }
 
         .custom-btn:hover {
@@ -31,13 +31,15 @@
             border-radius: 10px;
             padding: 30px;
             margin-top: 20px;
+            max-width: 500px;
             width: 100%;
-            max-width: 500px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            min-height: 400px; 
+            min-height: 400px;
+            margin-left: auto;
+            margin-right: auto; 
         }
 
         .panel-heading {
@@ -48,16 +50,16 @@
 
         .row {
             display: flex;
-            justify-content: center; 
-            align-items: center; 
-            gap: 20px; 
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .equal-height {
             display: flex;
             flex-direction: column;
-            justify-content: center; 
+            justify-content: center;
             height: 100%;
         }
 
@@ -65,7 +67,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
+            width: 100%; 
         }
 
         @media (max-width: 768px) {
