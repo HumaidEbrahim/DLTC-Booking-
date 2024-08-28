@@ -199,7 +199,7 @@
             </asp:RadioButtonList>
         </div>
 
-        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
+        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" OnClick="ContinueButton_Click" />
     </div>
     <br />
 </asp:Content>

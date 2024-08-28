@@ -73,7 +73,7 @@
         <div>
             <!-- Modal: Add New Client -->
             <asp:Button ID="AddClientButton" runat="server" Text="Add New Client" CssClass="btn-add" 
-                OnClientClick="$('#myModal').modal('show'); return false;" />
+                OnClientClick="$('#myModal').modal('show'); return false;" OnClick="AddClientButton_Click" />
         </div>
 
         <!-- The Modal -->
