@@ -69,12 +69,20 @@ namespace DriversSystem
                 }
             }
 
-            //query = "INSERT INTO Service(Service_Descr,Price) VALUES(@Descr, @Price)";
-          //  SqlParameter[] param =
-           // {
-            //            new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
-            //            new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputPrice }
-           // };
+            //Write to Application table
+            query = "INSERT INTO Application(Client_ID, Service_ID, Time_ID, isPaid, isAttend) VALUES(@ClientID, @ServiceID, @Time, @Paid, @Attend)";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@ClientID", SqlDbType.Int) { Value = ClientID},
+                new SqlParameter("@ServiceID", SqlDbType.Int) { Value =  ServiceID},
+                new SqlParameter("@Time", SqlDbType.Int) { Value =  0},
+                new SqlParameter("@Paid", SqlDbType.Bit) { Value =  0},
+                new SqlParameter("@Attend", SqlDbType.Bit) { Value =  0},
+            };
+
+            dbHelper.ExecuteNonQuery(query, param);
+
+            Response.Redirect("");
         }
     }
 }

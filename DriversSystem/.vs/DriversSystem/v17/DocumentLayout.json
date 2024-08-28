@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "E:\\Githun\\Cmpg223\\DriversSystem\\",
   "Documents": [
     {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverssystem\\driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverssystem\\driverssystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+=======
       "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|e:\\githun\\cmpg223\\driverssystem\\driverssystem\\clientportal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,6 +42,7 @@
     {
       "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|e:\\githun\\cmpg223\\driverssystem\\driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+>>>>>>> Delius
     }
   ],
   "DocumentGroupContainers": [
@@ -48,6 +57,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
+              "Title": "MantainServices.aspx",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversSystem\\DriversSystem\\MantainServices.aspx",
+              "RelativeDocumentMoniker": "DriversSystem\\MantainServices.aspx",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversSystem\\DriversSystem\\MantainServices.aspx",
+              "RelativeToolTip": "DriversSystem\\MantainServices.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-28T13:13:34.161Z",
+=======
               "Title": "ClientPortal.aspx.cs",
               "DocumentMoniker": "E:\\Githun\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal.aspx.cs",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal.aspx.cs",
@@ -56,11 +75,22 @@
               "ViewState": "AQIAABgAAAAAAAAAAAAQwCAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T11:39:10.432Z",
+>>>>>>> Delius
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversSystem\\DriversSystem\\Web.config",
+              "RelativeDocumentMoniker": "DriversSystem\\Web.config",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversSystem\\DriversSystem\\Web.config",
+              "RelativeToolTip": "DriversSystem\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-08-28T13:11:49.547Z",
+=======
               "Title": "ClientPortal.aspx",
               "DocumentMoniker": "E:\\Githun\\Cmpg223\\DriversSystem\\DriversSystem\\ClientPortal.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal.aspx",
@@ -151,6 +181,7 @@
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-08-27T11:09:07.262Z",
+>>>>>>> Delius
               "EditorCaption": ""
             }
           ]

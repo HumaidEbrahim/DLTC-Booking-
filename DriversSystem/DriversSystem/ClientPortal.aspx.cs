@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace DriversSystem
 {
-    public partial class ClientPortal1 : System.Web.UI.Page
+    public partial class ClientPortal : System.Web.UI.Page
     {
         const int ID_LENGTH = 13;
         DatabaseHelper dbHelper = new DatabaseHelper();

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admin Portal - Mantain Services" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantainServices.aspx.cs" Inherits="DriversSystem.MantainServices" %>
+﻿<%@ Page Title="Admin Portal - Maintain Services" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantainServices.aspx.cs" Inherits="DriversSystem.MantainServices" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
@@ -208,12 +208,28 @@
             </div>
 
             <div class="modal-footer">
-                 <asp:Button ID="DeleteServiceButton" runat="server" Text="Delete" CssClass="custom-btn" OnClick="DeleteServiceButton_Click" />
+                 <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="custom-btn"  OnClientClick="$('#DeleteModal').modal('hide'); $('#DeleteConfirmModal').modal('show'); return false;" />
                 <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
             </div>
         </div>
     </div>
 </div>
+
+    <!-- Delete Confirm Modal -->
+    <div class="modal fade" id="DeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+             <h5 class="modal-title" id="deleteconfirmLabel">Are you sure you want to delete?</h5>
+            <div class="modal-footer">
+                 <asp:Button ID="Button1" runat="server" Text="Confirm Delete" CssClass="custom-btn" OnClick="DeleteServiceButton_Click" />
+                <asp:Button ID="Button4" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteConfirmModal').modal('hide'); return false;" />
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Update Modal -->
 <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

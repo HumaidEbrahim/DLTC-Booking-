@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Client Menu" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_Menu.aspx.cs" Inherits="DriversSystem.ClientPortal" %>
+﻿<%@ Page Title="Client Menu" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_Menu.aspx.cs" Inherits="DriversSystem.ClientPortal_Menu" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
+<style>
         .custom-btn {
             padding: 15px 30px;
             font-size: 18px;
@@ -10,14 +10,14 @@
             color: white;
             border: 2px solid #28a745;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: block; 
             text-align: center;
             text-decoration: none;
-            margin: 10px;
+            margin: 10px 0; 
             border-radius: 5px;
-            white-space: normal; /* Allow text to wrap */
-            word-wrap: break-word; /* Ensure long words break to the next line */
-            width: 100%; /* Full width for buttons */
+            white-space: normal;
+            word-wrap: break-word;
+            width: 100%;
         }
 
         .custom-btn:hover {
@@ -31,13 +31,15 @@
             border-radius: 10px;
             padding: 30px;
             margin-top: 20px;
+            max-width: 500px;
             width: 100%;
-            max-width: 500px; /* Limit max width */
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            min-height: 300px; /* Ensure equal height */
+            min-height: 400px;
+            margin-left: auto;
+            margin-right: auto; 
         }
 
         .panel-heading {
@@ -48,22 +50,16 @@
 
         .row {
             display: flex;
-            justify-content: space-around; /* Center the panels and add space around them */
-            align-items: center; /* Vertically align the panels */
-            gap: 20px; /* Add some space between the columns */
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
-        }
-
-        .col-md-6 {
-            display: flex;
-            justify-content: center; /* Center content horizontally */
-            flex: 1;
         }
 
         .equal-height {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center buttons vertically */
+            justify-content: center;
             height: 100%;
         }
 
@@ -71,7 +67,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
+            width: 100%; 
         }
 
         @media (max-width: 768px) {
@@ -85,21 +81,14 @@
 
     <div class="text-center my-5">
         <h1 class="mb-5" style="color: #28a745;">Client Portal Menu</h1>
+        
         <h3 class="mb-4">Please select an option below:</h3>
         <div class="row mt-4">
             <div class="col-md-6">
                 <div class="custom-panel equal-height">
-                    <h2 class="panel-heading">User Details</h2>
+                    <h2 class="panel-heading">Manage Your Details and Applications</h2>
                     <div class="button-container">
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Details" />
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Details" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="custom-panel equal-height">
-                    <h2 class="panel-heading">Application</h2>
-                    <div class="button-container">
+                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete User Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
                         <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Application" />
                         <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Application" />
@@ -110,4 +99,3 @@
         </div>
     </div>
 </asp:Content>
-

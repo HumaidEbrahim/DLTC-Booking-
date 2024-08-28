@@ -104,6 +104,8 @@
     <Content Include="ClientPortal.aspx" />
     <Content Include="ClientPortal_AddApplicationDetails.aspx" />
     <Content Include="ClientPortal_AddUserDetails.aspx" />
+    <Content Include="ClientPortal_ConfirmAddUserDeatils.aspx" />
+    <Content Include="ClientPortal_MaintainClients.aspx" />
     <Content Include="ClientPortal_Menu.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -126,7 +128,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="logo1.png" />
-    <Content Include="MantainClients.aspx" />
+    <Content Include="MaintainCities.aspx" />
+    <Content Include="MantainAvailableTimes.aspx" />
     <Content Include="MantainServices.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -227,6 +230,20 @@
     <Compile Include="ClientPortal_AddUserDetails.aspx.designer.cs">
       <DependentUpon>ClientPortal_AddUserDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientPortal_ConfirmAddUserDeatils.aspx.cs">
+      <DependentUpon>ClientPortal_ConfirmAddUserDeatils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPortal_ConfirmAddUserDeatils.aspx.designer.cs">
+      <DependentUpon>ClientPortal_ConfirmAddUserDeatils.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPortal_MaintainClients.aspx.cs">
+      <DependentUpon>ClientPortal_MaintainClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPortal_MaintainClients.aspx.designer.cs">
+      <DependentUpon>ClientPortal_MaintainClients.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClientPortal_Menu.aspx.cs">
       <DependentUpon>ClientPortal_Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,12 +262,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MantainClients.aspx.cs">
-      <DependentUpon>MantainClients.aspx</DependentUpon>
+    <Compile Include="MaintainCities.aspx.cs">
+      <DependentUpon>MaintainCities.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MantainClients.aspx.designer.cs">
-      <DependentUpon>MantainClients.aspx</DependentUpon>
+    <Compile Include="MaintainCities.aspx.designer.cs">
+      <DependentUpon>MaintainCities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantainAvailableTimes.aspx.cs">
+      <DependentUpon>MantainAvailableTimes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantainAvailableTimes.aspx.designer.cs">
+      <DependentUpon>MantainAvailableTimes.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantainServices.aspx.cs">
       <DependentUpon>MantainServices.aspx</DependentUpon>
