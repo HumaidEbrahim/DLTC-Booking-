@@ -52,7 +52,7 @@ namespace DriversSystem
 
         protected bool existsID(String id)
         {
-            String query = "SELECT IDNum FROM Client WHERE IDNum = @ID";
+            String query = "SELECT ID_Num FROM Client WHERE IDNum = @ID";
 
             SqlParameter[] param =
             {

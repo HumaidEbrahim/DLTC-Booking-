@@ -136,7 +136,7 @@
 
         <!-- Add Button on the Right -->
         <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
-            OnClientClick="$('#AddModal').modal('show'); return false;" />   
+            OnClientClick="$('#AddModal').modal('show'); return false;" OnClick="AddServiceButton_Click1" />   
     </div>
 
 

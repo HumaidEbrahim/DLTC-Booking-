@@ -16,5 +16,19 @@ namespace DriversSystem
             
         }
 
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Unnamed1_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Unnamed1_Click2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
