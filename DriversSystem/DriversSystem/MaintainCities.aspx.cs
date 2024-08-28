@@ -13,5 +13,20 @@ namespace DriversSystem
         {
 
         }
+
+        protected void DeleteCityButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void UpdateCityButton_Click(object sender, EventArgs e) 
+        { 
+        
+        }
+
+        protected void SaveCityButton_Click(object sender, EventArgs e) 
+        { 
+        
+        }
     }
 }
