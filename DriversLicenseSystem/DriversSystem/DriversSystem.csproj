@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminPortal.aspx" />
+    <Content Include="AdminPortal_NumAppointmentsPerWeek.aspx" />
     <Content Include="ClientPortal.aspx" />
     <Content Include="ClientPortal_AddApplicationDetails.aspx" />
     <Content Include="ClientPortal_AddUserDetails.aspx" />
@@ -193,6 +194,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPortal_NumAppointmentsPerWeek.aspx.cs">
+      <DependentUpon>AdminPortal_NumAppointmentsPerWeek.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPortal_NumAppointmentsPerWeek.aspx.designer.cs">
+      <DependentUpon>AdminPortal_NumAppointmentsPerWeek.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
