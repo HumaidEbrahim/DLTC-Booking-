@@ -4,7 +4,7 @@
     <style>
         .report-container {
             margin: 20px auto;
-            max-width: 1000px;
+            max-width: 1200px;
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
@@ -42,7 +42,7 @@
         .report-table th, .report-table td {
             padding: 10px;
             border: 1px solid #ddd;
-            text-align: left;
+            text-align: center;
         }
 
         .report-table th {
@@ -54,6 +54,16 @@
             background-color: #fff;
         }
 
+        .total-row {
+            font-weight: bold;
+            background-color: #f1f1f1;
+        }
+
+        .grand-total-row {
+            font-weight: bold;
+            background-color: #e0e0e0;
+        }
+
         .report-footer {
             text-align: center;
             margin-top: 30px;
@@ -61,19 +71,22 @@
             color: #555;
         }
 
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        .filter-section .form-group {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
         .page-number {
-            text-align: center;
-            font-size: 14px;
+            text-align: right;
+            font-size: 12px;
             color: #555;
             margin-top: 10px;
         }
-
-        .total-row {
-            font-weight: bold;
-            background-color: #f1f1f1;
-        }
     </style>
-
 
     <div class="report-container">
         <!-- Report Header -->
@@ -84,37 +97,40 @@
             </div>
         </div>
 
-        <!-- Dtae -->
+        <!-- Filter Section -->
+        <div class="filter-section">
             <h2>Filter by Date</h2>
-
-        <div class="form-group">
-            <label for="startDate">Start Date:</label>
-            <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
+            </div>
+            <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="btn btn-primary" OnClick="FilterButton_Click" />
         </div>
 
-        <div class="form-group">
-            <label for="endDate">End Date:</label>
-            <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
-        </div>
-
-        <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="btn btn-primary" OnClick="FilterButton_Click" />
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-        <!-- Report Section: Detailed Appointments Report -->
-        <h2 class="section-title">Detailed Appointments Report</h2>
-        <asp:GridView ID="gvAppointmentsReport" runat="server" CssClass="report-table" AutoGenerateColumns="False" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvAppointmentsReport_PageIndexChanging" OnRowDataBound="gvAppointmentsReport_RowDataBound" OnSelectedIndexChanged="gvAppointmentsReport_SelectedIndexChanged">
+        <!-- Report Section: Weekly Appointments Report -->
+        <h2 class="section-title">Weekly Appointments Report</h2>
+        <asp:GridView ID="gvAppointmentsReport" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" AllowPaging="True" PageSize="10" OnRowDataBound="gvAppointmentsReport_RowDataBound" OnPageIndexChanging="gvAppointmentsReport_PageIndexChanging">
             <Columns>
-                <asp:BoundField DataField="Week" HeaderText="Week" />
-                <asp:BoundField DataField="StartDate" HeaderText="Start Date" DataFormatString="{0:MM/dd/yyyy}" />
-                <asp:BoundField DataField="EndDate" HeaderText="End Date" DataFormatString="{0:MM/dd/yyyy}" />
-                <asp:BoundField DataField="AppointmentCount" HeaderText="Number of Appointments" />
+                <asp:BoundField DataField="DateRange" HeaderText="Date Range" />
+                <asp:BoundField DataField="Week1" HeaderText="Week 1" />
+                <asp:BoundField DataField="Week2" HeaderText="Week 2" />
+                <asp:BoundField DataField="Week3" HeaderText="Week 3" />
+                <asp:BoundField DataField="Week4" HeaderText="Week 4" />
+                <asp:BoundField DataField="Week5" HeaderText="Week 5" />
+                <asp:BoundField DataField="TotalAppointments" HeaderText="Total Appointments" />
             </Columns>
-            <FooterStyle CssClass="total-row" />
             <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
+            <PagerStyle HorizontalAlign="Center" CssClass="pagination" />
         </asp:GridView>
+
+        <!-- Page Number -->
+        <div class="page-number">
+            Page <asp:Label ID="lblCurrentPage" runat="server"></asp:Label> of <asp:Label ID="lblTotalPages" runat="server"></asp:Label>
+        </div>
 
         <!-- Report Footer -->
         <div class="report-footer">
@@ -122,10 +138,13 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".datepicker").datepicker({
-                dateFormat: "dd-mm-yy", // Format: day-month-year
+                dateFormat: "dd-mm-yy",
                 changeMonth: true,
                 changeYear: true,
                 showAnim: "slideDown"

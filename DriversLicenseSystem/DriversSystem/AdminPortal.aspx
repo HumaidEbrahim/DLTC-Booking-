@@ -89,7 +89,7 @@
             <div class="col-md-6">
                 <h2 class="panel-heading">Reports</h2>
                 <div class="custom-panel">
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Number of Appointments Per Week Per Time Period" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Number of Appointments Per Week Per Time Period" PostBackUrl="~/AdminPortal_NumAppointmentsPerWeek.aspx" />
                     <asp:Button runat="server" CssClass="custom-btn" Text="Income Per Time Period" />
                 </div>
 
