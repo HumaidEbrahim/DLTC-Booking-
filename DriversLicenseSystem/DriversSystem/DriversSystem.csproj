@@ -128,6 +128,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="IncomeReport.aspx" />
     <Content Include="logo1.png" />
     <Content Include="MaintainCities.aspx" />
     <Content Include="MantainAvailableTimes.aspx" />
@@ -269,6 +270,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeReport.aspx.cs">
+      <DependentUpon>IncomeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IncomeReport.aspx.designer.cs">
+      <DependentUpon>IncomeReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="MaintainCities.aspx.cs">
       <DependentUpon>MaintainCities.aspx</DependentUpon>
