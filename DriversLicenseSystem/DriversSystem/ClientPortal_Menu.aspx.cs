@@ -12,6 +12,9 @@ namespace DriversSystem
     public partial class ClientPortal_Menu : System.Web.UI.Page
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
+        DataTable dt = new DataTable();
+        int client_id;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get clients ID from session
@@ -32,9 +35,41 @@ namespace DriversSystem
                     {
                         // Store Client_ID in session
                         Session["Client_ID"] = reader["Client_ID"].ToString();
+                        client_id = Convert.ToInt32(reader["Client_ID"].ToString());
                     }
                 }
             }
+
+            // check if application exists
+            if (existsApplication())
+            {
+                viewApplicationButton.Visible = true;
+                maintainApplicationButton.Visible = true;
+                createApplicationButton.Visible = false;
+            }
+            else
+            {
+                viewApplicationButton.Visible = false;
+                maintainApplicationButton.Visible = false;
+                createApplicationButton.Visible = true;
+
+            }
+
         }
+        private bool existsApplication()
+        {
+            string query = "SELECT * FROM Application WHERE CLient_ID = @ID AND isAttended=0";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = client_id},
+
+            };
+
+            dt = dbHelper.ExecuteQuery(query, param);
+            // if dt not empty 
+            return dt.Rows.Count > 0;
+        }
+
+
     }
 }

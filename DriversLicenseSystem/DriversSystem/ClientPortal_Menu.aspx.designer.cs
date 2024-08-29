@@ -13,5 +13,32 @@ namespace DriversSystem
 
     public partial class ClientPortal_Menu
     {
+
+        /// <summary>
+        /// createApplicationButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button createApplicationButton;
+
+        /// <summary>
+        /// maintainApplicationButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button maintainApplicationButton;
+
+        /// <summary>
+        /// viewApplicationButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button viewApplicationButton;
     }
 }

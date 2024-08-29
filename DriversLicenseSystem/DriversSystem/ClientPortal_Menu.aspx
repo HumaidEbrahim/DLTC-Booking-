@@ -88,11 +88,10 @@
                 <div class="custom-panel equal-height">
                     <h2 class="panel-heading">Manage Your Details and Applications</h2>
                     <div class="button-container">
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete User Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit User Application" />
-                        <asp:Button runat="server" CssClass="custom-btn" Text="Delete User Application" />
-                        <asp:Button runat="server" CssClass="custom-btn" Text="View Application" />
+                        <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete Your Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
+                        <asp:Button ID="createApplicationButton" runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
+                        <asp:Button ID="maintainApplicationButton" runat="server" CssClass="custom-btn" Text="Edit or Delete Your Application"/>
+                        <asp:Button ID="viewApplicationButton" runat="server" CssClass="custom-btn" Text="View Application" />
                     </div>
                 </div>
             </div>
