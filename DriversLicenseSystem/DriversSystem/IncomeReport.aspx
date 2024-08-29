@@ -38,12 +38,15 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            border: none;
         }
 
         .report-table th, .report-table td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: left;
+            border: none;
+           
         }
 
         .report-table th {
@@ -87,6 +90,27 @@
             color: #555;
             margin-top: 10px;
         }
+
+        .custom-btn {
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+        .custom-btn:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+}
     </style>
 
     <div class="report-container">
@@ -97,53 +121,64 @@
                 <asp:Label ID="lblDateTime" runat="server"></asp:Label>
             </div>
         </div>
-
+         
         <!-- Filter Section -->
         <div class="filter-section">
             <h2>Filter by Date</h2>
             <div class="form-group">
                 <label for="startDate">Start Date:</label>
-                <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+                 <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
             </div>
+           
             <div class="form-group">
                 <label for="endDate">End Date:</label>
                 <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
-            <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="btn btn-primary" OnClick="FilterButton_Click" />
-        </div>
+
+             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+               <ContentTemplate>
+             <div class="form-group">
+                <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
+             </div>
 
         <!-- Report Section: Income Per Time Period -->
-        <h2 class="section-title">Income Per Time Period</h2>
-        <asp:GridView ID="gvIncomeReport" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" AllowPaging="True" PageSize="10" OnRowDataBound="gvIncomeReport_RowDataBound" OnPageIndexChanging="gvIncomeReport_PageIndexChanging">
+        <div>  
+        <asp:Label runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
+        </div>
+        <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
             <Columns>
-                <asp:BoundField DataField="Service" HeaderText="Service" />
-                <asp:BoundField DataField="ServicePrice" HeaderText="Service Price" DataFormatString="{0:C2}" />
+                <asp:BoundField DataField="Service_Descr" HeaderText="Service" />
+                <asp:BoundField DataField="Price" HeaderText="Service Price" DataFormatString="{0:C0}" />
                 <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
-                <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C2}" />
+                <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C0}" />
             </Columns>
             <FooterStyle CssClass="grand-total-row" />
-            <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
-            <PagerStyle HorizontalAlign="Center" CssClass="pagination" />
         </asp:GridView>
+    </ContentTemplate>
+</asp:UpdatePanel>
 
         <!-- Page Number -->
         <div class="page-number">
-            Page <asp:Label ID="lblCurrentPage" runat="server"></asp:Label> of <asp:Label ID="lblTotalPages" runat="server"></asp:Label>
+            Page 1/1 
         </div>
 
         <!-- Report Footer -->
         <div class="report-footer">
             <p>End of Report</p>
         </div>
-    </div>
+    
+         </div>
+        </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript">
+        // format date for sql
         $(document).ready(function () {
             $(".datepicker").datepicker({
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 changeMonth: true,
                 changeYear: true,
                 showAnim: "slideDown"
