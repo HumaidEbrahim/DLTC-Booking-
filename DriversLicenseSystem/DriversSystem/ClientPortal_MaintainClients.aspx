@@ -164,8 +164,23 @@
         <asp:Panel ID="ClientDetailsPanel" runat="server" CssClass="button-group">
             <asp:Button ID="UpdateButton" runat="server" Text="Edit" CssClass="btn btn-primary" OnClick="UpdateButton_Click" />
             <asp:Button ID="SaveButton" runat="server" Text="Save" CssClass="btn btn-success" OnClick="SaveButton_Click" Visible="false" />
-            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="DeleteButton_Click" />
+            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-danger" OnClientClick="$('#DeleteConfirmModal').modal('show'); return false;"  />
         </asp:Panel>
     </div>
+
+        <!-- Delete Confirm Modal -->
+    <div class="modal fade" id="DeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+             <h5 class="modal-title" id="deleteconfirmLabel">Are you sure you want to delete?</h5>
+            <div class="modal-footer">
+                 <asp:Button ID="DeleteConfirmButton" runat="server" Text="Confirm Delete" CssClass="custom-btn" OnClick="DeleteConfirmButton_Click" />
+                <asp:Button ID="Button4" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteConfirmModal').modal('hide'); return false;" />
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </asp:Content>

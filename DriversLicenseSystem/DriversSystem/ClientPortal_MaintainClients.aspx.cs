@@ -79,7 +79,7 @@ namespace DriversSystem
                
             
         }
-        protected void DeleteButton_Click(Object sender, EventArgs e)
+        protected void DeleteConfirmButton_Click(Object sender, EventArgs e)
         {
             ClientID = Convert.ToInt32(Session["Client_ID"]);
             string query = "DELETE FROM Client WHERE Client_ID = @ID";
