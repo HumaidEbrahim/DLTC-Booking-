@@ -136,7 +136,7 @@
 
         <!-- Add Button on the Right -->
         <asp:Button ID="AddServiceButton" runat="server" Text="Add New Service" CssClass="custom-btn" 
-            OnClientClick="$('#AddModal').modal('show'); return false;" />   
+            OnClientClick="$('#AddModal').modal('show'); return false;" OnClick="AddServiceButton_Click" />   
     </div>
 
 
@@ -164,7 +164,7 @@
     </script>
 
 <!-- GridView -->
-<asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
+<asp:GridView ID="ServicesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table" OnSelectedIndexChanged="ServicesGridView_SelectedIndexChanged">
     <Columns>
         <asp:BoundField DataField="Service_ID" HeaderText="Service ID" />
         <asp:BoundField DataField="Service_Descr" HeaderText="Service Description" />

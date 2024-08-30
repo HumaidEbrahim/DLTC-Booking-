@@ -162,6 +162,16 @@ namespace DriversSystem
 
 
         }
+
+        protected void ServicesGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AddServiceButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

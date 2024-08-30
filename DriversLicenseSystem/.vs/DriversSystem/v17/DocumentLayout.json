@@ -1,25 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc - copy\\driverssystem\\driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\maintaincities.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\maintaincities.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc - copy\\driverssystem\\driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\user\\desktop\\projectcmpg\\cmpg223\\driverslicensesystem\\driverssystem\\mantainservices.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainservices.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc - copy\\driverssystem\\driverssystem\\clientportal_maintainclients.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainclients.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\maintaincities.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\maintaincities.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainservices.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\driverssystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainclients.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\clientportal_maintainclients.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainclients.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\driverssystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -30,28 +38,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClientPortal_AddApplicationDetails.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "RelativeToolTip": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAABAAAA",
+              "DocumentIndex": 1,
+              "Title": "MantainServices.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MantainServices.aspx.cs",
+              "RelativeDocumentMoniker": "DriversSystem\\MantainServices.aspx.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MantainServices.aspx.cs",
+              "RelativeToolTip": "DriversSystem\\MantainServices.aspx.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAswEIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T12:01:47.871Z",
+              "WhenOpened": "2024-08-30T07:44:24.343Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MaintainCities.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MaintainCities.aspx.cs",
+              "RelativeDocumentMoniker": "DriversSystem\\MaintainCities.aspx.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MaintainCities.aspx.cs",
+              "RelativeToolTip": "DriversSystem\\MaintainCities.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T07:44:05.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MaintainCities.aspx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MaintainCities.aspx",
+              "RelativeDocumentMoniker": "DriversSystem\\MaintainCities.aspx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MaintainCities.aspx",
+              "RelativeToolTip": "DriversSystem\\MaintainCities.aspx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-30T07:43:43.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MantainServices.aspx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MantainServices.aspx",
+              "RelativeDocumentMoniker": "DriversSystem\\MantainServices.aspx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\MantainServices.aspx",
+              "RelativeToolTip": "DriversSystem\\MantainServices.aspx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-28T13:13:34.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ClientPortal_MaintainClients.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
               "RelativeToolTip": "DriversSystem\\ClientPortal_MaintainClients.aspx.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -60,36 +110,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ClientPortal_MaintainClients.aspx",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_MaintainClients.aspx",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainClients.aspx",
               "RelativeToolTip": "DriversSystem\\ClientPortal_MaintainClients.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-08-29T11:06:03.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MantainServices.aspx",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\MantainServices.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\MantainServices.aspx",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\MantainServices.aspx",
-              "RelativeToolTip": "DriversSystem\\MantainServices.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-28T13:13:34.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\Web.config",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\Web.config",
               "RelativeDocumentMoniker": "DriversSystem\\Web.config",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC - Copy\\DriversSystem\\DriversSystem\\Web.config",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projectcmpg\\Cmpg223\\DriversLicenseSystem\\DriversSystem\\Web.config",
               "RelativeToolTip": "DriversSystem\\Web.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
