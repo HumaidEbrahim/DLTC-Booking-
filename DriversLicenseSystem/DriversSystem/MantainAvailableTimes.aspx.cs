@@ -55,7 +55,7 @@ namespace DriversSystem
                 if (result > 0)
                 {
                     successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "Service deleted successfully!" });
+                    successAlert.Controls.Add(new Literal { Text = "Available Time deleted successfully!" });
                     populateGridView();
                 }
             }
@@ -63,7 +63,7 @@ namespace DriversSystem
             {
                 successAlert.Visible = false;
                 errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to delete service" });
+                errorAlert.Controls.Add(new Literal { Text = "Failed to delete Available Time" });
             }
         }
 
@@ -95,14 +95,14 @@ namespace DriversSystem
                     populateGridView();
                     errorAlert.Visible = false;
                     successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "Service updated successfully!" });
+                    successAlert.Controls.Add(new Literal { Text = "Available time updated successfully!" });
                 }
             }
             catch (Exception)
             {
                 successAlert.Visible = false;
                 errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to update service" });
+                errorAlert.Controls.Add(new Literal { Text = "Failed to update Available Time" });
             }
         }
 
