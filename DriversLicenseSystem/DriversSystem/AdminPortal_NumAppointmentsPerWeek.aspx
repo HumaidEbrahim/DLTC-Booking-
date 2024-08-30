@@ -86,6 +86,27 @@
             color: #555;
             margin-top: 10px;
         }
+
+         .custom-btn {
+         padding: 5px 10px;
+         font-size: 18px;
+         font-weight: bold;
+         background-color: #28a745;
+         color: white;
+         border: 2px solid #28a745;
+         transition: all 0.3s ease;
+         display: inline-block;
+         text-align: center;
+         text-decoration: none;
+         margin: 15px;
+         border-radius: 5px;
+         min-width: 200px;
+     }
+        .custom-btn:hover {
+        background-color: white;
+        color: #28a745;
+        border-color: #28a745;
+            }
     </style>
 
     <div class="report-container">
@@ -108,14 +129,18 @@
                 <label for="endDate">End Date:</label>
                 <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
-            <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="btn btn-primary" OnClick="FilterButton_Click" />
-        </div>
+         
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+          <div class="form-group">
+             <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
+          </div>
 
         <!-- Report Section: Weekly Appointments Report -->
         <h2 class="section-title">Weekly Appointments Report</h2>
-        <asp:GridView ID="gvAppointmentsReport" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" AllowPaging="True" PageSize="10" OnRowDataBound="gvAppointmentsReport_RowDataBound" OnPageIndexChanging="gvAppointmentsReport_PageIndexChanging">
+        <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
             <Columns>
-                <asp:BoundField DataField="DateRange" HeaderText="Date Range" />
+                <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot" />
                 <asp:BoundField DataField="Week1" HeaderText="Week 1" />
                 <asp:BoundField DataField="Week2" HeaderText="Week 2" />
                 <asp:BoundField DataField="Week3" HeaderText="Week 3" />
@@ -123,14 +148,14 @@
                 <asp:BoundField DataField="Week5" HeaderText="Week 5" />
                 <asp:BoundField DataField="TotalAppointments" HeaderText="Total Appointments" />
             </Columns>
-            <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
-            <PagerStyle HorizontalAlign="Center" CssClass="pagination" />
+           
         </asp:GridView>
-
+        </ContentTemplate>
+        </asp:UpdatePanel>
         <!-- Page Number -->
-        <div class="page-number">
-            Page <asp:Label ID="lblCurrentPage" runat="server"></asp:Label> of <asp:Label ID="lblTotalPages" runat="server"></asp:Label>
-        </div>
+         <div class="page-number">
+             Page 1/1 
+         </div>
 
         <!-- Report Footer -->
         <div class="report-footer">

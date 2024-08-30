@@ -23,7 +23,7 @@ namespace DriversSystem
                 string id = Session["IDNumber"].ToString();
 
                 // Get Client db ID 
-                string query = "SELECT Client_ID FROM CLIENT WHERE IDNum = @ID";
+                string query = "SELECT Client_ID,Name FROM CLIENT WHERE IDNum = @ID";
                 SqlParameter[] param =
                 {
                     new SqlParameter("@ID", SqlDbType.Char,13) { Value = id }
@@ -36,6 +36,8 @@ namespace DriversSystem
                         // Store Client_ID in session
                         Session["Client_ID"] = reader["Client_ID"].ToString();
                         client_id = Convert.ToInt32(reader["Client_ID"].ToString());
+                        // welcome user
+                        welcomemessage.Text = "Welcome " + reader["Name"].ToString();
                     }
                 }
             }

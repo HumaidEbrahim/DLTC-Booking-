@@ -13,9 +13,7 @@ using System.Text.RegularExpressions;
 
 namespace DriversSystem
 {
-    
-    
-        public partial class IncomeReport : System.Web.UI.Page
+     public partial class IncomeReport : System.Web.UI.Page
     {
             DatabaseHelper dbHelper = new DatabaseHelper();
             
@@ -48,8 +46,8 @@ namespace DriversSystem
                     IncomeGridView.DataSource = null;
                     IncomeGridView.DataBind();
            
-                    IncomeGridView.DataSource = dbHelper.ExecuteQuery(query,param);
-                    IncomeGridView.DataBind();
+                    //IncomeGridView.DataSource = dbHelper.ExecuteQuery(query,param);
+                    //IncomeGridView.DataBind();
             }
 
         }

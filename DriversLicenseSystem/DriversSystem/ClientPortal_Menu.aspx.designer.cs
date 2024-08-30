@@ -15,6 +15,15 @@ namespace DriversSystem
     {
 
         /// <summary>
+        /// welcomemessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label welcomemessage;
+
+        /// <summary>
         /// createApplicationButton control.
         /// </summary>
         /// <remarks>
