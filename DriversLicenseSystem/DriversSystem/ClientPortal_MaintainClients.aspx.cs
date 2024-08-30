@@ -26,6 +26,7 @@ namespace DriversSystem
                     populateForm();
                     //TextBox1.Text = ClientID.ToString();
                 }
+                FormState.Enabled = false;
                 // Enable client-side validation
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
             }
