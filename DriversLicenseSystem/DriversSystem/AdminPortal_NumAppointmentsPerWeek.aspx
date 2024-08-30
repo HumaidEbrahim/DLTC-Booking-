@@ -123,11 +123,11 @@
             <h2>Filter by Date</h2>
             <div class="form-group">
                 <label for="startDate">Start Date:</label>
-                <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+                <asp:TextBox ID="StartDateTextBox" runat="server" TextMode="Date" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
             </div>
             <div class="form-group">
                 <label for="endDate">End Date:</label>
-                <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
+                <asp:TextBox ID="EndDateTextBox" runat="server" TextMode="Date" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
          
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -140,40 +140,23 @@
         <h2 class="section-title">Weekly Appointments Report</h2>
         <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
             <Columns>
-                <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot" />
+                <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot"/>
                 <asp:BoundField DataField="Week1" HeaderText="Week 1" />
                 <asp:BoundField DataField="Week2" HeaderText="Week 2" />
                 <asp:BoundField DataField="Week3" HeaderText="Week 3" />
                 <asp:BoundField DataField="Week4" HeaderText="Week 4" />
                 <asp:BoundField DataField="Week5" HeaderText="Week 5" />
-                <asp:BoundField DataField="TotalAppointments" HeaderText="Total Appointments" />
+                <asp:BoundField DataField="TotalApplication" HeaderText="Total Appointments" />
             </Columns>
            
         </asp:GridView>
         </ContentTemplate>
         </asp:UpdatePanel>
-        <!-- Page Number -->
-         <div class="page-number">
-             Page 1/1 
-         </div>
-
-        <!-- Report Footer -->
-        <div class="report-footer">
-            <p>End of Report</p>
-        </div>
+         <!-- Report Footer -->
+  <div class="report-footer">
+       Page 1/1 
+      <p>End of Report</p>
+  </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "dd-mm-yy",
-                changeMonth: true,
-                changeYear: true,
-                showAnim: "slideDown"
-            });
-        });
-    </script>
+        </div>
 </asp:Content>

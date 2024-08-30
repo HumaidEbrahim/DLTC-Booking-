@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -40,8 +42,14 @@ namespace DriversSystem
             ApplicationGridView.DataSource = null;
             ApplicationGridView.DataBind();
 
-            //ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
-            //ApplicationGridView.DataBind();
+
+            SqlParameter[] param =
+             {
+                 new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDateString},
+                 new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDateString}
+             };
+            ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
+            ApplicationGridView.DataBind();
         }
 
 

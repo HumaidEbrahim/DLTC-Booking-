@@ -127,12 +127,12 @@
             <h2>Filter by Date</h2>
             <div class="form-group">
                 <label for="startDate">Start Date:</label>
-                 <asp:TextBox ID="StartDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+                 <asp:TextBox ID="StartDateTextBox" TextMode="Date" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
             </div>
            
             <div class="form-group">
                 <label for="endDate">End Date:</label>
-                <asp:TextBox ID="EndDateTextBox" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
+                <asp:TextBox ID="EndDateTextBox" TextMode="Date" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
 
              <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -157,32 +157,12 @@
     </ContentTemplate>
 </asp:UpdatePanel>
 
-        <!-- Page Number -->
-        <div class="page-number">
-            Page 1/1 
-        </div>
-
         <!-- Report Footer -->
         <div class="report-footer">
+             Page 1/1 
             <p>End of Report</p>
         </div>
     
          </div>
         </div>
-    
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        // format date for sql
-        $(document).ready(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "yy-mm-dd",
-                changeMonth: true,
-                changeYear: true,
-                showAnim: "slideDown"
-            });
-        });
-    </script>
 </asp:Content>

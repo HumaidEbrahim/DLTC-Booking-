@@ -45,10 +45,15 @@ namespace DriversSystem
 
                     IncomeGridView.DataSource = null;
                     IncomeGridView.DataBind();
-           
-                    //IncomeGridView.DataSource = dbHelper.ExecuteQuery(query,param);
-                    //IncomeGridView.DataBind();
-            }
+          
+            SqlParameter[] param =
+            {
+         new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDateString},
+         new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDateString}
+};
+            IncomeGridView.DataSource = dbHelper.ExecuteQuery(query,param);
+            IncomeGridView.DataBind();
+        }
 
         }
  
