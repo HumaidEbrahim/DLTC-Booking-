@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\driverssystem\\clientportal_addapplicationdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_addapplicationdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\driverssystem\\clientportal_adduserdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_adduserdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,33 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "ClientPortal_AddUserDetails.aspx",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddUserDetails.aspx",
+              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_AddUserDetails.aspx",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddUserDetails.aspx",
+              "RelativeToolTip": "DriversSystem\\ClientPortal_AddUserDetails.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-31T16:34:25.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientPortal.aspx",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal.aspx",
+              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal.aspx",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal.aspx",
+              "RelativeToolTip": "DriversSystem\\ClientPortal.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-31T16:04:53.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ClientPortal_AddApplicationDetails.aspx",
               "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx",
@@ -35,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ClientPortal_AddApplicationDetails.aspx.cs",
               "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
               "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
               "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
               "RelativeToolTip": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAgwGAAAABtAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAgwHgAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T14:12:59.07Z",
               "EditorCaption": ""

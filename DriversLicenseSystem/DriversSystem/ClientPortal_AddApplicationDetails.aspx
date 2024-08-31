@@ -194,13 +194,14 @@
     </div>
         <br /> 
         <div class="form-group timeslot-group">
+            <asp:label ID="Label1"  runat="server" Visible="true"/>
             <label for="SelectTimeslot" class="form-label">Select Timeslot</label>
               <asp:label ID="NoTimes" Text="No available times for the selected date." runat="server" Visible="false"/>
             <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control"> </asp:RadioButtonList>
         </div>
 
 
-        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
+        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" OnClick="ContinueButton_Click" />
     </div>
     <br />
 </asp:Content>

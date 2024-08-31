@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.Services.Description;
 
 namespace DriversSystem
 {
@@ -16,18 +17,17 @@ namespace DriversSystem
         DatabaseHelper dbHelper = new DatabaseHelper();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            // Get Client details from session
+            if (Session["Client_ID"] != null)
             {
-                // Get Client details from session
-                if (Session["Client_ID"] != null)
-                {
-                    clientID = Convert.ToInt32(Session["Client_ID"]);
-                }
-                if (Session["IDNumber"] != null)
-                {
-                    IDNumber.Text = Session["IDNumber"].ToString();
-                }
-
+                clientID = Convert.ToInt32(Session["Client_ID"]);
+            }
+            if (Session["IDNumber"] != null)
+            {
+                IDNumber.Text = Session["IDNumber"].ToString();
+            }
+            if (!IsPostBack)
+            {
                 //Populate ServiceDropDown
                 String query = "SELECT Service_ID, Service_Descr FROM Service ORDER BY Service_Descr ASC";
                 using (SqlDataReader reader = dbHelper.ExecuteReader(query))
@@ -56,18 +56,20 @@ namespace DriversSystem
             string selectdate = calendar.SelectedDate.ToString("yyyy-MM-dd");
 
             // Query and populate
-            string query = "SELECT Time_ID,StartTime FROM Available_Time WHERE Date = @SelectedDate AND NumPeopleAllowed > 0";
+            string query = "SELECT Time_ID,CONCAT(CAST(StartTime AS VARCHAR(5)),' - ',CAST(EndTime AS VARCHAR(5))) AS TimeSlot FROM Available_Time WHERE Date = @SelectedDate AND NumPeopleAllowed > 0";
 
             SqlParameter[] param =
             {
                 new SqlParameter("@SelectedDate", SqlDbType.Date) { Value = selectdate }
             };
 
+
             DataTable dt = dbHelper.ExecuteQuery(query, param);
             if (dt.Rows.Count > 0)
             {
+            
                 TimeslotRadioButtonList.DataSource = dt;
-                TimeslotRadioButtonList.DataTextField = "StartTime"; 
+                TimeslotRadioButtonList.DataTextField = "TimeSlot"; 
                 TimeslotRadioButtonList.DataValueField = "Time_ID";
                 TimeslotRadioButtonList.DataBind();
                 TimeslotRadioButtonList.Visible = true;
@@ -85,6 +87,7 @@ namespace DriversSystem
         
          protected void ContinueButton_Click(object sender, EventArgs e)
         {
+            Label1.Text = clientID + " " + TimeslotRadioButtonList.SelectedValue + " " + ServiceDropdown.SelectedValue;
             try
             {
                 //Write to Application table
@@ -93,8 +96,8 @@ namespace DriversSystem
                 {
                     new SqlParameter("@clientID", SqlDbType.Int) { Value = clientID},
                     new SqlParameter("@ServiceID", SqlDbType.Int) { Value =  ServiceDropdown.SelectedValue},
-                    new SqlParameter("@Time", SqlDbType.Int) { Value =  0},
-                    new SqlParameter("@Paid", SqlDbType.Bit) { Value =  TimeslotRadioButtonList.SelectedValue},
+                    new SqlParameter("@Time", SqlDbType.Int) { Value =  TimeslotRadioButtonList.SelectedValue},
+                    new SqlParameter("@Paid", SqlDbType.Bit) { Value =  0},
                     new SqlParameter("@Attend", SqlDbType.Bit) { Value =  0},
                  };
 
@@ -109,19 +112,16 @@ namespace DriversSystem
                 else
                 {
                     errorAlert.Controls.Add(new Literal { Text = "Failed to create application" });
-                    errorAlert.Visible = true;
-                    
+                    errorAlert.Visible = true; 
                 }
                     
             }
-            catch
+            catch(Exception ex) { }
             {
                 errorAlert.Controls.Add(new Literal { Text = "Failed to create application" });
-                errorAlert.Visible = true;
-                
+                errorAlert.Visible = true; 
             }
-                
-            
+
         }
     }
 }
