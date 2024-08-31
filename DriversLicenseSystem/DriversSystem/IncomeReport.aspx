@@ -54,13 +54,9 @@
             background-color: #fff;
         }
 
-        .total-row {
-            font-weight: bold;
-            background-color: #f1f1f1;
-        }
-
         .grand-total-row {
             font-weight: bold;
+            text-align: right;
             background-color: #e0e0e0;
         }
 
@@ -153,16 +149,16 @@
 
                     <!-- Sort Options -->
                     <div class="sort-options">
-                        <label for="sortOrder">Sort By:</label>
-                        <asp:RadioButtonList ID="SortOrderRadioButtonList" runat="server" RepeatDirection="Horizontal" CssClass="sort-order">
-                            <asp:ListItem Text="Ascending" Value="ASC" Selected="True"></asp:ListItem>
-                            <asp:ListItem Text="Descending" Value="DESC"></asp:ListItem>
+                        <label for="sortOrder">Sort By Total:</label>
+                        <asp:RadioButtonList ID="sortOrder" runat="server" RepeatDirection="Horizontal" CssClass="sort-order">
+                            <asp:ListItem Text="Lowest" Value="ASC" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="Highest" Value="DESC"></asp:ListItem>
                         </asp:RadioButtonList>
                     </div>
 
                     <!-- Report Section: Income Per Time Period -->
-                    <asp:Label runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
-                    <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
+                    <asp:Label ID="reportHeading" runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
+                    <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" OnRowDataBound="IncomeGridView_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="Service_Descr" HeaderText="Service" />
                             <asp:BoundField DataField="Price" HeaderText="Service Price" DataFormatString="{0:C0}" />

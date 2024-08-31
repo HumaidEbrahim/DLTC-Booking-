@@ -112,7 +112,7 @@
      background-color: #198754;
 }
 
-/* Style for the header (Month and Year) */
+
 .calendar-container .calendar-header {
     background-color: #198754;
     color: white;
@@ -157,6 +157,11 @@
     text-decoration: none;
 }
     </style>
+        <!-- Error Alert -->
+    <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
+    <asp:Label ID="errorMessage" runat="server"></asp:Label>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</asp:Panel>
 
     <div class="form-container">
         <h2 class="form-heading">Service Booking</h2>
@@ -172,9 +177,9 @@
                
             </asp:DropDownList>
         </div>
-
+       
          <div class="calendar-container">
-        <asp:Calendar ID="SelectDateCalendar" runat="server" 
+        <asp:Calendar ID="calendar" runat="server" OnSelectionChanged="calendar_SelectionChanged"
             DayStyle-Font-Underline="false"
             DayStyle-Font-Overline="false"
             TodayDayStyle-Font-Underline="false"
@@ -185,16 +190,18 @@
             TitleStyle-CssClass="calendar-header"
             DayHeaderStyle-CssClass="calendar-day-header">
         </asp:Calendar>
-    </div>
 
+    </div>
+        <br /> 
         <div class="form-group timeslot-group">
+            <asp:label ID="Label1"  runat="server" Visible="true"/>
             <label for="SelectTimeslot" class="form-label">Select Timeslot</label>
-            <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control">
-               
-            </asp:RadioButtonList>
+              <asp:label ID="NoTimes" Text="No available times for the selected date." runat="server" Visible="false"/>
+            <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control"> </asp:RadioButtonList>
         </div>
 
-        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
+
+        <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" OnClick="ContinueButton_Click" />
     </div>
     <br />
 </asp:Content>
