@@ -48,7 +48,7 @@ namespace DriversSystem
                  new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDateString},
                  new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDateString}
              };
-            ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
+            //ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
             ApplicationGridView.DataBind();
         }
 

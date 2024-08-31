@@ -77,11 +77,19 @@
                 margin-right: 20px;
             }
         }
+
+        .welcome-message {
+            font-size: 24px;
+            color: #28a745;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
     </style>
 
     <div class="text-center my-5">
         <h1 class="mb-5" style="color: #28a745;">Client Portal Menu</h1>
-        <asp:Label runat="server" ID="welcomemessage" Text="" />
+        <asp:Label runat="server" ID="welcomemessage" Text="" CssClass="welcome-message" />
         <h3 class="mb-4">Please select an option below:</h3>
         <div class="row mt-4">
             <div class="col-md-6">
@@ -90,8 +98,8 @@
                     <div class="button-container">
                         <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete Your Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
                         <asp:Button ID="createApplicationButton" runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
-                        <asp:Button ID="maintainApplicationButton" runat="server" CssClass="custom-btn" Text="Edit or Delete Your Application"/>
-                        <asp:Button ID="viewApplicationButton" runat="server" CssClass="custom-btn" Text="View Application" />
+                        <asp:Button ID="maintainApplicationButton" runat="server" CssClass="custom-btn" Text="Edit or Delete Your Application" />
+                        <asp:Button ID="viewApplicationButton" runat="server" CssClass="custom-btn" Text="View Application" PostBackUrl="~/ClientPortal_ViewDocument.aspx"/>
                     </div>
                 </div>
             </div>

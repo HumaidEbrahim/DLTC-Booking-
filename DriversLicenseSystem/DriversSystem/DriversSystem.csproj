@@ -131,6 +131,7 @@
     <Content Include="Global.asax" />
     <Content Include="IncomeReport.aspx" />
     <Content Include="logo1.png" />
+    <Content Include="MaintainApplications.aspx" />
     <Content Include="MaintainCities.aspx" />
     <Content Include="MantainAvailableTimes.aspx" />
     <Content Include="MantainServices.aspx" />
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="IncomeReport.aspx.designer.cs">
       <DependentUpon>IncomeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainApplications.aspx.cs">
+      <DependentUpon>MaintainApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintainApplications.aspx.designer.cs">
+      <DependentUpon>MaintainApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="MaintainCities.aspx.cs">
       <DependentUpon>MaintainCities.aspx</DependentUpon>

@@ -13,6 +13,7 @@
             margin-top: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        
 
         .form-heading {
             font-size: 28px;
@@ -58,6 +59,13 @@
             outline: none;
             border-color: #28a745;
         }
+
+       .dropdown-control:disabled {
+                background-color: #e9ecef;
+                color: #6c757d;
+                cursor: not-allowed;
+                opacity: 0.65;
+       }
 
         .btn {
             padding: 15px 30px;
