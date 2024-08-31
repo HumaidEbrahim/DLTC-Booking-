@@ -106,6 +106,7 @@
     <Content Include="ClientPortal_AddApplicationDetails.aspx" />
     <Content Include="ClientPortal_AddUserDetails.aspx" />
     <Content Include="ClientPortal_ConfirmAddUserDeatils.aspx" />
+    <Content Include="ClientPortal_MaintainApplications.aspx" />
     <Content Include="ClientPortal_MaintainClients.aspx" />
     <Content Include="ClientPortal_Menu.aspx" />
     <Content Include="ClientPortal_ViewDocument.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="ClientPortal_ConfirmAddUserDeatils.aspx.designer.cs">
       <DependentUpon>ClientPortal_ConfirmAddUserDeatils.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPortal_MaintainApplications.aspx.cs">
+      <DependentUpon>ClientPortal_MaintainApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPortal_MaintainApplications.aspx.designer.cs">
+      <DependentUpon>ClientPortal_MaintainApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientPortal_MaintainClients.aspx.cs">
       <DependentUpon>ClientPortal_MaintainClients.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientPortal_MaintainClients.aspx.cs" Inherits="DriversSystem.ClientPortal_MaintainClients" %>
+﻿<%@ Page Title="CLient Portal - Edit and Delete CLient" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientPortal_MaintainClients.aspx.cs" Inherits="DriversSystem.ClientPortal_MaintainClients" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
