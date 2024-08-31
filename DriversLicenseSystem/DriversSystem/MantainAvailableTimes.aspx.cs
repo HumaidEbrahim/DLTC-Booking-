@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace DriversSystem
 {
     public partial class MantainAvailableTimes : System.Web.UI.Page
     {
-
         DatabaseHelper dbHelper = new DatabaseHelper();
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
                 populateGridView();
-
         }
 
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string userSearch = SearchTextBox.Text.Trim();
 
-            string query = "SELECT * FROM AVAILABLETIME WHERE AvailableTime_Date LIKE '%' + @userSearch + '%'";
+            string query = "SELECT * FROM AVAILABLE TIME WHERE Time_ID LIKE '%' + @userSearch + '%'";
             SqlParameter[] param =
             {
                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
@@ -33,6 +31,7 @@ namespace DriversSystem
 
             AvailableTimesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
             AvailableTimesGridView.DataBind();
+
         }
 
 
@@ -43,7 +42,7 @@ namespace DriversSystem
             {
                 int id = int.Parse(HiddenDelAvailableTimeID.Value);
 
-                string query = "DELETE FROM AvailalbleTime WHERE AvailableTime_ID = @ID";
+                string query = "DELETE FROM Available Time WHERE Time_ID = @ID";
                 SqlParameter[] param =
                 {
                     new SqlParameter("@ID", SqlDbType.Int) { Value = id}
@@ -63,14 +62,13 @@ namespace DriversSystem
             {
                 successAlert.Visible = false;
                 errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to delete Available Time" });
+                errorAlert.Controls.Add(new Literal { Text = "Failed to delete available time" });
             }
         }
 
         protected void ConfirmUpdateButton_Click(Object sender, EventArgs e)
-
         {
-            string inputDate = UpdateAvailableDate.Text;
+            string inputDescr = UpdateAvailableTime.Text;
             double inputTime;
 
             try
@@ -78,11 +76,11 @@ namespace DriversSystem
                 int id = int.Parse(HiddenUpdateAvailableTimeID.Value);
                 inputTime = double.Parse(UpdateAvailableTime.Text);
 
-                string query = "UPDATE Service SET Service_Descr = @Descr, Price = @Price WHERE Service_ID = @ID";
+                string query = "UPDATE Available Time SET Date = @Date, Time = @Time WHERE Time_ID = @ID";
 
                 SqlParameter[] param =
                 {
-                    new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDate},
+                    new SqlParameter("@Descr", SqlDbType.VarChar, 50) { Value = inputDescr},
                     new SqlParameter("@Price", SqlDbType.SmallMoney) { Value =  inputTime },
                     new SqlParameter("@ID", SqlDbType.Int) { Value = id}
                  };
@@ -95,24 +93,20 @@ namespace DriversSystem
                     populateGridView();
                     errorAlert.Visible = false;
                     successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "Available time updated successfully!" });
+                    successAlert.Controls.Add(new Literal { Text = "Service updated successfully!" });
                 }
             }
             catch (Exception)
             {
                 successAlert.Visible = false;
                 errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to update Available Time" });
+                errorAlert.Controls.Add(new Literal { Text = "Failed to update service" });
             }
         }
 
-
-
-
         protected void populateGridView()
         {
-
-            string query = "SELECT * FROM Service";
+            string query = "SELECT * FROM Available Time";
             try
             {
                 AvailableTimesGridView.DataSource = dbHelper.ExecuteQuery(query);
@@ -123,10 +117,6 @@ namespace DriversSystem
                 errorAlert.Visible = true;
                 errorAlert.Controls.Add(new Literal { Text = "Failed to connect to database" });
             }
-
-
-
-
         }
     }
 }
