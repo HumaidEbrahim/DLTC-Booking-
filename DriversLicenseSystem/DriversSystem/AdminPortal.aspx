@@ -82,6 +82,7 @@
                     <asp:Button runat="server" CssClass="custom-btn" Text="Available Times" PostBackUrl="~/MantainAvailableTimes.aspx" />
                     <asp:Button runat="server" CssClass="custom-btn" Text="Applications" PostBackUrl="~/MantainApplications.aspx" />
                     <asp:Button runat="server" CssClass="custom-btn" Text="Cities" PostBackUrl="~/MaintainCities.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Clients" PostBackUrl="~/MantainClients.aspx" />
                 </div>
 
             </div>

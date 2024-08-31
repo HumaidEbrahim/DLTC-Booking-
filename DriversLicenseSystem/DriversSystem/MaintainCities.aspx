@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    &nbsp;&nbsp;&nbsp;
+    <!--&nbsp;&nbsp;&nbsp;-->
     <style>
         .table-container {
             margin: 50px auto;
@@ -251,5 +251,10 @@
 
             $('#DeleteModal').modal('show');
         }
+
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </asp:Content>
