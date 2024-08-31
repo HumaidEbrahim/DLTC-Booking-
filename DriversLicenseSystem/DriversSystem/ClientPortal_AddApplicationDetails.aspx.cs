@@ -12,77 +12,90 @@ namespace DriversSystem
 {
     public partial class ClientPortal_AddApplicationDetails : System.Web.UI.Page
     {
-
+        int clientID;
         DatabaseHelper dbHelper = new DatabaseHelper();
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Get clients ID from session
+            // Get Client details from session
+            if (Session["Client_ID"] != null)
+            {
+               clientID = Convert.ToInt32(Session["Client_ID"]);
+            }
             if (Session["IDNumber"] != null)
             {
-                String id = Session["IDNumber"].ToString();
-                IDNumber.Text = id;
+                IDNumber.Text = Session["IDNumber"].ToString();
             }
 
-            //Populate ServiceDropDown
-            ServiceDropdown.Items.Clear();
-            String query = "SELECT Service_Descr FROM Service";
+             //Populate ServiceDropDown
+             ServiceDropdown.Items.Clear();
+            String query = "SELECT Service_ID, Service_Descr FROM Service ORDER BY Service_Descr ASC";
             using (SqlDataReader reader = dbHelper.ExecuteReader(query))
             {
                 while (reader.Read())
                 {
-                    String Service = reader["Service_Descr"].ToString();
-                    ServiceDropdown.Items.Add(Service);
+                    String Service_id = reader["Service_ID"].ToString();
+                    String Service_descr = reader["Service_Descr"].ToString();
+                    ServiceDropdown.Items.Add(new ListItem(Service_descr, Service_id));
                 }
             }
-
         }
 
-        protected void ContinueButton_Click(object sender, EventArgs e)
+        protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
-            //Get ClientID
-            int ClientID = 0;
-            String query = "SELECT ID_Num,Client_ID FROM Client";
-            using (SqlDataReader reader = dbHelper.ExecuteReader(query))
-            {
-                if (Session["IDNumber"] == reader["ID_Num"])
-                {
-                    ClientID = int.Parse(reader["Client_ID"].ToString());
-                }
-                else
-                {
-                    reader.Read();
-                }
-            }
+            populateTimeSlot();
+        }
 
-            //Get ServiceID
-            int ServiceID = 0;
-            query = "SELECT Service_Descr, Service_ID FROM Service";
-            using (SqlDataReader reader = dbHelper.ExecuteReader(query))
-            {
-                if (reader["Service_Descr"] == ServiceDropdown.SelectedItem.ToString())
-                {
-                    ServiceID = int.Parse(reader["Service_ID"].ToString());
-                }
-                else
-                {
-                    reader.Read();
-                }
-            }
+        protected void populateTimeSlot()
+        {
+            TimeslotRadioButtonList.DataSource = null;
+            TimeslotRadioButtonList.DataBind();
+            // Get date
+            string selectdate = calendar.SelectedDate.ToString("yyyy-MM-dd");
 
-            //Write to Application table
-            query = "INSERT INTO Application(Client_ID, Service_ID, Time_ID, isPaid, isAttend) VALUES(@ClientID, @ServiceID, @Time, @Paid, @Attend)";
+            ContinueButton.Text = selectdate;
+
+            string query = "SELECT Time_ID,StartTime FROM Available_Time WHERE Date = @SelectedDate AND NumPeopleAllowed > 0";
+
             SqlParameter[] param =
             {
-                new SqlParameter("@ClientID", SqlDbType.Int) { Value = ClientID},
-                new SqlParameter("@ServiceID", SqlDbType.Int) { Value =  ServiceID},
+                new SqlParameter("@SelectedDate", SqlDbType.Date) { Value = selectdate }
+            };
+
+            DataTable dt = dbHelper.ExecuteQuery(query, param);
+            if (dt.Rows.Count > 0)
+            {
+                TimeslotRadioButtonList.DataSource = dt;
+                TimeslotRadioButtonList.DataTextField = "StartTime"; 
+                TimeslotRadioButtonList.DataValueField = "Time_ID";
+                TimeslotRadioButtonList.DataBind();
+            }
+            else
+            {
+                TimeslotRadioButtonList.Visible = false;
+                ContinueButton.Text = "No available times for the selected date.";
+            }
+        }
+        
+         protected void ContinueButton_Click(object sender, EventArgs e)
+        {
+            
+
+
+                //Write to Application table
+                string query = "INSERT INTO Application(Client_ID, Service_ID, Time_ID, isPaid, isAttend) VALUES(@clientID, @ServiceID, @Time, @Paid, @Attend)";
+                SqlParameter[] param =
+                {
+                new SqlParameter("@clientID", SqlDbType.Int) { Value = clientID},
+                new SqlParameter("@ServiceID", SqlDbType.Int) { Value =  ServiceDropdown.SelectedValue},
                 new SqlParameter("@Time", SqlDbType.Int) { Value =  0},
                 new SqlParameter("@Paid", SqlDbType.Bit) { Value =  0},
                 new SqlParameter("@Attend", SqlDbType.Bit) { Value =  0},
-            };
+                 };
 
-            dbHelper.ExecuteNonQuery(query, param);
+                dbHelper.ExecuteNonQuery(query, param);
 
-            Response.Redirect("");
+                Response.Redirect("ClientPortal_ViewDocument.aspx");
+            
         }
     }
 }

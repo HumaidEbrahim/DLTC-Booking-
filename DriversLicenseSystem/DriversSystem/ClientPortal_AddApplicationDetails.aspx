@@ -172,9 +172,10 @@
                
             </asp:DropDownList>
         </div>
-
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+        <ContentTemplate>
          <div class="calendar-container">
-        <asp:Calendar ID="SelectDateCalendar" runat="server" 
+        <asp:Calendar ID="calendar" runat="server" OnSelectionChanged="calendar_SelectionChanged"
             DayStyle-Font-Underline="false"
             DayStyle-Font-Overline="false"
             TodayDayStyle-Font-Underline="false"
@@ -185,6 +186,7 @@
             TitleStyle-CssClass="calendar-header"
             DayHeaderStyle-CssClass="calendar-day-header">
         </asp:Calendar>
+
     </div>
 
         <div class="form-group timeslot-group">
@@ -193,6 +195,8 @@
                
             </asp:RadioButtonList>
         </div>
+                  </ContentTemplate>
+</asp:UpdatePanel>
 
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
     </div>
