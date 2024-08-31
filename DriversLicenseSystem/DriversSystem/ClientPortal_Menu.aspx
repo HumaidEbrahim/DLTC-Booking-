@@ -98,7 +98,7 @@
                     <div class="button-container">
                         <asp:Button runat="server" CssClass="custom-btn" Text="Edit or Delete Your Details" PostBackUrl="~/ClientPortal_MaintainClients.aspx"/>
                         <asp:Button ID="createApplicationButton" runat="server" CssClass="custom-btn" Text="Create a New Application" PostBackUrl="~/ClientPortal_AddApplicationDetails.aspx"/>
-                        <asp:Button ID="maintainApplicationButton" runat="server" CssClass="custom-btn" Text="Edit or Delete Your Application" />
+                        <asp:Button ID="maintainApplicationButton" runat="server" CssClass="custom-btn" Text="Edit or Delete Your Application" PostBackUrl="~/ClientPortal_MaintainApplications.aspx" />
                         <asp:Button ID="viewApplicationButton" runat="server" CssClass="custom-btn" Text="View Application" PostBackUrl="~/ClientPortal_ViewDocument.aspx"/>
                     </div>
                 </div>

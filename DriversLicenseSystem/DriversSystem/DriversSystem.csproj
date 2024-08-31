@@ -134,6 +134,7 @@
     <Content Include="logo1.png" />
     <Content Include="MaintainApplications.aspx" />
     <Content Include="MaintainCities.aspx" />
+    <Content Include="MaintainClients.aspx" />
     <Content Include="MantainAvailableTimes.aspx" />
     <Content Include="MantainServices.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="MaintainCities.aspx.designer.cs">
       <DependentUpon>MaintainCities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainClients.aspx.cs">
+      <DependentUpon>MaintainClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintainClients.aspx.designer.cs">
+      <DependentUpon>MaintainClients.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantainAvailableTimes.aspx.cs">
       <DependentUpon>MantainAvailableTimes.aspx</DependentUpon>
