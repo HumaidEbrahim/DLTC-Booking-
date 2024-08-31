@@ -119,13 +119,13 @@
             <asp:GridView ID="CitiesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
                 <Columns>
                     <asp:BoundField DataField="City_ID" HeaderText="City ID" />
-                    <asp:BoundField DataField="City_Name" HeaderText="City Name" />
+                    <asp:BoundField DataField="Name" HeaderText="City Name" />
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
                             <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
-                                OnClientClick='<%# "showUpdateModal(\"" + Eval("City_ID") + "\", \"" + Eval("City_Name") + "\"); return false;" %>' />
+                                OnClientClick='<%# "showUpdateModal(\"" + Eval("City_ID") + "\", \"" + Eval("Name") + "\"); return false;" %>' />
                             <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
-                                OnClientClick='<%# "showDeleteModal(\"" + Eval("City_ID") + "\", \"" + Eval("City_Name") + "\"); return false;" %>' />
+                                OnClientClick='<%# "showDeleteModal(\"" + Eval("City_ID") + "\", \"" + Eval("Name") + "\"); return false;" %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -251,6 +251,11 @@
 
             $('#DeleteModal').modal('show');
         }
+
+        $(document).ready(function () {
+            // Initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
 
     </script>
 

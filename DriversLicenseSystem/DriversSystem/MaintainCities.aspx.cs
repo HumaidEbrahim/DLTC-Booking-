@@ -48,7 +48,7 @@ namespace DriversSystem
             }
         }
 
-        protected void UpdateCityButton_Click(object sender, EventArgs e) 
+        protected void UpdateCityButton_Click(object sender, EventArgs e)
         {
             string inputName = UpdateCityName.Text;
             if (!string.IsNullOrEmpty(inputName))
@@ -57,7 +57,7 @@ namespace DriversSystem
                 {
                     int id = int.Parse(HiddenUpdateCityID.Value);
 
-                    string query = "UPDATE City SET City_Name = @Name WHERE City_ID = @ID";
+                    string query = "UPDATE City SET Name = @Name WHERE City_ID = @ID";
                     SqlParameter[] param =
                     {
                         new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName },
@@ -83,14 +83,14 @@ namespace DriversSystem
             }
         }
 
-        protected void SaveCityButton_Click(object sender, EventArgs e) 
+        protected void SaveCityButton_Click(object sender, EventArgs e)
         {
             string inputName = AddCityName.Text;
             if (!string.IsNullOrEmpty(inputName))
             {
                 try
                 {
-                    string query = "INSERT INTO City(City_Name) VALUES (@Name)";
+                    string query = "INSERT INTO City(Name) VALUES (@Name)";
                     SqlParameter[] param =
                     {
                         new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName }
@@ -113,11 +113,11 @@ namespace DriversSystem
                     errorAlert.Controls.Add(new Literal { Text = "Failed to add city: " + ex.Message });
                 }
             }
-
         }
+
         protected void populateGridView()
         {
-            string query = "SELECT City_ID, City_Name FROM City"; //string query = "SELECT * FROM City";
+            string query = "SELECT * FROM City";
             try
             {
                 CitiesGridView.DataSource = dbHelper.ExecuteQuery(query);
@@ -130,20 +130,19 @@ namespace DriversSystem
             }
         }
 
-
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string userSearch = SearchTextBox.Text.Trim();
 
-             string query = "SELECT * FROM CITY WHERE City_Name LIKE '%' + @userSearch + '%'";
-             SqlParameter[] param =
-             {
-                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
-             };
+            string query = "SELECT * FROM City WHERE Name LIKE '%' + @userSearch + '%'";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
+            };
 
-             CitiesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
-             CitiesGridView.DataBind();
-            }
+            CitiesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
+            CitiesGridView.DataBind();
+        }
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
