@@ -28,16 +28,15 @@ namespace DriversSystem
                 string query = "DELETE FROM City WHERE City_ID = @ID";
                 SqlParameter[] param =
                 {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = id}
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id }
                 };
 
                 int result = dbHelper.ExecuteNonQuery(query, param);
 
-                // repopulate gridview and success message
                 if (result > 0)
                 {
                     successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "Service deleted successfully!" });
+                    successAlert.Controls.Add(new Literal { Text = "City deleted successfully!" });
                     populateGridView();
                 }
             }
@@ -52,75 +51,73 @@ namespace DriversSystem
         protected void UpdateCityButton_Click(object sender, EventArgs e) 
         {
             string inputName = UpdateCityName.Text;
-            
-
-            try
+            if (!string.IsNullOrEmpty(inputName))
             {
-                int id = int.Parse(HiddenUpdateCityID.Value);
-               
-
-                string query = "UPDATE City SET City_Name = @Name WHERE City_ID = @ID";
-
-                SqlParameter[] param =
+                try
                 {
-                    new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName},
-                    
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = id}
-                 };
+                    int id = int.Parse(HiddenUpdateCityID.Value);
 
-                int result = dbHelper.ExecuteNonQuery(query, param);
+                    string query = "UPDATE City SET City_Name = @Name WHERE City_ID = @ID";
+                    SqlParameter[] param =
+                    {
+                        new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName },
+                        new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+                    };
 
-                if (result > 0)
-                {
-                    // repopulate gridview and success message
-                    populateGridView();
-                    errorAlert.Visible = false;
-                    successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "City updated successfully!" });
+                    int result = dbHelper.ExecuteNonQuery(query, param);
+
+                    if (result > 0)
+                    {
+                        populateGridView();
+                        errorAlert.Visible = false;
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "City updated successfully!" });
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                successAlert.Visible = false;
-                errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to update service" });
+                catch (Exception ex)
+                {
+                    successAlert.Visible = false;
+                    errorAlert.Visible = true;
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to update city: " + ex.Message });
+                }
             }
         }
 
         protected void SaveCityButton_Click(object sender, EventArgs e) 
         {
             string inputName = AddCityName.Text;
-            try
+            if (!string.IsNullOrEmpty(inputName))
             {
-                string query = "INSERT INTO CITY(City_Name)VALUES(@Name)";
-                SqlParameter[] param =
-                    {
-                        new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName}
-
-                    };
-                int result = dbHelper.ExecuteNonQuery(query, param);
-                if (result > 0)
+                try
                 {
-                    // repopulate gridview and success message
-                    populateGridView();
-                    errorAlert.Visible = false;
-                    successAlert.Visible = true;
-                    successAlert.Controls.Add(new Literal { Text = "City added successfully!" });
-                }
+                    string query = "INSERT INTO City(City_Name) VALUES (@Name)";
+                    SqlParameter[] param =
+                    {
+                        new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = inputName }
+                    };
 
+                    int result = dbHelper.ExecuteNonQuery(query, param);
+
+                    if (result > 0)
+                    {
+                        populateGridView();
+                        errorAlert.Visible = false;
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "City added successfully!" });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    successAlert.Visible = false;
+                    errorAlert.Visible = true;
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to add city: " + ex.Message });
+                }
             }
-            
-                catch (Exception)
-            {
-                successAlert.Visible = false;
-                errorAlert.Visible = true;
-                errorAlert.Controls.Add(new Literal { Text = "Failed to add service" });
-            }
-        
+
         }
         protected void populateGridView()
         {
-            string query = "SELECT * FROM City";
+            string query = "SELECT City_ID, City_Name FROM City"; //string query = "SELECT * FROM City";
             try
             {
                 CitiesGridView.DataSource = dbHelper.ExecuteQuery(query);
@@ -133,19 +130,20 @@ namespace DriversSystem
             }
         }
 
+
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string userSearch = SearchTextBox.Text.Trim();
 
-            string query = "SELECT * FROM CITY WHERE City_Name LIKE '%' + @userSearch + '%'";
-            SqlParameter[] param =
-            {
-                new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
-            };
+             string query = "SELECT * FROM CITY WHERE City_Name LIKE '%' + @userSearch + '%'";
+             SqlParameter[] param =
+             {
+                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
+             };
 
-            CitiesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
-            CitiesGridView.DataBind();
-        }
+             CitiesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
+             CitiesGridView.DataBind();
+            }
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
