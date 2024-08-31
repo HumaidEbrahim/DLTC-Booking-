@@ -112,7 +112,7 @@
      background-color: #198754;
 }
 
-/* Style for the header (Month and Year) */
+
 .calendar-container .calendar-header {
     background-color: #198754;
     color: white;
@@ -157,6 +157,11 @@
     text-decoration: none;
 }
     </style>
+        <!-- Error Alert -->
+    <asp:Panel ID="errorAlert" CssClass="alert alert-danger alert-dismissible fade show" runat="server" Visible="false">
+    <asp:Label ID="errorMessage" runat="server"></asp:Label>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</asp:Panel>
 
     <div class="form-container">
         <h2 class="form-heading">Service Booking</h2>
@@ -172,8 +177,7 @@
                
             </asp:DropDownList>
         </div>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
-        <ContentTemplate>
+       
          <div class="calendar-container">
         <asp:Calendar ID="calendar" runat="server" OnSelectionChanged="calendar_SelectionChanged"
             DayStyle-Font-Underline="false"
@@ -188,15 +192,13 @@
         </asp:Calendar>
 
     </div>
-
+        <br /> 
         <div class="form-group timeslot-group">
             <label for="SelectTimeslot" class="form-label">Select Timeslot</label>
-            <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control">
-               
-            </asp:RadioButtonList>
+              <asp:label ID="NoTimes" Text="No available times for the selected date." runat="server" Visible="false"/>
+            <asp:RadioButtonList ID="TimeslotRadioButtonList" runat="server" RepeatDirection="Vertical" CssClass="form-control"> </asp:RadioButtonList>
         </div>
-                  </ContentTemplate>
-</asp:UpdatePanel>
+
 
         <asp:Button ID="ContinueButton" runat="server" Text="Continue" CssClass="continue-btn" />
     </div>
