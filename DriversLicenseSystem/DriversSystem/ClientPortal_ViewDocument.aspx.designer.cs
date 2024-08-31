@@ -15,6 +15,15 @@ namespace DriversSystem
     {
 
         /// <summary>
+        /// IDNumberLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IDNumberLabel;
+
+        /// <summary>
         /// NameLabel control.
         /// </summary>
         /// <remarks>
@@ -33,40 +42,13 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Label SurnameLabel;
 
         /// <summary>
-        /// IDNumberLabel control.
+        /// ServiceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IDNumberLabel;
-
-        /// <summary>
-        /// AddressLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AddressLabel;
-
-        /// <summary>
-        /// AddressNumberLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AddressNumberLabel;
-
-        /// <summary>
-        /// TimeslotLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TimeslotLabel;
+        protected global::System.Web.UI.WebControls.Label ServiceLabel;
 
         /// <summary>
         /// DateLabel control.
@@ -78,13 +60,13 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Label DateLabel;
 
         /// <summary>
-        /// ServiceLabel control.
+        /// TimeslotLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ServiceLabel;
+        protected global::System.Web.UI.WebControls.Label TimeslotLabel;
 
         /// <summary>
         /// PrintButton control.

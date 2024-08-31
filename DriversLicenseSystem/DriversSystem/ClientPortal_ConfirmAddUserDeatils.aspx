@@ -99,48 +99,7 @@
     </style>
 
     <div class="form-container">
-        <h2 class="form-heading">Confirm Client Details</h2>
-
-        <asp:Panel ID="ConfirmationPanel" runat="server">
-            <!-- Name -->
-            <div class="form-group">
-                <label class="form-label">First Name:</label>
-                <asp:Label ID="ConfirmName" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <!-- Surname -->
-            <div class="form-group">
-                <label class="form-label">Surname:</label>
-                <asp:Label ID="ConfirmSurname" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <!-- Phone Number -->
-            <div class="form-group">
-                <label class="form-label">Phone Number:</label>
-                <asp:Label ID="ConfirmPhoneNumber" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <!-- Address -->
-            <div class="form-group">
-                <label class="form-label">Address Number:</label>
-                <asp:Label ID="ConfirmAddressNumber" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Address Street:</label>
-                <asp:Label ID="ConfirmAddressStreet" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <!-- City -->
-            <div class="form-group">
-                <label class="form-label">City:</label>
-                <asp:Label ID="ConfirmCity" runat="server" CssClass="form-control"></asp:Label>
-            </div>
-
-            <!-- Confirm and Cancel Buttons -->
-            <asp:Button ID="ConfirmButton" runat="server" Text="Confirm" CssClass="continue-btn" OnClick="ConfirmButton_Click" />
-            <asp:Button ID="CancelButton" runat="server" Text="Cancel" CssClass="continue-btn" OnClick="CancelButton_Click" />
-        </asp:Panel>
+      
     </div>
 </asp:Content>
 

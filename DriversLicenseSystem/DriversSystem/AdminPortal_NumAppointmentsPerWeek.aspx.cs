@@ -42,13 +42,34 @@ namespace DriversSystem
             ApplicationGridView.DataSource = null;
             ApplicationGridView.DataBind();
 
+            string query = @"
+            SELECT 
+                CONCAT(CAST(StartTime AS VARCHAR(5)),' - ',CAST(EndTime AS VARCHAR(5))) AS TimeSlot,
+                SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) THEN 1 ELSE 0 END) AS Week1,
+                SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) + 1 THEN 1 ELSE 0 END) AS Week2,
+                SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) + 2 THEN 1 ELSE 0 END) AS Week3,
+                SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) + 3 THEN 1 ELSE 0 END) AS Week4,
+                SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) + 4 THEN 1 ELSE 0 END) AS Week5,
+                COUNT(a.Application_ID) AS TotalApplication
+            FROM 
+                Available_Time t
+            LEFT JOIN 
+                Application a ON t.Time_ID = a.Time_ID
+            WHERE 
+                t.Date BETWEEN @StartDate AND @EndDate
+                AND t.StartTime BETWEEN '08:00' AND '14:00'
+            GROUP BY 
+                t.StartTime, t.EndTime
+            ORDER BY 
+                t.StartTime;
+            ";
 
             SqlParameter[] param =
              {
                  new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDateString},
                  new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDateString}
              };
-            //ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
+            ApplicationGridView.DataSource = dbHelper.ExecuteQuery(query,param);
             ApplicationGridView.DataBind();
         }
 
