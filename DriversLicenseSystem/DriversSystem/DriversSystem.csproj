@@ -108,6 +108,7 @@
     <Content Include="ClientPortal_ConfirmAddUserDeatils.aspx" />
     <Content Include="ClientPortal_MaintainClients.aspx" />
     <Content Include="ClientPortal_Menu.aspx" />
+    <Content Include="ClientPortal_ViewDocument.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="ClientPortal_Menu.aspx.designer.cs">
       <DependentUpon>ClientPortal_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPortal_ViewDocument.aspx.cs">
+      <DependentUpon>ClientPortal_ViewDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPortal_ViewDocument.aspx.designer.cs">
+      <DependentUpon>ClientPortal_ViewDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Default.aspx.cs">
