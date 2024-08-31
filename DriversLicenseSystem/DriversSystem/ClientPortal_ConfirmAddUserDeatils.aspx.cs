@@ -11,27 +11,7 @@ namespace DriversSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Populate labels with the previously entered data
-            ConfirmName.Text = Session["Name"]?.ToString();
-            ConfirmSurname.Text = Session["Surname"]?.ToString();
-            ConfirmPhoneNumber.Text = Session["PhoneNumber"]?.ToString();
-            ConfirmAddressNumber.Text = Session["AddressNumber"]?.ToString();
-            ConfirmAddressStreet.Text = Session["AddressStreet"]?.ToString();
-            ConfirmCity.Text = Session["City"]?.ToString();
         }
 
-        protected void ConfirmButton_Click(object sender, EventArgs e)
-        {
-            // Code to save the data to the database or another storage mechanism
-
-            // Redirect to a success page or another relevant page
-            // Response.Redirect("");
-        }
-
-        protected void CancelButton_Click(object sender, EventArgs e)
-        {
-            // Return to the previous form
-            Response.Redirect("ClientPortal_AddUserDetails.aspx");
-        }
     }
 }

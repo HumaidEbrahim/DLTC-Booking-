@@ -62,25 +62,31 @@
             color: #28a745;
             border-color: #28a745;
         }
-
-        /* Print styles */
+   
         @media print {
-            body {
-                -webkit-print-color-adjust: exact !important;
-            }
             .form-container {
                 box-shadow: none;
                 border: none;
             }
             .btn-container {
-                display: none; /* Hide buttons during print */
+                display: none; 
+            }
+            @page
+            { margin: 0;
+              margin-bottom: 0;
             }
         }
     </style>
 
     <div class="form-container">
         <h2>Application Details</h2>
+        <p > Please print bring this form with you as proof of your appointment</p>
 
+          <!-- ID Number -->
+  <div class="form-group">
+      <label for="IDNumberLabel" class="form-label">ID Number</label>
+      <asp:Label ID="IDNumberLabel" runat="server" CssClass="form-control-static"></asp:Label>
+  </div>
         <!-- Name -->
         <div class="form-group">
             <label for="NameLabel" class="form-label">Name</label>
@@ -93,29 +99,11 @@
             <asp:Label ID="SurnameLabel" runat="server" CssClass="form-control-static"></asp:Label>
         </div>
 
-        <!-- ID Number -->
-        <div class="form-group">
-            <label for="IDNumberLabel" class="form-label">ID Number</label>
-            <asp:Label ID="IDNumberLabel" runat="server" CssClass="form-control-static"></asp:Label>
-        </div>
-
-        <!-- Address -->
-        <div class="form-group">
-            <label for="AddressLabel" class="form-label">Address</label>
-            <asp:Label ID="AddressLabel" runat="server" CssClass="form-control-static"></asp:Label>
-        </div>
-
-        <!-- Address Number -->
-        <div class="form-group">
-            <label for="AddressNumberLabel" class="form-label">Address Number</label>
-            <asp:Label ID="AddressNumberLabel" runat="server" CssClass="form-control-static"></asp:Label>
-        </div>
-
-        <!-- Timeslot -->
-        <div class="form-group">
-            <label for="TimeslotLabel" class="form-label">Timeslot</label>
-            <asp:Label ID="TimeslotLabel" runat="server" CssClass="form-control-static"></asp:Label>
-        </div>
+        <!-- Service -->
+  <div class="form-group">
+      <label for="ServiceLabel" class="form-label">Service</label>
+      <asp:Label ID="ServiceLabel" runat="server" CssClass="form-control-static"></asp:Label>
+  </div>
 
         <!-- Date -->
         <div class="form-group">
@@ -123,11 +111,11 @@
             <asp:Label ID="DateLabel" runat="server" CssClass="form-control-static"></asp:Label>
         </div>
 
-        <!-- Service -->
-        <div class="form-group">
-            <label for="ServiceLabel" class="form-label">Service</label>
-            <asp:Label ID="ServiceLabel" runat="server" CssClass="form-control-static"></asp:Label>
-        </div>
+          <!-- Timeslot -->
+  <div class="form-group">
+      <label for="TimeslotLabel" class="form-label">Timeslot</label>
+      <asp:Label ID="TimeslotLabel" runat="server" CssClass="form-control-static"></asp:Label>
+  </div>
 
         <!-- Button Container -->
         <div class="btn-container">
