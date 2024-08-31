@@ -7,11 +7,7 @@
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\adminportal_numappointmentsperweek.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_addapplicationdetails.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\adminportal_numappointmentsperweek.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\driverssystem\\adminportal_numappointmentsperweek.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\adminportal_numappointmentsperweek.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -22,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClientPortal_AddApplicationDetails.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "RelativeToolTip": "DriversSystem\\ClientPortal_AddApplicationDetails.aspx.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwDoAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T19:38:03.183Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -45,14 +28,14 @@
               "RelativeDocumentMoniker": "DriversSystem\\AdminPortal_NumAppointmentsPerWeek.aspx.cs",
               "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\AdminPortal_NumAppointmentsPerWeek.aspx.cs",
               "RelativeToolTip": "DriversSystem\\AdminPortal_NumAppointmentsPerWeek.aspx.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAUwC4AAABjAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwDoAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T19:32:48.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AdminPortal_NumAppointmentsPerWeek.aspx",
               "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\AdminPortal_NumAppointmentsPerWeek.aspx",
               "RelativeDocumentMoniker": "DriversSystem\\AdminPortal_NumAppointmentsPerWeek.aspx",

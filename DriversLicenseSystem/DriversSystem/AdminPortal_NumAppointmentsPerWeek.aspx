@@ -149,26 +149,11 @@
                         <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
                     </div>
 
-                    <!-- Sort Options -->
-                    <div class="sort-options">
-                        <label for="sortOrder">Sort By:</label>
-                        <asp:RadioButtonList ID="SortOrderRadioButtonList" runat="server" RepeatDirection="Horizontal" CssClass="sort-order">
-                            <asp:ListItem Text="Ascending" Value="ASC" Selected="True"></asp:ListItem>
-                            <asp:ListItem Text="Descending" Value="DESC"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </div>
-
                     <!-- Report Section: Weekly Appointments Report -->
                     <h2 class="section-title">Weekly Appointments Report</h2>
-                    <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
+                    <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" OnRowDataBound="ApplicationGridView_RowDataBound">
                         <Columns>
-                            <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot"/>
-                            <asp:BoundField DataField="Week1" HeaderText="Week 1" />
-                            <asp:BoundField DataField="Week2" HeaderText="Week 2" />
-                            <asp:BoundField DataField="Week3" HeaderText="Week 3" />
-                            <asp:BoundField DataField="Week4" HeaderText="Week 4" />
-                            <asp:BoundField DataField="Week5" HeaderText="Week 5" />
-                            <asp:BoundField DataField="TotalApplication" HeaderText="Total Appointments" />
+                           
                         </Columns>
                     </asp:GridView>
                 </ContentTemplate>
