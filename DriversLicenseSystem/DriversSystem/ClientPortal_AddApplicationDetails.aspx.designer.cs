@@ -15,6 +15,24 @@ namespace DriversSystem
     {
 
         /// <summary>
+        /// errorAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel errorAlert;
+
+        /// <summary>
+        /// errorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorMessage;
+
+        /// <summary>
         /// IDNumber control.
         /// </summary>
         /// <remarks>
@@ -33,15 +51,6 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.DropDownList ServiceDropdown;
 
         /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
-        /// <summary>
         /// calendar control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace DriversSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar calendar;
+
+        /// <summary>
+        /// NoTimes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoTimes;
 
         /// <summary>
         /// TimeslotRadioButtonList control.
