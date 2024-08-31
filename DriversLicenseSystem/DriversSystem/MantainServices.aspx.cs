@@ -148,7 +148,7 @@ namespace DriversSystem
 
         protected void populateGridView()
         {
-            string query = "SELECT * FROM Service";
+            string query = "SELECT * FROM Service ORDER BY Service_Descr ASC";
             try
             {
                 ServicesGridView.DataSource = dbHelper.ExecuteQuery(query);

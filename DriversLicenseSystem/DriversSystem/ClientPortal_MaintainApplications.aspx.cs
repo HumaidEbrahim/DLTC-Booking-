@@ -13,5 +13,10 @@ namespace DriversSystem
         {
 
         }
+
+        protected void DeleteConfirmButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
