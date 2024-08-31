@@ -60,7 +60,7 @@ namespace DriversSystem
         }
         private bool existsApplication()
         {
-            string query = "SELECT * FROM Application WHERE CLient_ID = @ID AND isAttended=0";
+            string query = "SELECT * FROM Application WHERE Client_ID = @ID AND isAttended=0";
             SqlParameter[] param =
             {
                 new SqlParameter("@ID", SqlDbType.Int) { Value = client_id},
