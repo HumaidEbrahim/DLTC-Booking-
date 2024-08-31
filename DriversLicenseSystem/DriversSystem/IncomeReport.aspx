@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Admin Portal - Reports" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="IncomeReport.aspx.cs" Inherits="DriversSystem.IncomeReport" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         .report-container {
@@ -38,15 +37,12 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            border: none;
         }
 
         .report-table th, .report-table td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: left;
-            border: none;
-           
         }
 
         .report-table th {
@@ -84,6 +80,19 @@
             margin-right: 15px;
         }
 
+        .filter-section .sort-options {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sort-options label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
         .page-number {
             text-align: right;
             font-size: 12px;
@@ -106,11 +115,12 @@
             border-radius: 5px;
             min-width: 200px;
         }
+
         .custom-btn:hover {
             background-color: white;
             color: #28a745;
             border-color: #28a745;
-}
+        }
     </style>
 
     <div class="report-container">
@@ -127,7 +137,7 @@
             <h2>Filter by Date</h2>
             <div class="form-group">
                 <label for="startDate">Start Date:</label>
-                 <asp:TextBox ID="StartDateTextBox" TextMode="Date" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
+                <asp:TextBox ID="StartDateTextBox" TextMode="Date" runat="server" CssClass="form-control datepicker" placeholder="Select Start Date"></asp:TextBox>
             </div>
            
             <div class="form-group">
@@ -135,34 +145,40 @@
                 <asp:TextBox ID="EndDateTextBox" TextMode="Date" runat="server" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
 
-             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-               <ContentTemplate>
-             <div class="form-group">
-                <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
-             </div>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="form-group">
+                        <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
+                    </div>
 
-        <!-- Report Section: Income Per Time Period -->
-        <div>  
-        <asp:Label runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
+                    <!-- Sort Options -->
+                    <div class="sort-options">
+                        <label for="sortOrder">Sort By:</label>
+                        <asp:RadioButtonList ID="SortOrderRadioButtonList" runat="server" RepeatDirection="Horizontal" CssClass="sort-order">
+                            <asp:ListItem Text="Ascending" Value="ASC" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="Descending" Value="DESC"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </div>
+
+                    <!-- Report Section: Income Per Time Period -->
+                    <asp:Label runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
+                    <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
+                        <Columns>
+                            <asp:BoundField DataField="Service_Descr" HeaderText="Service" />
+                            <asp:BoundField DataField="Price" HeaderText="Service Price" DataFormatString="{0:C0}" />
+                            <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+                            <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C0}" />
+                        </Columns>
+                        <FooterStyle CssClass="grand-total-row" />
+                    </asp:GridView>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
-        <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
-            <Columns>
-                <asp:BoundField DataField="Service_Descr" HeaderText="Service" />
-                <asp:BoundField DataField="Price" HeaderText="Service Price" DataFormatString="{0:C0}" />
-                <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
-                <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C0}" />
-            </Columns>
-            <FooterStyle CssClass="grand-total-row" />
-        </asp:GridView>
-    </ContentTemplate>
-</asp:UpdatePanel>
 
         <!-- Report Footer -->
         <div class="report-footer">
-             Page 1/1 
+            Page 1/1 
             <p>End of Report</p>
         </div>
-    
-         </div>
-        </div>
+    </div>
 </asp:Content>

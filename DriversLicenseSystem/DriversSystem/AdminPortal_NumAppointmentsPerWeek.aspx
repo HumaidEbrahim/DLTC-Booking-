@@ -80,6 +80,18 @@
             margin-right: 15px;
         }
 
+        .sort-options {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sort-options label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
         .page-number {
             text-align: right;
             font-size: 12px;
@@ -87,26 +99,27 @@
             margin-top: 10px;
         }
 
-         .custom-btn {
-         padding: 5px 10px;
-         font-size: 18px;
-         font-weight: bold;
-         background-color: #28a745;
-         color: white;
-         border: 2px solid #28a745;
-         transition: all 0.3s ease;
-         display: inline-block;
-         text-align: center;
-         text-decoration: none;
-         margin: 15px;
-         border-radius: 5px;
-         min-width: 200px;
-     }
+        .custom-btn {
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+
         .custom-btn:hover {
-        background-color: white;
-        color: #28a745;
-        border-color: #28a745;
-            }
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+        }
     </style>
 
     <div class="report-container">
@@ -129,34 +142,43 @@
                 <label for="endDate">End Date:</label>
                 <asp:TextBox ID="EndDateTextBox" runat="server" TextMode="Date" CssClass="form-control datepicker" placeholder="Select End Date"></asp:TextBox>
             </div>
-         
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-          <div class="form-group">
-             <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
-          </div>
 
-        <!-- Report Section: Weekly Appointments Report -->
-        <h2 class="section-title">Weekly Appointments Report</h2>
-        <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
-            <Columns>
-                <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot"/>
-                <asp:BoundField DataField="Week1" HeaderText="Week 1" />
-                <asp:BoundField DataField="Week2" HeaderText="Week 2" />
-                <asp:BoundField DataField="Week3" HeaderText="Week 3" />
-                <asp:BoundField DataField="Week4" HeaderText="Week 4" />
-                <asp:BoundField DataField="Week5" HeaderText="Week 5" />
-                <asp:BoundField DataField="TotalApplication" HeaderText="Total Appointments" />
-            </Columns>
-           
-        </asp:GridView>
-        </ContentTemplate>
-        </asp:UpdatePanel>
-         <!-- Report Footer -->
-  <div class="report-footer">
-       Page 1/1 
-      <p>End of Report</p>
-  </div>
-    </div>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="form-group">
+                        <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
+                    </div>
+
+                    <!-- Sort Options -->
+                    <div class="sort-options">
+                        <label for="sortOrder">Sort By:</label>
+                        <asp:RadioButtonList ID="SortOrderRadioButtonList" runat="server" RepeatDirection="Horizontal" CssClass="sort-order">
+                            <asp:ListItem Text="Ascending" Value="ASC" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="Descending" Value="DESC"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </div>
+
+                    <!-- Report Section: Weekly Appointments Report -->
+                    <h2 class="section-title">Weekly Appointments Report</h2>
+                    <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True">
+                        <Columns>
+                            <asp:BoundField DataField="TimeSlot" HeaderText="Time Slot"/>
+                            <asp:BoundField DataField="Week1" HeaderText="Week 1" />
+                            <asp:BoundField DataField="Week2" HeaderText="Week 2" />
+                            <asp:BoundField DataField="Week3" HeaderText="Week 3" />
+                            <asp:BoundField DataField="Week4" HeaderText="Week 4" />
+                            <asp:BoundField DataField="Week5" HeaderText="Week 5" />
+                            <asp:BoundField DataField="TotalApplication" HeaderText="Total Appointments" />
+                        </Columns>
+                    </asp:GridView>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
+
+        <!-- Report Footer -->
+        <div class="report-footer">
+            Page 1/1 
+            <p>End of Report</p>
+        </div>
+    </div>
 </asp:Content>

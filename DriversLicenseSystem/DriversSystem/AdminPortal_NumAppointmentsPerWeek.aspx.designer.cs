@@ -60,6 +60,15 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button FilterButton;
 
         /// <summary>
+        /// SortOrderRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList SortOrderRadioButtonList;
+
+        /// <summary>
         /// ApplicationGridView control.
         /// </summary>
         /// <remarks>
