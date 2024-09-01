@@ -96,87 +96,6 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.GridView ClientsGridView;
 
         /// <summary>
-        /// AddIDNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddIDNumber;
-
-        /// <summary>
-        /// AddName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddName;
-
-        /// <summary>
-        /// AddSurname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddSurname;
-
-        /// <summary>
-        /// AddPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddPhoneNumber;
-
-        /// <summary>
-        /// AddAddressNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddAddressNumber;
-
-        /// <summary>
-        /// AddStreetAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddStreetAddress;
-
-        /// <summary>
-        /// AddCityID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AddCityID;
-
-        /// <summary>
-        /// SaveClientButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveClientButton;
-
-        /// <summary>
-        /// CancelAddButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelAddButton;
-
-        /// <summary>
         /// UpdateClientID control.
         /// </summary>
         /// <remarks>
@@ -267,39 +186,120 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button CancelUpdateButton;
 
         /// <summary>
-        /// DeleteClientID control.
+        /// DelClientID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField DeleteClientID;
+        protected global::System.Web.UI.WebControls.TextBox DelClientID;
 
         /// <summary>
-        /// ConfirmDeleteButton control.
+        /// HiddenDelClientID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ConfirmDeleteButton;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenDelClientID;
 
         /// <summary>
-        /// CancelDeleteButton control.
+        /// DelIDNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelDeleteButton;
+        protected global::System.Web.UI.WebControls.TextBox DelIDNumber;
 
         /// <summary>
-        /// ApplicationClientID control.
+        /// DelName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ApplicationClientID;
+        protected global::System.Web.UI.WebControls.TextBox DelName;
+
+        /// <summary>
+        /// DelSurname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DelSurname;
+
+        /// <summary>
+        /// DelPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DelPhoneNumber;
+
+        /// <summary>
+        /// DelAddressNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DelAddressNumber;
+
+        /// <summary>
+        /// DelStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DelStreetAddress;
+
+        /// <summary>
+        /// DelCityID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DelCityID;
+
+        /// <summary>
+        /// DeleteClientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteClientButton;
+
+        /// <summary>
+        /// CancelDeleteClientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelDeleteClientButton;
+
+        /// <summary>
+        /// ConfirmDeleteClientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ConfirmDeleteClientButton;
+
+        /// <summary>
+        /// CancelConfirmDeleteClientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelConfirmDeleteClientButton;
     }
 }

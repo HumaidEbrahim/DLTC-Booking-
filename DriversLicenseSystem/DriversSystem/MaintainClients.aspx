@@ -131,85 +131,71 @@
     <div class="action-bar">
         <!-- Search Bar on the Left -->
         <div class="search-container">
-            <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Name or Surname..." OnTextChanged="SearchTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
-            <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
+            <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Name..." OnTextChanged="SearchTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
+            <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" OnClick="SearchButton_Click" />
         </div>
 
         <!-- Add Button on the Right -->
-        <asp:Button ID="AddClientButton" runat="server" Text="Add New Client" CssClass="custom-btn" 
-            OnClientClick="$('#AddModal').modal('show'); return false;" OnClick="AddClientButton_Click" />   
+        <asp:Button ID="AddClientButton" runat="server" Text="Add New Client" CssClass="custom-btn" OnCLick="AddClientButton_Click"   />
     </div>
 
-    <!-- GridView -->
-    <asp:GridView ID="ClientsGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table" OnSelectedIndexChanged="ClientsGridView_SelectedIndexChanged">
-        <Columns>
-            <asp:BoundField DataField="Client_ID" HeaderText="Client ID" />
-            <asp:BoundField DataField="ID_Number" HeaderText="ID Number" />
-            <asp:BoundField DataField="Name" HeaderText="Name" />
-            <asp:BoundField DataField="Surname" HeaderText="Surname" />
-            <asp:BoundField DataField="Phone_Number" HeaderText="Phone Number" />
-            <asp:BoundField DataField="Address_Number" HeaderText="Address Number" />
-            <asp:BoundField DataField="Street_Address" HeaderText="Street Address" />
-            <asp:BoundField DataField="City_ID" HeaderText="City ID" />
-            <asp:TemplateField HeaderText="Actions">
-                <ItemTemplate>
-                    <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
-                     OnClientClick='<%# "showUpdateModal(" + Eval("Client_ID") + "); return false;" %>' />
-                    <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
-                     OnClientClick='<%# "showDeleteModal(" + Eval("Client_ID") + "); return false;" %>' />
-                    <asp:Button ID="AddApplicationButton" runat="server" Text="Add Application" CssClass="btn btn-add-application" 
-                     OnClientClick='<%# "showAddApplicationModal(" + Eval("Client_ID") + "); return false;" %>' />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
-    </ContentTemplate>
-    </asp:UpdatePanel>
+        
+    <!-- Get details from form for delete -->
+<script>
+    function showDeleteModal(clientID, idNumber, name, surname, phoneNumber, addressNumber, streetAddress, cityID) {
+        document.getElementById('<%= DelClientID.ClientID %>').value = clientID;
+        document.getElementById('<%= DelIDNumber.ClientID %>').value = idNumber;
+        document.getElementById('<%= DelName.ClientID %>').value = name;
+        document.getElementById('<%= DelSurname.ClientID %>').value = surname;
+        document.getElementById('<%= DelPhoneNumber.ClientID %>').value = phoneNumber;
+        document.getElementById('<%= DelAddressNumber.ClientID %>').value = addressNumber;
+        document.getElementById('<%= DelStreetAddress.ClientID %>').value = streetAddress;
+        document.getElementById('<%= DelCityID.ClientID %>').value = cityID;
+        $('#DeleteModal').modal('show');
+    }
+</script>
 
-    <!-- Add Modal -->
-    <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addModalLabel">Add Client</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="AddIDNumber" class="form-label">ID Number</label>
-                        <asp:TextBox ID="AddIDNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddName" class="form-label">Name</label>
-                        <asp:TextBox ID="AddName" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddSurname" class="form-label">Surname</label>
-                        <asp:TextBox ID="AddSurname" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddPhoneNumber" class="form-label">Phone Number</label>
-                        <asp:TextBox ID="AddPhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddAddressNumber" class="form-label">Address Number</label>
-                        <asp:TextBox ID="AddAddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddStreetAddress" class="form-label">Street Address</label>
-                        <asp:TextBox ID="AddStreetAddress" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="AddCityID" class="form-label">City ID</label>
-                        <asp:DropDownList ID="AddCityID" runat="server" CssClass="form-control"></asp:DropDownList>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="SaveClientButton" runat="server" Text="Save" CssClass="custom-btn" OnClick="SaveClientButton_Click"/>
-                    <asp:Button ID="CancelAddButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#AddModal').modal('hide'); return false;" />
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Get details from form for update -->
+<script>
+    function showUpdateModal(clientID, idNumber, name, surname, phoneNumber, addressNumber, streetAddress, cityID) {
+        document.getElementById('<%= UpdateClientID.ClientID %>').value = clientID;
+        document.getElementById('<%= UpdateIDNumber.ClientID %>').value = idNumber;
+        document.getElementById('<%= UpdateName.ClientID %>').value = name;
+        document.getElementById('<%= UpdateSurname.ClientID %>').value = surname;
+        document.getElementById('<%= UpdatePhoneNumber.ClientID %>').value = phoneNumber;
+        document.getElementById('<%= UpdateAddressNumber.ClientID %>').value = addressNumber;
+        document.getElementById('<%= UpdateStreetAddress.ClientID %>').value = streetAddress;
+        document.getElementById('<%= UpdateCityID.ClientID %>').value = cityID;
+        $('#UpdateModal').modal('show');
+    }
+</script>
+
+<!-- GridView -->
+<asp:GridView ID="ClientsGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
+    <Columns>
+        <asp:BoundField DataField="Client_ID" HeaderText="Client ID" />
+        <asp:BoundField DataField="IDNum" HeaderText="ID Number" />
+        <asp:BoundField DataField="Name" HeaderText="Name" />
+        <asp:BoundField DataField="Surname" HeaderText="Surname" />
+        <asp:BoundField DataField="Phone_Number" HeaderText="Phone Number" />
+        <asp:BoundField DataField="Address_Num" HeaderText="Address Number" />
+        <asp:BoundField DataField="Address_Street" HeaderText="Street Address" />
+        <asp:BoundField DataField="CityName" HeaderText="City" />
+        <asp:TemplateField HeaderText="Actions">
+            <ItemTemplate>
+                <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
+                 OnClientClick='<%# "showUpdateModal(" + Eval("Client_ID") + ", \"" + Eval("IDNum") + "\", \"" + Eval("Name") + "\", \"" + Eval("Surname") + "\", \"" + Eval("Phone_Number") + "\", \"" + Eval("Address_Num") + "\", \"" + Eval("Address_Street") + "\", \"" + Eval("CityName") + "\"); return false;" %>' />
+                <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
+                 OnClientClick='<%# "showDeleteModal(" + Eval("Client_ID") + ", \"" + Eval("IDNum") + "\", \"" + Eval("Name") + "\", \"" + Eval("Surname") + "\", \"" + Eval("Phone_Number") + "\", \"" + Eval("Address_Num") + "\", \"" + Eval("Address_Street") + "\", \"" + Eval("CityName") + "\"); return false;" %>' />
+                <asp:Button ID="AddApplicationButton" runat="server" Text="Add Application" CssClass="btn btn-add-application" OnClick="AddApplicationButton_Click" />
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+         </ContentTemplate>
+</asp:UpdatePanel>
+
+ 
 
     <!-- Update Modal -->
     <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -222,7 +208,7 @@
                     <asp:HiddenField ID="UpdateClientID" runat="server" />
                     <div class="form-group">
                         <label for="UpdateIDNumber" class="form-label">ID Number</label>
-                        <asp:TextBox ID="UpdateIDNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="UpdateIDNumber" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="UpdateName" class="form-label">Name</label>
@@ -257,33 +243,71 @@
         </div>
     </div>
 
-    <!-- Delete Modal -->
-    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Delete Client</h5>
+ <!-- Delete Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteLabel">Delete Client</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="DelClientID" class="form-label">Client ID</label>
+                        <asp:TextBox ID="DelClientID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:HiddenField ID="HiddenDelClientID" runat="server" />
+                    </div>
+                    <div class="form-group">
+                        <label for="DelIDNumber" class="form-label">ID Number</label>
+                        <asp:TextBox ID="DelIDNumber" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelName" class="form-label">Name</label>
+                        <asp:TextBox ID="DelName" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelSurname" class="form-label">Surname</label>
+                        <asp:TextBox ID="DelSurname" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelPhoneNumber" class="form-label">Phone Number</label>
+                        <asp:TextBox ID="DelPhoneNumber" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelAddressNumber" class="form-label">Address Number</label>
+                        <asp:TextBox ID="DelAddressNumber" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelStreetAddress" class="form-label">Street Address</label>
+                        <asp:TextBox ID="DelStreetAddress" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DelCityID" class="form-label">City ID</label>
+                        <asp:TextBox ID="DelCityID" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <asp:HiddenField ID="DeleteClientID" runat="server" />
-                    <p>Are you sure you want to delete this client?</p>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="ConfirmDeleteButton" runat="server" Text="Delete" CssClass="custom-btn" OnClick="DeleteClientButton_Click"/>
-                    <asp:Button ID="CancelDeleteButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
-                </div>
+            </div>
+
+            <div class="modal-footer">
+                <asp:Button ID="DeleteClientButton" runat="server" Text="Delete" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); $('#DeleteConfirmModal').modal('show'); return false;" />
+                <asp:Button ID="CancelDeleteClientButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteModal').modal('hide'); return false;" />
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Add Application Modal -->
-    <div class="modal fade" id="AddApplicationModal" tabindex="-1" role="dialog" aria-labelledby="addApplicationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addApplicationModalLabel">Add Application</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="ApplicationClientID" class="form-label">Client ID</label>
-                        <asp:TextBox ID="ApplicationClientID" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+<!-- Delete Confirm Modal -->
+<div class="modal fade" id="DeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmLabel">Are you sure you want to delete this client?</h5>
+            </div>
+            <div class="modal-footer">
+                <asp:Button ID="ConfirmDeleteClientButton" runat="server" Text="Confirm Delete" CssClass="custom-btn" OnClick="DeleteClientButton_Click" />
+                <asp:Button ID="CancelConfirmDeleteClientButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteConfirmModal').modal('hide'); return false;" />
+            </div>
+        </div>
+    </div>
+</div>
+    </asp:Content>
