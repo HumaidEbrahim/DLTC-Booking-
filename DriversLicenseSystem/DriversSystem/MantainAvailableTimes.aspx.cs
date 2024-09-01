@@ -25,7 +25,7 @@ namespace DriversSystem
         {
             string userSearch = SearchTextBox.Text.Trim();
 
-            string query = "SELECT * FROM AVAILABLETIME WHERE AvailableTime_Date LIKE '%' + @userSearch + '%'";
+            string query = "SELECT * FROM AVAILABLE_TIME WHERE AvailableTime_Date LIKE '%' + @userSearch + '%'";
             SqlParameter[] param =
             {
                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
@@ -43,7 +43,7 @@ namespace DriversSystem
             {
                 int id = int.Parse(HiddenDelTimeID.Value);
 
-                string query = "DELETE FROM AvailalbleTime WHERE AvailableTime_ID = @ID";
+                string query = "DELETE FROM Availalble_Time WHERE Time_ID = @ID";
                 SqlParameter[] param =
                 {
                     new SqlParameter("@ID", SqlDbType.Int) { Value = id}
@@ -118,7 +118,7 @@ namespace DriversSystem
             {
                 try
                 {
-                    string insertQuery = "INSERT INTO AvailableTimes(Date, StartTime, EndTime, NumPeopleAllowed) VALUES (@Date, @StartTime, @EndTime, @NumPeopleAllowed)";
+                    string insertQuery = "INSERT INTO Available_Time(Date, StartTime, EndTime, NumPeopleAllowed) VALUES (@Date, @StartTime, @EndTime, @NumPeopleAllowed)";
                     SqlParameter[] parameters =
                     {
                         new SqlParameter("@Date", SqlDbType.Date) { Value = parsedDate },
@@ -161,7 +161,7 @@ namespace DriversSystem
         protected void populateGridView()
         {
 
-            string query = "SELECT * FROM Available_Time";
+            string query = "SELECT Time_ID,FORMAT(Date, 'yyyy-MM-dd') AS Date,StartTime,EndTime,NumPeopleAllowed FROM Available_Time";
             try
             {
                 TimesGridView.DataSource = dbHelper.ExecuteQuery(query);

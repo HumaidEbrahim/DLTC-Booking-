@@ -115,7 +115,7 @@
             <asp:GridView ID="TimesGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
                 <Columns>
                     <asp:BoundField DataField="Time_ID" HeaderText="Time ID" />
-                    <asp:BoundField DataField="Date" HeaderText="Date" />
+              <asp:BoundField DataField="Date" HeaderText="Date"  />
                     <asp:BoundField DataField="StartTime" HeaderText="Start Time" />
                     <asp:BoundField DataField="EndTime" HeaderText="End Time" />
                     <asp:BoundField DataField="NumPeopleAllowed" HeaderText="Number of People Allowed" />
@@ -177,15 +177,15 @@
                         </div>
                         <div class="form-group">
                             <label for="UpdateDate" class="form-label">Date</label>
-                            <asp:TextBox ID="UpdateDate" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                            <asp:TextBox ID="UpdateDate" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="UpdateStartTime" class="form-label">Start Time</label>
-                            <asp:TextBox ID="UpdateStartTime" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                            <asp:TextBox ID="UpdateStartTime" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="UpdateEndTime" class="form-label">End Time</label>
-                            <asp:TextBox ID="UpdateEndTime" runat="server" CssClass="form-control" Enabled="true"></asp:TextBox>
+                            <asp:TextBox ID="UpdateEndTime" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="UpdateNumPeopleAllowed" class="form-label">Number of People Allowed</label>
