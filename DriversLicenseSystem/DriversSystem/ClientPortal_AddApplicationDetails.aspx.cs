@@ -122,6 +122,9 @@ namespace DriversSystem
                 errorAlert.Visible = true; 
             }
 
+            Session["Service"] = ServiceDropdown.SelectedValue.ToString();
+            Session["TimeSlot"] = TimeslotRadioButtonList.SelectedValue;
+            Session["Date"] = calendar.SelectedDate.ToString();
         }
     }
 }
