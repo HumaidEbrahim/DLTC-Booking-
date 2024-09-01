@@ -105,8 +105,8 @@
 
                         <!-- Search Bar on the Left -->
 <div class="search-container" style="display: flex; align-items: center;">
-    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by city..." AutoPostBack="True" style="flex: 1; margin-right: 10px;" />
-    <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
+    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by city..." AutoPostBack="True" style="flex: 1; margin-right: 10px;" OnTextChanged="SearchTextBox_TextChanged"/>
+    <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" OnCLick="SearchButton_Click"/>
 </div>
 
 

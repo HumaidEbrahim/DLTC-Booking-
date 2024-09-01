@@ -132,6 +132,16 @@ namespace DriversSystem
 
         protected void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        protected void Search()
+        {
             string userSearch = SearchTextBox.Text.Trim();
 
             string query = "SELECT * FROM City WHERE Name LIKE '%' + @userSearch + '%'";
@@ -142,11 +152,6 @@ namespace DriversSystem
 
             CitiesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
             CitiesGridView.DataBind();
-        }
-
-        protected void SearchButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
