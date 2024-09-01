@@ -125,12 +125,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </asp:Panel>
 
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+   
             <div class="action-bar">
                 <!-- Search Bar on the Left -->
                 <div class="search-container">
-                    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by Application ID..." OnTextChanged="SearchTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search Client ID or Date..."></asp:TextBox>
                     <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" OnClick="SearchButton_Click"/>
                 </div>
 
@@ -138,45 +137,48 @@
                 <asp:Button ID="AddApplicationButton" runat="server" Text="Add New Application" CssClass="custom-btn" postBackUrl="~/MaintainClients.aspx" />
             </div>
 
-            <!-- GridView -->
-            <asp:GridView ID="ApplicationsGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table" OnRowEditing="ApplicationsGridView_RowEditing" OnRowCancelingEdit="ApplicationsGridView_RowCancelingEdit" OnRowUpdating="ApplicationsGridView_RowUpdating">
-                <Columns>
-                    <asp:BoundField DataField="Application_ID" HeaderText="Application ID" />
-                    <asp:BoundField DataField="IDNum" HeaderText="Client ID"  />
-                     <asp:BoundField DataField="Service_Descr" HeaderText="Service"  />
-                     <asp:BoundField DataField="Date" HeaderText="Date"  />
-                    <asp:BoundField DataField="TimeSlot" HeaderText="Timeslot"/>
-                    <asp:TemplateField HeaderText="Is Paid?">
-                    <ItemTemplate>
-                        <asp:CheckBox ID="IsPaidCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsPaid")) %>' Enabled="False" />
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:CheckBox ID="IsPaidCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsPaid")) %>' />
-                    </EditItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Is Attended?">
-                    <ItemTemplate>
-                        <asp:CheckBox ID="IsAttendedCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsAttended")) %>' Enabled="False" />
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:CheckBox ID="IsAttendedCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsAttended")) %>' />
-                    </EditItemTemplate>
-                </asp:TemplateField>
-                   <asp:TemplateField HeaderText="Actions">
-                    <ItemTemplate>
-                        <asp:Button ID="EditButton" runat="server" Text="Edit" CommandName="Edit" CssClass="btn btn-edit" />
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:Button ID="UpdateButton" runat="server" Text="Update" CommandName="Update" CssClass="btn btn-update" />
-                        <asp:Button ID="CancelButton" runat="server" Text="Cancel" CommandName="Cancel" CssClass="btn btn-cancel" />
-                    </EditItemTemplate>
-                </asp:TemplateField>
+            <asp:GridView ID="ApplicationsGridView" runat="server" AutoGenerateColumns="False" 
+    CssClass="crud-table" 
+    OnRowEditing="ApplicationsGridView_RowEditing" 
+    OnRowCancelingEdit="ApplicationsGridView_RowCancelingEdit" 
+    OnRowUpdating="ApplicationsGridView_RowUpdating"
+    DataKeyNames="Application_ID">
+   
+    <Columns>
+        <asp:BoundField DataField="Application_ID" HeaderText="Application ID" ReadOnly="True"/>
+        <asp:BoundField DataField="IDNum" HeaderText="Client ID"  ReadOnly="True" />
+        <asp:BoundField DataField="Service_Descr" HeaderText="Service"  ReadOnly="True" />
+        <asp:BoundField DataField="Date" HeaderText="Date"  ReadOnly="True" />
+        <asp:BoundField DataField="TimeSlot" HeaderText="Timeslot"  ReadOnly="True"/>
+        <asp:TemplateField HeaderText="Is Paid?">
+            <ItemTemplate>
+                <asp:CheckBox ID="IsPaidCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsPaid")) %>' Enabled="False" />
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:CheckBox ID="IsPaidCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsPaid")) %>' />
+            </EditItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Is Attended?">
+            <ItemTemplate>
+                <asp:CheckBox ID="IsAttendedCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsAttended")) %>' Enabled="False" />
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:CheckBox ID="IsAttendedCheckBox" runat="server" Checked='<%# Convert.ToBoolean(Eval("IsAttended")) %>' />
+            </EditItemTemplate>
+        </asp:TemplateField>
 
-                </Columns>
-            </asp:GridView> 
+        <asp:CommandField ShowEditButton="True" />
 
-        </ContentTemplate>
-    </asp:UpdatePanel>
+        <asp:TemplateField HeaderText="Actions">
+            <ItemTemplate>
+             
+                <asp:Button ID="maintainButton" runat="server" Text="Maintain Application" CssClass="btn btn-edit" OnClick="maintainButton_Click" />
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+
+
 
 
 </asp:Content>
