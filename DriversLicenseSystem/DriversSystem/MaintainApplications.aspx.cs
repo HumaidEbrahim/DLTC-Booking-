@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +10,10 @@ namespace DriversSystem
 {
     public partial class MaintainApplications : System.Web.UI.Page
     {
+        DatabaseHelper dbHelper = new DatabaseHelper();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BindData()
@@ -47,5 +49,14 @@ namespace DriversSystem
             BindData();
         }
 
+        protected void ApplicationsGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AddApplicationButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

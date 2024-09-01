@@ -135,7 +135,7 @@
         <asp:Panel ID="ApplicationDetailsPanel" runat="server" CssClass="button-group">
             <asp:Button ID="UpdateButton" runat="server" Text="Edit" CssClass="btn btn-primary" OnClick="UpdateButton_Click" />
             <asp:Button ID="SaveButton" runat="server" Text="Save" CssClass="btn btn-success" OnClick="SaveButton_Click" Visible="false" />
-            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-danger" OnClientClick="$('#DeleteConfirmModal').modal('show'); return false;" />
+            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-danger" OnClientClick="$('#DeleteConfirmModal').modal('show'); return false;" OnClick="DeleteButton_Click" />
         </asp:Panel>
     </div>
 
