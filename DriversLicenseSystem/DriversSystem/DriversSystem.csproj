@@ -104,6 +104,7 @@
     <Content Include="AdminPortal_NumAppointmentsPerWeek.aspx" />
     <Content Include="Admin_AddApplication.aspx" />
     <Content Include="Admin_AddUser.aspx" />
+    <Content Include="Admin_MaintainApplications.aspx" />
     <Content Include="Admin_MaintainUser.aspx" />
     <Content Include="ClientPortal.aspx" />
     <Content Include="ClientPortal_AddApplicationDetails.aspx" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="Admin_AddUser.aspx.designer.cs">
       <DependentUpon>Admin_AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_MaintainApplications.aspx.cs">
+      <DependentUpon>Admin_MaintainApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_MaintainApplications.aspx.designer.cs">
+      <DependentUpon>Admin_MaintainApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_MaintainUser.aspx.cs">
       <DependentUpon>Admin_MaintainUser.aspx</DependentUpon>

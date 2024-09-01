@@ -119,7 +119,10 @@
 
         <!-- Button Container -->
         <div class="btn-container">
-            <asp:Button ID="PrintButton" runat="server" Text="Print" CssClass="custom-btn" OnClientClick="window.print();return false;" OnClick="PrintButton_Click" />
+            <asp:Button ID="PrintButton" runat="server" Text="Print" CssClass="custom-btn" OnClientClick="window.print();return false;"  />
+            <div>
+             <asp:Button ID="continueButton" runat="server" Text="Continue" CssClass="custom-btn" OnClick="continueButton_Click"  />
+                  </div>
         </div>
     </div>
 </asp:Content>
