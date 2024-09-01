@@ -100,7 +100,7 @@ namespace DriversSystem
 
         protected void ContinueButton_Click(object sender, EventArgs e)
         {
-            Label1.Text = clientID + " " + TimeslotRadioButtonList.SelectedValue + " " + ServiceDropdown.SelectedValue;
+            
             try
             {
                 //Write to Application table

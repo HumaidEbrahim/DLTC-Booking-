@@ -15,13 +15,49 @@ namespace DriversSystem
     {
 
         /// <summary>
-        /// ApplicationID control.
+        /// DeleteConfirmButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ApplicationID;
+        protected global::System.Web.UI.WebControls.Button DeleteConfirmButton;
+
+        /// <summary>
+        /// CancelDeleteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelDeleteButton;
+
+        /// <summary>
+        /// errorAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel errorAlert;
+
+        /// <summary>
+        /// errorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorMessage;
+
+        /// <summary>
+        /// IDNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox IDNumber;
 
         /// <summary>
         /// FormState control.
@@ -33,67 +69,58 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Panel FormState;
 
         /// <summary>
-        /// Service control.
+        /// ServiceDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Service;
+        protected global::System.Web.UI.WebControls.DropDownList ServiceDropdown;
 
         /// <summary>
-        /// ServiceRequired control.
+        /// calendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ServiceRequired;
+        protected global::System.Web.UI.WebControls.Calendar calendar;
 
         /// <summary>
-        /// ApplicationDate control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ApplicationDate;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// DateRequired control.
+        /// NoTimes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator DateRequired;
+        protected global::System.Web.UI.WebControls.Label NoTimes;
 
         /// <summary>
-        /// ApplicationTime control.
+        /// TimeslotRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ApplicationTime;
+        protected global::System.Web.UI.WebControls.RadioButtonList TimeslotRadioButtonList;
 
         /// <summary>
-        /// TimeRequired control.
+        /// ClientDetailsPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator TimeRequired;
-
-        /// <summary>
-        /// ApplicationDetailsPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ApplicationDetailsPanel;
+        protected global::System.Web.UI.WebControls.Panel ClientDetailsPanel;
 
         /// <summary>
         /// UpdateButton control.
@@ -121,23 +148,5 @@ namespace DriversSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DeleteButton;
-
-        /// <summary>
-        /// DeleteConfirmButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteConfirmButton;
-
-        /// <summary>
-        /// CancelDeleteButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelDeleteButton;
     }
 }

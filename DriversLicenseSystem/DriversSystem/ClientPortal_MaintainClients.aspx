@@ -80,7 +80,7 @@
 
         .btn-primary {
             background-color: #ffc107;
-            color: #333;
+            color: white;
             border: 2px solid #ffc107;
             transition: all 0.3s ease;
         }
