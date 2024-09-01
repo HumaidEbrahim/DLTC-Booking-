@@ -31,17 +31,17 @@ namespace DriversSystem
                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }
             };
 
-            AvailableTimesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
-            AvailableTimesGridView.DataBind();
+            TimesGridView.DataSource = dbHelper.ExecuteQuery(query, param);
+            TimesGridView.DataBind();
         }
 
 
 
-        protected void ConfirmDeleteButton_Click(object sender, EventArgs e)
+        protected void DeleteTimeButton_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = int.Parse(HiddenDelAvailableTimeID.Value);
+                int id = int.Parse(HiddenDelTimeID.Value);
 
                 string query = "DELETE FROM AvailalbleTime WHERE AvailableTime_ID = @ID";
                 SqlParameter[] param =
@@ -51,7 +51,6 @@ namespace DriversSystem
 
                 int result = dbHelper.ExecuteNonQuery(query, param);
 
-                // repopulate gridview and success message
                 if (result > 0)
                 {
                     successAlert.Visible = true;
@@ -67,16 +66,16 @@ namespace DriversSystem
             }
         }
 
-        protected void ConfirmUpdateButton_Click(Object sender, EventArgs e)
+        protected void UpdateTimeButton_Click(Object sender, EventArgs e)
 
         {
-            string inputDate = UpdateAvailableDate.Text;
+            string inputDate = UpdateDate.Text;
             double inputTime;
 
             try
             {
-                int id = int.Parse(HiddenUpdateAvailableTimeID.Value);
-                inputTime = double.Parse(UpdateAvailableTime.Text);
+                int id = int.Parse(HiddenUpdateTimeID.Value);
+                inputTime = double.Parse(UpdateTimeID.Text);
 
                 string query = "UPDATE Service SET Service_Descr = @Descr, Price = @Price WHERE Service_ID = @ID";
 
@@ -91,7 +90,6 @@ namespace DriversSystem
 
                 if (result > 0)
                 {
-                    // repopulate gridview and success message
                     populateGridView();
                     errorAlert.Visible = false;
                     successAlert.Visible = true;
@@ -106,23 +104,75 @@ namespace DriversSystem
             }
         }
 
+        protected void SaveTimeButton_Click(object sender, EventArgs e)
+        {
+            string date = AddDate.Text;
+            string startTime = AddStartTime.Text;
+            string endTime = AddEndTime.Text;
+            int numPeopleAllowed;
 
+            if (DateTime.TryParse(date, out DateTime parsedDate) &&
+            TimeSpan.TryParse(startTime, out TimeSpan parsedStartTime) &&
+            TimeSpan.TryParse(endTime, out TimeSpan parsedEndTime) &&
+            int.TryParse(AddNumPeopleAllowed.Text, out numPeopleAllowed))
+            {
+                try
+                {
+                    string insertQuery = "INSERT INTO AvailableTimes(Date, StartTime, EndTime, NumPeopleAllowed) VALUES (@Date, @StartTime, @EndTime, @NumPeopleAllowed)";
+                    SqlParameter[] parameters =
+                    {
+                        new SqlParameter("@Date", SqlDbType.Date) { Value = parsedDate },
+                        new SqlParameter("@StartTime", SqlDbType.Time) { Value = parsedStartTime },
+                        new SqlParameter("@EndTime", SqlDbType.Time) { Value = parsedEndTime },
+                        new SqlParameter("@NumPeopleAllowed", SqlDbType.Int) { Value = numPeopleAllowed }
+                    };
+
+                    int result = dbHelper.ExecuteNonQuery(insertQuery, parameters);
+
+                    if (result > 0)
+                    {
+                        successAlert.Visible = true;
+                        successAlert.Controls.Add(new Literal { Text = "Time slot added successfully!" });
+                        populateGridView();
+                    }
+                    else
+                    {
+                        successAlert.Visible = false;
+                        errorAlert.Visible = true;
+                        errorAlert.Controls.Add(new Literal { Text = "Failed to add time slot." });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    successAlert.Visible = false;
+                    errorAlert.Visible = true;
+                    errorAlert.Controls.Add(new Literal { Text = "Failed to add time slot: " + ex.Message });
+                }
+            }
+            else
+           {
+                successAlert.Visible = false;
+                errorAlert.Visible = true;
+                errorAlert.Controls.Add(new Literal { Text = "Please enter valid data for all fields." });
+            }
+        }
 
 
         protected void populateGridView()
         {
 
-            string query = "SELECT * FROM Service";
+            string query = "SELECT * FROM Available_Time";
             try
             {
-                AvailableTimesGridView.DataSource = dbHelper.ExecuteQuery(query);
-                AvailableTimesGridView.DataBind();
+                TimesGridView.DataSource = dbHelper.ExecuteQuery(query);
+                TimesGridView.DataBind();
             }
             catch (SqlException)
             {
                 errorAlert.Visible = true;
                 errorAlert.Controls.Add(new Literal { Text = "Failed to connect to database" });
             }
+
 
 
 
