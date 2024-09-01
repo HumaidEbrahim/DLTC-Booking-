@@ -78,111 +78,192 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button SearchButton;
 
         /// <summary>
-        /// AddAvailableTimeButton control.
+        /// AddTimeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddAvailableTimeButton;
+        protected global::System.Web.UI.WebControls.Button AddTimeButton;
 
         /// <summary>
-        /// AvailableTimesGridView control.
+        /// TimesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AvailableTimesGridView;
+        protected global::System.Web.UI.WebControls.GridView TimesGridView;
 
         /// <summary>
-        /// DelAvailableTimeID control.
+        /// DelTimeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelAvailableTimeID;
+        protected global::System.Web.UI.WebControls.TextBox DelTimeID;
 
         /// <summary>
-        /// HiddenDelAvailableTimeID control.
+        /// HiddenDelTimeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenDelAvailableTimeID;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenDelTimeID;
 
         /// <summary>
-        /// DelAvailableDate control.
+        /// DelDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelAvailableDate;
+        protected global::System.Web.UI.WebControls.TextBox DelDate;
 
         /// <summary>
-        /// DelAvailableTime control.
+        /// DeleteTimeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DelAvailableTime;
+        protected global::System.Web.UI.WebControls.Button DeleteTimeButton;
 
         /// <summary>
-        /// ConfirmDeleteButton control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ConfirmDeleteButton;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// UpdateAvailableTimeID control.
+        /// UpdateTimeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdateAvailableTimeID;
+        protected global::System.Web.UI.WebControls.TextBox UpdateTimeID;
 
         /// <summary>
-        /// HiddenUpdateAvailableTimeID control.
+        /// HiddenUpdateTimeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenUpdateAvailableTimeID;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenUpdateTimeID;
 
         /// <summary>
-        /// UpdateAvailableDate control.
+        /// UpdateDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdateAvailableDate;
+        protected global::System.Web.UI.WebControls.TextBox UpdateDate;
 
         /// <summary>
-        /// UpdateAvailableTime control.
+        /// UpdateStartTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UpdateAvailableTime;
+        protected global::System.Web.UI.WebControls.TextBox UpdateStartTime;
 
         /// <summary>
-        /// ConfirmUpdateButton control.
+        /// UpdateEndTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ConfirmUpdateButton;
+        protected global::System.Web.UI.WebControls.TextBox UpdateEndTime;
+
+        /// <summary>
+        /// UpdateNumPeopleAllowed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox UpdateNumPeopleAllowed;
+
+        /// <summary>
+        /// UpdateTimeButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateTimeButton;
+
+        /// <summary>
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+
+        /// <summary>
+        /// AddDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddDate;
+
+        /// <summary>
+        /// AddStartTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddStartTime;
+
+        /// <summary>
+        /// AddEndTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddEndTime;
+
+        /// <summary>
+        /// AddNumPeopleAllowed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddNumPeopleAllowed;
+
+        /// <summary>
+        /// SaveTimeButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveTimeButton;
+
+        /// <summary>
+        /// Button4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button4;
     }
 }
