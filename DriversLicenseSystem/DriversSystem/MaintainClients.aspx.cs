@@ -47,8 +47,9 @@ namespace DriversSystem
         {
             Button btn = (Button)sender;
             string clientId = btn.CommandArgument;
+            // check if client has application
             Session["ClientID_Admin"] = clientId;
-            Response.Redirect("Admin_MaintainUser.aspx");
+            Response.Redirect("Admin_AddApplication.aspx");
         }
         protected void AddClientButton_Click(Object sender, EventArgs e)
         {
