@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Admin Portal - Reports" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientPortal_ViewDocument.aspx.cs" Inherits="DriversSystem.ClientPortal_ViewDocument" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         .form-container {
@@ -17,6 +16,13 @@
             margin-bottom: 20px;
             font-weight: bold;
             color: #28a745;
+        }
+
+        .form-container p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .form-group {
@@ -41,8 +47,9 @@
         }
 
         .btn-container {
-            text-align: center;
-            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
         }
 
         .custom-btn {
@@ -55,6 +62,9 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
         }
 
         .custom-btn:hover {
@@ -62,7 +72,7 @@
             color: #28a745;
             border-color: #28a745;
         }
-   
+
         @media print {
             .form-container {
                 box-shadow: none;
@@ -71,22 +81,23 @@
             .btn-container {
                 display: none; 
             }
-            @page
-            { margin: 0;
-              margin-bottom: 0;
+            @page {
+                margin: 0;
+                margin-bottom: 0;
             }
         }
     </style>
 
     <div class="form-container">
         <h2>Application Details</h2>
-        <p > Please print bring this form with you as proof of your appointment</p>
+        <p>Please print and bring this form with you as proof of your appointment.</p>
 
-          <!-- ID Number -->
-  <div class="form-group">
-      <label for="IDNumberLabel" class="form-label">ID Number</label>
-      <asp:Label ID="IDNumberLabel" runat="server" CssClass="form-control-static"></asp:Label>
-  </div>
+        <!-- ID Number -->
+        <div class="form-group">
+            <label for="IDNumberLabel" class="form-label">ID Number</label>
+            <asp:Label ID="IDNumberLabel" runat="server" CssClass="form-control-static"></asp:Label>
+        </div>
+
         <!-- Name -->
         <div class="form-group">
             <label for="NameLabel" class="form-label">Name</label>
@@ -100,10 +111,10 @@
         </div>
 
         <!-- Service -->
-  <div class="form-group">
-      <label for="ServiceLabel" class="form-label">Service</label>
-      <asp:Label ID="ServiceLabel" runat="server" CssClass="form-control-static"></asp:Label>
-  </div>
+        <div class="form-group">
+            <label for="ServiceLabel" class="form-label">Service</label>
+            <asp:Label ID="ServiceLabel" runat="server" CssClass="form-control-static"></asp:Label>
+        </div>
 
         <!-- Date -->
         <div class="form-group">
@@ -111,18 +122,16 @@
             <asp:Label ID="DateLabel" runat="server" CssClass="form-control-static"></asp:Label>
         </div>
 
-          <!-- Timeslot -->
-  <div class="form-group">
-      <label for="TimeslotLabel" class="form-label">Timeslot</label>
-      <asp:Label ID="TimeslotLabel" runat="server" CssClass="form-control-static"></asp:Label>
-  </div>
+        <!-- Timeslot -->
+        <div class="form-group">
+            <label for="TimeslotLabel" class="form-label">Timeslot</label>
+            <asp:Label ID="TimeslotLabel" runat="server" CssClass="form-control-static"></asp:Label>
+        </div>
 
         <!-- Button Container -->
         <div class="btn-container">
-            <asp:Button ID="PrintButton" runat="server" Text="Print" CssClass="custom-btn" OnClientClick="window.print();return false;"  />
-            <div>
-             <asp:Button ID="continueButton" runat="server" Text="Continue" CssClass="custom-btn" OnClick="continueButton_Click"  />
-                  </div>
+            <asp:Button ID="PrintButton" runat="server" Text="Print" CssClass="custom-btn" OnClientClick="window.print();return false;" />
+            <asp:Button ID="continueButton" runat="server" Text="Continue" CssClass="custom-btn" OnClick="continueButton_Click" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to proceed to the main menu" />
         </div>
     </div>
 </asp:Content>
