@@ -45,7 +45,10 @@ namespace DriversSystem
 
         protected void AddApplicationButton_Click(Object sender, EventArgs e)
         {
-            Response.Redirect("Admin_AddUser.aspx");
+            Button btn = (Button)sender;
+            string clientId = btn.CommandArgument;
+            Session["ClientID_Admin"] = clientId;
+            Response.Redirect("Admin_MaintainUser.aspx");
         }
         protected void AddClientButton_Click(Object sender, EventArgs e)
         {
@@ -59,7 +62,10 @@ namespace DriversSystem
 
         protected void UpdateClientButton_Click(object sender, EventArgs e)
         {
-
+            Button btn = (Button)sender;
+            string clientId = btn.CommandArgument;
+            Session["ClientID_Admin"] = clientId;
+            Response.Redirect("Admin_MaintainUser.aspx");
         }
 
         protected void DeleteClientButton_Click(object sender, EventArgs e)

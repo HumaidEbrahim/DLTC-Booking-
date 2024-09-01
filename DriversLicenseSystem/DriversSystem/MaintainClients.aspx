@@ -155,20 +155,6 @@
     }
 </script>
 
-<!-- Get details from form for update -->
-<script>
-    function showUpdateModal(clientID, idNumber, name, surname, phoneNumber, addressNumber, streetAddress, cityID) {
-        document.getElementById('<%= UpdateClientID.ClientID %>').value = clientID;
-        document.getElementById('<%= UpdateIDNumber.ClientID %>').value = idNumber;
-        document.getElementById('<%= UpdateName.ClientID %>').value = name;
-        document.getElementById('<%= UpdateSurname.ClientID %>').value = surname;
-        document.getElementById('<%= UpdatePhoneNumber.ClientID %>').value = phoneNumber;
-        document.getElementById('<%= UpdateAddressNumber.ClientID %>').value = addressNumber;
-        document.getElementById('<%= UpdateStreetAddress.ClientID %>').value = streetAddress;
-        document.getElementById('<%= UpdateCityID.ClientID %>').value = cityID;
-        $('#UpdateModal').modal('show');
-    }
-</script>
 
 <!-- GridView -->
 <asp:GridView ID="ClientsGridView" runat="server" AutoGenerateColumns="False" CssClass="crud-table">
@@ -183,11 +169,8 @@
         <asp:BoundField DataField="CityName" HeaderText="City" />
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
-                <asp:Button ID="EditButton" runat="server" Text="Update" CssClass="btn btn-edit" CommandName="Edit" 
-                 OnClientClick='<%# "showUpdateModal(" + Eval("Client_ID") + ", \"" + Eval("IDNum") + "\", \"" + Eval("Name") + "\", \"" + Eval("Surname") + "\", \"" + Eval("Phone_Number") + "\", \"" + Eval("Address_Num") + "\", \"" + Eval("Address_Street") + "\", \"" + Eval("CityName") + "\"); return false;" %>' />
-                <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="btn btn-delete" CommandName="Delete" 
-                 OnClientClick='<%# "showDeleteModal(" + Eval("Client_ID") + ", \"" + Eval("IDNum") + "\", \"" + Eval("Name") + "\", \"" + Eval("Surname") + "\", \"" + Eval("Phone_Number") + "\", \"" + Eval("Address_Num") + "\", \"" + Eval("Address_Street") + "\", \"" + Eval("CityName") + "\"); return false;" %>' />
-                <asp:Button ID="AddApplicationButton" runat="server" Text="Add Application" CssClass="btn btn-add-application" OnClick="AddApplicationButton_Click" />
+                <asp:Button ID="EditButton" runat="server" Text="Maintain Client" CssClass="btn btn-edit" CommandArgument='<%# Eval("Client_ID") %>'  OnClick="UpdateClientButton_Click" />
+                <asp:Button ID="AddApplicationButton" runat="server" Text="Add Application" CssClass="btn btn-add-application" CommandArgument='<%# Eval("Client_ID") %>' OnClick="AddApplicationButton_Click" />
             </ItemTemplate>
         </asp:TemplateField>
     </Columns>
@@ -196,53 +179,6 @@
 </asp:UpdatePanel>
 
  
-
-    <!-- Update Modal -->
-    <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateModalLabel">Update Client</h5>
-                </div>
-                <div class="modal-body">
-                    <asp:HiddenField ID="UpdateClientID" runat="server" />
-                    <div class="form-group">
-                        <label for="UpdateIDNumber" class="form-label">ID Number</label>
-                        <asp:TextBox ID="UpdateIDNumber" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdateName" class="form-label">Name</label>
-                        <asp:TextBox ID="UpdateName" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdateSurname" class="form-label">Surname</label>
-                        <asp:TextBox ID="UpdateSurname" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdatePhoneNumber" class="form-label">Phone Number</label>
-                        <asp:TextBox ID="UpdatePhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdateAddressNumber" class="form-label">Address Number</label>
-                        <asp:TextBox ID="UpdateAddressNumber" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdateStreetAddress" class="form-label">Street Address</label>
-                        <asp:TextBox ID="UpdateStreetAddress" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="UpdateCityID" class="form-label">City ID</label>
-                        <asp:DropDownList ID="UpdateCityID" runat="server" CssClass="form-control"></asp:DropDownList>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="UpdateClientButton" runat="server" Text="Update" CssClass="custom-btn" OnClick="UpdateClientButton_Click"/>
-                    <asp:Button ID="CancelUpdateButton" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#UpdateModal').modal('hide'); return false;" />
-                </div>
-            </div>
-        </div>
-    </div>
-
  <!-- Delete Modal -->
 <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
