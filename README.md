@@ -1,4 +1,4 @@
-# Cmpg223
+# Booking System
 This is a booking system for the drivers license department
 
 ### Screenshots
